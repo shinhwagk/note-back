@@ -1,12 +1,6 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
-</ol>
-
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-6" *ngFor="let key of _note_type">
+    <div class="col-lg-6" *ngFor="let key of Object.keys(_notes)">
       <div class="card">
         <div class="card-header">{{key}}</div>
         <div class="card-block">
