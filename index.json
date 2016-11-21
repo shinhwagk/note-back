@@ -1,11 +1,8 @@
 {
   "labels": [
     "oracle",
-    "linux"
+    "linux",
+    "emacs"
   ],
-  "notes": [
-    {
-      "views": []
-    }
-  ]
+  "notes": {}
 }
