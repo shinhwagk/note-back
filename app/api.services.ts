@@ -5,8 +5,7 @@ import { UrlServices, Urls } from "./url.services";
 
 @Injectable()
 export class ApiServices {
-  constructor(private _http: Http) {
-  }
+  constructor(private _http: Http) { }
 
   _urlServices: Urls = UrlServices
 
