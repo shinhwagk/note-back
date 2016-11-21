@@ -13,6 +13,7 @@
         "docs": []
       },
       {
+        "id": 2,
         "contents": [
           "cider",
           "clojure交互式开发"
@@ -20,6 +21,7 @@
         "docs": []
       },
       {
+        "id": 3,
         "contents": [
           "pdf-tools",
           "emacs中看pdf，她把pdf作为image来显示"
@@ -27,6 +29,7 @@
         "docs": []
       },
       {
+        "id": 3,
         "contents": [
           "smartparens",
           "自动补全括号"
@@ -34,6 +37,7 @@
         "docs": []
       },
       {
+        "id": 4,
         "contents": [
           "popwin",
           "打开新的buffer光标跟随进入新的buffer"
@@ -41,6 +45,7 @@
         "docs": []
       },
       {
+        "id": 5,
         "contents": [
           "nodejs-repl",
           "nodejs"
@@ -48,6 +53,7 @@
         "docs": []
       },
       {
+        "id": 6,
         "contents": [
           "js2-mode",
           "js ide"
@@ -55,6 +61,7 @@
         "docs": []
       },
       {
+        "id": 7,
         "contents": [
           "swiper",
           "加强搜索功能，提供mini buffer来显示搜索"
@@ -62,6 +69,7 @@
         "docs": []
       },
       {
+        "id": 8,
         "contents": [
           "smex",
           "加强M-x"
@@ -69,6 +77,7 @@
         "docs": []
       },
       {
+        "id": 9,
         "contents": [
           "hungry-delete",
           "一次按键删除多个空格"
@@ -76,6 +85,7 @@
         "docs": []
       },
       {
+        "id": 10,
         "contents": [
           "monokai-theme",
           "emacs主题"
@@ -83,6 +93,7 @@
         "docs": []
       },
       {
+        "id": 11,
         "contents": [
           "company",
           "自动补全"
