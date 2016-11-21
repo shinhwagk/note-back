@@ -3,7 +3,7 @@
   "notes": {
     "command": [
       {
-        "command": [
+        "contents": [
           "vagrant up",
           "启动虚拟机"
         ],
