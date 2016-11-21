@@ -41,10 +41,6 @@ export class NoteComponent implements OnInit {
     this.router.navigate(['/', this._path + '/' + label]);
   }
 
-  gotoHome():void{
-    this.router.navigate(['/', 'index']);
-  }
-
   goBack(): void {
     this.location.back();
   }
