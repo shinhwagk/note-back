@@ -32,6 +32,5 @@ export class GithubUrls implements Urls {
   labelsUrl: string = "data/labels.json"
 }
 
-// export const UrlServices: Urls = new RestUrls()
 export const UrlServices: Urls = new GithubUrls();
 // export const UrlServices: Urls = new LocalUrls();
