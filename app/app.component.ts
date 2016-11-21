@@ -11,5 +11,5 @@ export class AppComponent {
       .toPromise().then(p => this._labels = p.labels)
   }
 
-  _labels
+  _labels: string[] = []
 }
