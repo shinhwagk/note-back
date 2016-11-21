@@ -26,11 +26,11 @@ export class GithubUrls implements Urls {
   }
 
   labelUrl(label: string): string {
-    return `data/labels/${label}.json`;
+    return `https://raw.githubusercontent.com/shinhwagk/note-back-pages/data/${label}.json`;
   }
 
   labelsUrl: string = "data/labels.json"
 }
 
 // export const UrlServices: Urls = new RestUrls()
-export const UrlServices: Urls = new LocalUrls()
+export const UrlServices: Urls = new GithubUrls()
