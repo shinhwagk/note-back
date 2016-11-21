@@ -1,0 +1,53 @@
+{
+  "labels": [],
+  "notes": {
+    "text": [
+      {
+        "contents": [
+          "M-v",
+          "向上翻页"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "C-v",
+          "向下翻页"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "M-f",
+          "光标后移一个单词"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "C-f",
+          "光标后移一个字符"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "C-b",
+          "光标前移一个字符"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "C-p",
+          "Previous line (up)"
+        ],
+        "docs": []
+      },
+      { "contents":["C-n","Next line (down)"], "docs" :[] },
+      { "contents":["C-e","移动光标到行尾"], "docs" :[] },
+      { "contents":["c-k","删除光标之后的字符"], "docs" :[] },
+      { "contents":["c-a","移动光标到行开头"], "docs" :[] }
+    ]
+  }
+}

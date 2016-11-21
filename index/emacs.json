@@ -1,7 +1,8 @@
 {
   "labels": [
     "packages",
-    "org-mode"
+    "org-mode",
+    "keymap"
   ],
   "notes": {
     "install": [
