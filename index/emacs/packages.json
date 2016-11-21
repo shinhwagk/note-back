@@ -6,84 +6,84 @@
     "packges": [
       {
         "id": 1,
-        "content": [
+        "contents": [
           "clojure-mode",
           "emacs支持clojure语言"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "cider",
           "clojure交互式开发"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "pdf-tools",
           "emacs中看pdf，她把pdf作为image来显示"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "smartparens",
           "自动补全括号"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "popwin",
           "打开新的buffer光标跟随进入新的buffer"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "nodejs-repl",
           "nodejs"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "js2-mode",
           "js ide"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "swiper",
           "加强搜索功能，提供mini buffer来显示搜索"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "smex",
           "加强M-x"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "hungry-delete",
           "一次按键删除多个空格"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "monokai-theme",
           "emacs主题"
         ],
         "docs": []
       },
       {
-        "content": [
+        "contents": [
           "company",
           "自动补全"
         ],
