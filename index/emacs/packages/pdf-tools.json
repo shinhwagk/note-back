@@ -3,6 +3,7 @@
   "notes": {
     "doc": [
       {
+        "id": 11,
         "contents": [
           "emacs中看pdf，她把pdf作为image来显示"
         ],
@@ -11,6 +12,7 @@
     ],
     "operation": [
       {
+        "id": 22,
         "contents": [
           "使用pdf-tools 在ubuntu 16.04",
           "安装pdf依赖:M-x pdf-tools-install\nc-x c-f打开pdf文件即可"
