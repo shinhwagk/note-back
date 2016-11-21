@@ -10,10 +10,6 @@ export class ApiServices {
 
   _urlServices: Urls = UrlServices
 
-  // getIndexJSON() {
-  //   return this._http.get(this._urlServices.labelUrl('index')).map((res: Response) => res.json());
-  // }
-
   getLabel(l: string) {
     return this._http.get(this._urlServices.labelUrl(l)).map((res: Response) => res.json());
   }
