@@ -3,7 +3,7 @@
     "pdf-tools"
   ],
   "notes": {
-    "packges": [
+    "packge-list": [
       {
         "contents": [
           "clojure-mode",
