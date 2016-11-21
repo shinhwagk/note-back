@@ -1,5 +1,7 @@
 {
-  "labels": ["pdf-tools"],
+  "labels": [
+    "pdf-tools"
+  ],
   "notes": {
     "packges": [
       {
