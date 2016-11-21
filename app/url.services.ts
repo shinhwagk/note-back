@@ -33,4 +33,5 @@ export class GithubUrls implements Urls {
 }
 
 // export const UrlServices: Urls = new RestUrls()
-export const UrlServices: Urls = new GithubUrls()
+// export const UrlServices: Urls = new GithubUrls();
+export const UrlServices: Urls = new LocalUrls();

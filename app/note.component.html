@@ -1,9 +1,8 @@
-<ul class="navbar-fixed-top">
-  <li *ngFor="let label of _labels" (click)="gotoLabel(label)"> {{label}} </li>
-  <li><button (click)="goBack()">Back</button></li>
-</ul>
-<br>
-<br>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Library</a></li>
+  <li class="breadcrumb-item active">Data</li>
+</ol>
 
 <div class="container-fluid">
   <div class="row">
@@ -22,3 +21,9 @@
     </div>
   </div>
 </div>
+
+<ul class="navbar-fixed-bottom">
+  <li (click)="gotoHome()">Home</li>
+  <li *ngFor="let label of _labels" (click)="gotoLabel(label)"> {{label}} </li>
+  <li><button (click)="goBack()">Back</button></li>
+</ul>

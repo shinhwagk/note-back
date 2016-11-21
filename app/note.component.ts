@@ -44,8 +44,12 @@ export class NoteComponent implements OnInit {
     }
   }
 
-  gotoLabel(label: string) {
+  gotoLabel(label: string):void {
     this.router.navigate(['/', this._path + '/' + label]);
+  }
+
+  gotoHome():void{
+    this.router.navigate(['/', 'index']);
   }
 
   goBack(): void {
