@@ -19,7 +19,7 @@ export class NoteComponent implements OnInit {
       this._api.getLabel(this._path).toPromise().then(p => {
         this._labels = p.labels
         this._notes = p.notes
-        this._note_type = Object.keys(this._notes)
+        this.setNote()
       });
     })
   }
@@ -36,6 +36,13 @@ export class NoteComponent implements OnInit {
   _labels: string[] = [];
   _notes;
   _note_type: string[] = [];
+
+  setNote() {
+    this._note_type = [];
+    for (let key in this._notes) {
+      this._note_type.push(key)
+    }
+  }
 
   gotoLabel(label: string):void {
     this.router.navigate(['/', this._path + '/' + label]);
