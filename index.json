@@ -2,7 +2,8 @@
   "labels": [
     "oracle",
     "linux",
-    "emacs"
+    "emacs",
+    "vagrant"
   ],
   "notes": {}
 }

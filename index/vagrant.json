@@ -1,0 +1,14 @@
+{
+  "labels": [],
+  "notes": {
+    "command": [
+      {
+        "command": [
+          "vagrant up",
+          "启动虚拟机"
+        ],
+        "docs": []
+      }
+    ]
+  }
+}
