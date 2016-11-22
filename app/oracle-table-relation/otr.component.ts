@@ -27,10 +27,10 @@ export class OrclTabRelComponent implements OnInit {
     private location: Location) {
   }
 
-  _name: string
-  _table
-
   goBack(): void {
     this.location.back();
   }
+  
+  _name: string
+  _table:string[][] = []
 }
