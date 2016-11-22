@@ -13,7 +13,7 @@ import { ApiServices } from "../api.services";
 })
 export class OrclTabRelAllComponent implements OnInit {
   ngOnInit(): void {
-    this._api.tableAllUrl().toPromise().then(names => this._names = names);
+    this._api.getTableAll().toPromise().then(names => this._names = names);
   }
 
   constructor(
