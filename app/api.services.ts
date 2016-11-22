@@ -9,13 +9,12 @@ export class ApiServices {
 
   _urlServices: Urls = UrlServices
 
-  getLabel(l: string) {
-    return this._http.get(this._urlServices.labelUrl(l)).map((res: Response) => res.json());
-  }
+  // note
+  getLabel(l: string) { return this._http.get(this._urlServices.labelUrl(l)).map((res: Response) => res.json()); }
+  getNote(id: number) { return this._http.get(this._urlServices.noteUrl(id)).map((res: Response) => res.json()); }
 
-  getNote(id: number) {
-    return this._http.get(this._urlServices.noteUrl(id)).map((res: Response) => res.json());
-  }
+  // oracle table relation
+  getTable(name: string) { return this._http.get(this._urlServices.tableUrl(name)).map((res: Response) => res.json()); }
 
   headers = new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });

@@ -7,15 +7,14 @@ import { Location } from '@angular/common'
 import { ApiServices } from "../api.services";
 
 @Component({
-  selector: 'my-app-note',
-  templateUrl: 'app/note/note.component.html',
-  styleUrls: ['app/note/note.component.css'],
-  providers: [ApiServices]
+  selector: 'my-app-otr',
+  templateUrl: 'app/oracle-table-relation/otr.component.html',
+  styleUrls: ['app/oracle-table-relation/otr.component.css']
 })
-export class NoteComponent implements OnInit {
+export class OrclTabRelComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
-      this._path = params['path'];
+      this._path = params['name'];
       this._api.getLabel(this._path).toPromise().then(p => {
         this._labels = p.labels
         this._notes = p.notes
