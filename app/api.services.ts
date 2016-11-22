@@ -15,7 +15,8 @@ export class ApiServices {
 
   // oracle table relation
   getTableByName(name: string) { return this._http.get(this._urlServices.tableUrl(name)).map((res: Response) => res.json()); }
-  getTableAll() { return this._http.get(this._urlServices.tableAllUrl()).map((res: Response) => res.json()); }
+  getDDVAll() { return this._http.get(this._urlServices.OTRddvUrl()).map((res: Response) => res.json()); }
+  getDPVAll() { return this._http.get(this._urlServices.OTRdpvUrl()).map((res: Response) => res.json()); }
 
   headers = new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });
