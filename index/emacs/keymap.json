@@ -48,7 +48,9 @@
       { "contents":["C-e","移动光标到行尾"], "docs" :[] },
       { "contents":["c-k","删除光标之后的字符"], "docs" :[] },
       { "contents":["c-a","移动光标到行开头"], "docs" :[] },
-      { "contents":["C-g","中断操作"], "docs" :[] }
+      { "contents":["C-g","中断操作"], "docs" :[] },
+      { "contents":["c-h t","打开emacs教程"], "docs" :[] },
+      { "contents":["c-x c-e","执行elisp"], "docs" :[] }
     ]
   }
 }
