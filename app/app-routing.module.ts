@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: 'index', component: AppComponent }
+  { path: 'index', component: AppComponent },
 
   //note
   { path: 'note/:path', component: NoteComponent },
