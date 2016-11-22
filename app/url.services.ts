@@ -17,7 +17,6 @@ export class GithubUrls implements Urls {
   labelsUrl: string = "data/labels.json"
 
   // oracle table relation
-
   tableUrl(name: string): string { return `https://raw.githubusercontent.com/shinhwagk/note-back/data/oracle-table-relation/${name}.json`; }
 }
 

@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NoteComponent } from './note/note.component'
 import { OrclTabRelComponent } from './oracle-table-relation/otr.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: 'index', component: AppComponent }
+
   //note
-  { path: '', redirectTo: '/note/index', pathMatch: 'full' },
   { path: 'note/:path', component: NoteComponent },
 
   //oracle table relation
