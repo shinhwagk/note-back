@@ -28,5 +28,5 @@ export class OrclTabRelAllComponent implements OnInit {
     this.location.back();
   }
   
-  _names:string[] = []
+  _names: string[] = []
 }

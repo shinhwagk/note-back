@@ -3,6 +3,9 @@ export interface Urls {
   labelUrl(label: string): string;
   noteUrl(id: number): string;
 
+  tableUrl(name: string): string;
+  tableAllUrl(): string;
+
 }
 
 export class LocalUrls implements Urls {
