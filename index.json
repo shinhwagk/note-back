@@ -3,7 +3,8 @@
     "oracle",
     "linux",
     "emacs",
-    "vagrant"
+    "vagrant",
+    "h2database"
   ],
   "notes": {}
 }
