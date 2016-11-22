@@ -18,6 +18,7 @@ export class GithubUrls implements Urls {
 
   // oracle table relation
   tableUrl(name: string): string { return `https://raw.githubusercontent.com/shinhwagk/note-back/data/oracle-table-relation/${name}.json`; }
+  tableAllUrl(): string { return `https://raw.githubusercontent.com/shinhwagk/note-back/data/oracle-table-relation/index.json`; }
 }
 
 export const UrlServices: Urls = new GithubUrls();

@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-1">
+      <a *ngFor="let name of names" [routerLink]="['/orcltabrel', name]">{{ name }}</a>
+    </div>
+  </div>
+</div>

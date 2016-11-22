@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NoteComponent } from './note/note.component'
 import { OrclTabRelComponent } from './oracle-table-relation/otr.component';
 import { AppComponent } from './app.component';
+import { OrclTabRelAllComponent } from './oracle-table-relation/otr-all-component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'note/:path', component: NoteComponent },
 
   //oracle table relation
+  { path: 'orcltabrel', component: OrclTabRelAllComponent },
   { path: 'orcltabrel/:name', component: OrclTabRelComponent }
 ];
  
