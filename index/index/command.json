@@ -1,0 +1,11 @@
+{
+  "labels": [],
+  "notes": {
+    "command": [
+      {
+        "contents": ["which","查看命令位置"],
+        "docs": []
+      }
+    ]
+  }
+}
