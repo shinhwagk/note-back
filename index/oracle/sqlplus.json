@@ -65,6 +65,13 @@
         ],
         "docs": []
       }
+    ],
+    "concepts": [
+      {
+        "contents": [
+          "初始化加载sqlplus配置文件: glogin.sql和login.sql"
+        ]
+      }
     ]
   }
 }
