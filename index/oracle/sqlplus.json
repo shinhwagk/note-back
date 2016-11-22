@@ -8,6 +8,62 @@
           "显示错误，包括plsql编译错误。"
         ],
         "docs": []
+      },
+      {
+        "contents": [
+          "show parameter {paramater_name}",
+          "查看参数值"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "show con_name",
+          "查看当前使用的pdb"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "sta[rt] xxx.sql",
+          "执行一个sql脚 支持http和ftp协议"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "@",
+          "执行一个sql脚"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "l[ist]",
+          "列出buffer中最近执行过的sql和pl/sql"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "set",
+          "设置sqlplus系统变量"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "SQLPROMPT",
+          "设置sqlplus提示符信息"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "-no logintime",
+          "12c中登录sqlplus会显示最后一次登录时间，此参数为去掉这个显示"
+        ],
+        "docs": []
       }
     ]
   }
