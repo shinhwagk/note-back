@@ -16,7 +16,6 @@ export class NoteComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       this._path = params['path'];
-      console.info(this._path);
       this._api.getLabel(this._path).toPromise().then(p => {
         this._labels = p.labels
         this._notes = p.notes
@@ -39,7 +38,7 @@ export class NoteComponent implements OnInit {
   _note_type: string[] = [];
 
   gotoLabel(label: string):void {
-    this.router.navigate(['/', this._path + '/' + label]);
+    this.router.navigate(['/note', this._path + '/' + label]);
   }
 
   goBack(): void {
