@@ -1,5 +1,8 @@
 <table border="1" class="table">
   <tr *ngFor="let row of _table">
+    <td id={{row[0]}}>
+      {{row.pop()}}
+    </td>
     <td *ngFor="let col of row">
       {{col}}
     </td>
