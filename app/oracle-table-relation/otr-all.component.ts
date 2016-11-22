@@ -13,8 +13,8 @@ import { ApiServices } from "../api.services";
 })
 export class OrclTabRelAllComponent implements OnInit {
   ngOnInit(): void {
-    this._api.getDDVAll().toPromise().then(names => this._names.concat(names));
-    this._api.getDPVAll().toPromise().then(names => this._names.concat(names));
+    this._api.getDDVAll().toPromise().then(names => names.forEach(this._names.push));
+    this._api.getDPVAll().toPromise().then(names => names.forEach(this._names.push));
   }
 
   constructor(
