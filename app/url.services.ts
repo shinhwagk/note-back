@@ -1,6 +1,3 @@
-/**
- * Created by zhangxu on 2016/8/22.
- */
 export interface Urls {
   labelsUrl: string;
   labelUrl(label: string): string;

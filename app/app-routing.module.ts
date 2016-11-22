@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { NoteComponent } from './note.component'
+import { NoteComponent } from './note-back/note.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
