@@ -14,12 +14,8 @@ import { ApiServices } from "../api.services";
 export class OrclTabRelComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
-      this._path = params['name'];
-      this._api.getLabel(this._path).toPromise().then(p => {
-        this._labels = p.labels
-        this._notes = p.notes
-        this._note_type = Object.keys(this._notes)
-      });
+      this._name = params['name'];
+      this._api.getTable(this._name).toPromise().then(tab => this._table = tab);
     })
   }
 
@@ -31,14 +27,8 @@ export class OrclTabRelComponent implements OnInit {
     private location: Location) {
   }
 
-  _path
-  _labels: string[] = [];
-  _notes;
-  _note_type: string[] = [];
-
-  gotoLabel(label: string):void {
-    this.router.navigate(['/note', this._path + '/' + label]);
-  }
+  _name: string
+  _table
 
   goBack(): void {
     this.location.back();
