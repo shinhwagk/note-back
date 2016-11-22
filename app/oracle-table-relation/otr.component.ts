@@ -8,7 +8,8 @@ import { ApiServices } from "../api.services";
 @Component({
   selector: 'my-app-otr',
   templateUrl: 'app/oracle-table-relation/otr.component.html',
-  styleUrls: ['app/oracle-table-relation/otr.component.css']
+  styleUrls: ['app/oracle-table-relation/otr.component.css'],
+  providers: [ApiServices]
 })
 export class OrclTabRelComponent implements OnInit {
   ngOnInit(): void {
