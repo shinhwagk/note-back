@@ -47,7 +47,8 @@
       { "contents":["C-n","Next line (down)"], "docs" :[] },
       { "contents":["C-e","移动光标到行尾"], "docs" :[] },
       { "contents":["c-k","删除光标之后的字符"], "docs" :[] },
-      { "contents":["c-a","移动光标到行开头"], "docs" :[] }
+      { "contents":["c-a","移动光标到行开头"], "docs" :[] },
+      { "contents":["C-g","中断操作"], "docs" :[] }
     ]
   }
 }
