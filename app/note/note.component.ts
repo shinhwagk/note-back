@@ -8,8 +8,8 @@ import { ApiServices } from "./api.services";
 
 @Component({
   selector: 'my-app-note',
-  templateUrl: 'app/note-back/note.component.html',
-  styleUrls: ['app/note-back/note.component.css'],
+  templateUrl: 'app/note/note.component.html',
+  styleUrls: ['app/note/note.component.css'],
   providers: [ApiServices]
 })
 export class NoteComponent implements OnInit {
