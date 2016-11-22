@@ -4,7 +4,8 @@
     "linux",
     "emacs",
     "vagrant",
-    "h2database"
+    "h2database",
+    "cmd"
   ],
   "notes": {}
 }
