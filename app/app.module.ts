@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
-import { NoteComponent } from './note-back/note.component'
+import { NoteComponent } from './note/note.component'
 import { AppRoutingModule } from './app-routing.module';
 import "./rxjs-operators";
 
