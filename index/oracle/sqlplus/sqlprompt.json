@@ -6,7 +6,57 @@
         "contents": [
           "_user",
           "显示当前连接的用户"
-        ]
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_connect_identifier",
+          "显示被连接数据库的连接标识符"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_sqlplus_release",
+          "显示sqlplus完整版本号"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_editor",
+          "显示使用的编辑器名字"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_o_release",
+          "当前oracle数据库完整版本号"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_o_version",
+          "当前oracle数据库版本"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_date",
+          "当前时间"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "_user",
+          "当前连接使用的用户名"
+        ],
+        "docs": []
       }
     ]
   }
