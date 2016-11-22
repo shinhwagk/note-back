@@ -1,0 +1,1 @@
+[ [ "WINDOW_NAME", "VARCHAR2(261)", "&nbsp;", "<p>Name of the maintenance window</p>" ], [ "WINDOW_START_TIME", "TIMESTAMP(6) WITH TIME ZONE", "&nbsp;", "<p>Window start time</p>" ], [ "WINDOW_END_TIME", "TIMESTAMP(6) WITH TIME ZONE", "&nbsp;", "<p>Window end time</p>" ] ]

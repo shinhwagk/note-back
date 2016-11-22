@@ -1,0 +1,1 @@
+[ [ "GROUP_NAME", "VARCHAR2(30)", "<p><code>NOT NULL</code></p>", "<p>Name of the tablespace group</p>" ], [ "TABLESPACE_NAME", "VARCHAR2(30)", "<p><code>NOT NULL</code></p>", "<p>Name of the tablespace</p>" ] ]

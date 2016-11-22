@@ -1,0 +1,1 @@
+[ [ "PRODUCT", "VARCHAR2(80)", "&nbsp;", "<p>Product name</p>" ], [ "VERSION", "VARCHAR2(80)", "&nbsp;", "<p>Version number</p>" ], [ "STATUS", "VARCHAR2(80)", "&nbsp;", "<p>Status of release</p>" ] ]

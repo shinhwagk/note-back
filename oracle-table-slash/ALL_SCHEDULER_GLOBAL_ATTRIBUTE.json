@@ -1,0 +1,1 @@
+[ [ "ATTRIBUTE_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the Scheduler attribute</p>" ], [ "VALUE", "VARCHAR2(128)", "&nbsp;", "<p>Value of the Scheduler attribute</p>" ] ]

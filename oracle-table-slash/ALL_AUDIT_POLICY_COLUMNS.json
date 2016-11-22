@@ -1,0 +1,1 @@
+[ [ "OBJECT_SCHEMA", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the table or view</p>" ], [ "OBJECT_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the table or view</p>" ], [ "POLICY_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the policy</p>" ], [ "POLICY_COLUMN", "VARCHAR2(128)", "&nbsp;", "<p>Relevant column of the policy</p>" ] ]

@@ -1,0 +1,1 @@
+[ [ "TABLE_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the object that contains the column</p>" ], [ "COLUMN_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the column</p>" ], [ "COMMENTS", "VARCHAR2(4000)", "&nbsp;", "<p>Text comment on the column</p>" ] ]

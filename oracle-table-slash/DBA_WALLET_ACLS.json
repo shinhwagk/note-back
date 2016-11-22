@@ -1,0 +1,1 @@
+[ [ "WALLET_PATH", "VARCHAR2(1000)", "<p><code>NOT NULL</code></p>", "<p>Wallet path</p>" ], [ "ACL", "VARCHAR2(4000)", "&nbsp;", "<p>Path of the access control list</p>" ], [ "ACLID", "RAW(8)", "&nbsp;", "<p>Object ID of the access control list</p>" ], [ "ACL_OWNER", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the access control list</p>" ] ]
