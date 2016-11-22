@@ -13,10 +13,10 @@ import { ApiServices } from "../api.services";
 })
 export class OrclTabRelComponent implements OnInit {
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      this._name = params['name'];
-      this._api.getTable(this._name).toPromise().then(tab => this._table = tab);
-    })
+    // this.route.params.forEach((params: Params) => {
+    //   this._name = params['name'];
+    //   this._api.getTable(this._name).toPromise().then(tab => this._table = tab);
+    // })
   }
 
   constructor(
