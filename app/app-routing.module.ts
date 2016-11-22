@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NoteComponent } from './note-back/note.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: ':path', component: NoteComponent },
+  { path: '', redirectTo: '/note-back/index', pathMatch: 'full' },
+  { path: '/note-back/:path', component: NoteComponent },
 ];
 
 @NgModule({
