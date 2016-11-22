@@ -23,7 +23,7 @@ export class GithubUrls implements Urls {
   }
 
   labelUrl(label: string): string {
-    return `https://raw.githubusercontent.com/shinhwagk/note-back/data/${label}.json`;
+    return `https://raw.githubusercontent.com/shinhwagk/note-back/data/note/${label}.json`;
   }
 
   labelsUrl: string = "data/labels.json"
