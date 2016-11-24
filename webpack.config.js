@@ -6,7 +6,11 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: './dist',
-    library: ['copyTexta']
+    library: 'copyTexta2',
+    libraryTarget: "umd"
+  },
+  externals: {
+    jquery: true
   },
   resolve: {
     extensions: ['', '.ts']
