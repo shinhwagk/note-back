@@ -1,7 +1,0 @@
-<div class="container-fluid">
-  <div class="row">
-    <div *ngFor="let name of _names" [class.col-lg-1]="name.length <= 21" [class.col-lg-2]="name.length >= 20">
-      <a [routerLink]="['/orcltabrel', name]">{{ name }}</a>
-    </div>
-  </div>
-</div>
