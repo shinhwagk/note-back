@@ -6,14 +6,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: './dist',
-    library: 'copyTexta2',
-    libraryTarget: "umd"
+    library: 'nlib',
+    libraryTarget: "var"
   },
   externals: {
-    jquery: true
+    "jquery": "$"
   },
   resolve: {
-    extensions: ['', '.ts']
+    extensions: ['', '.ts', '.js']
   },
   module: {
     loaders: [
@@ -23,7 +23,7 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     title: 'note-back-edit',
     filename: 'index.html',
-    template: './app/html/index.html'
-    // inject: "head"
+    template: './app/html/index.html',
+    inject: "body"
   })]
 }

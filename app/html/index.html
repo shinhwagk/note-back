@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
 </head>
+
 <body>
-    <div>
-        <input type="text" /><button id="ABC">button</button>
-        <button onclick="copyTexta2.copyTexta()">buttonxx</button>
+    <h3>label</h3>
+    <input type="text" />&nbsp;<button id="ABC">add</button>&nbsp;<button id="ABC">apply</button>&nbsp;<button id="ABC">delete</button>
+    <hr>
+
+    <h3>category</h3>
+    <input type="text" />&nbsp;<button id="ABC">add</button>&nbsp;<button id="ABC">apply</button>&nbsp;<button id="ABC">delete</button>
+    <hr>
+
+    <h3>note</h3>
+    <input type="number" />&nbsp;<button onclick="nlib.init_note_add()">Init</button>&nbsp;<button id="ABC">delete</button>
+    <div id="note_area">
+        <div id="note_area_texts">
+            <textarea>Hello Again</textarea>
+        </div>
+        <button onclick="nlib.note_add()">add</button>
     </div>
-</body>
+    <hr>
+
 </html>
