@@ -15,7 +15,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.ts', '.js']
   },
+  exclude: ['dist'],
   module: {
+    // include: [path.resolve("app/src")],
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader' }
     ]

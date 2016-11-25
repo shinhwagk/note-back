@@ -2,13 +2,37 @@ import * as $ from 'jquery'
 
 let note_id = 0;
 export function init_note_add() {
-    let t1 = document.createElement("textarea");
-    t1.id = `note_text_${note_id}`
-    let t2 = document.createElement("br");
-    $("#note_area_texts").append(t1, t2);
+    let txt = `<textarea id="note_${note_id += 1}"></textarea>`;
+    let br = `<br>`;
+    $("#note_area_texts").append(txt, br);
 }
 
 export function note_add() {
-    let datas = $("#note_area_texts textarea")
-    $('#note_area_texts textarea').eq(-1).remove();
+    let data = []
+    for (let i = 0; i <= note_id - 1; i += 1) {
+        data[i] = $(`#note_${i + 1}`).val()
+    }
+
+    // $.post({
+    //     url: "/api/node", data: JSON.stringify(data), success: function () {
+    //         $(this).addClass("done");
+    //     }
+    // });
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "/api/node",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: function (message) {
+                alert("请求已提交！我们会尽快与您取得联系");
+        },
+        error: function (message) {
+           alert("请求已提交！我们会尽快与您取得联2系");
+        }
+    });
 }
+

@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "tsc": "tsc -p app.ts"
+    "tsc": "tsc -p app.ts",
+    "watch": "gulp watch",
+    "default": "gulp",
+    "run_watch": "concurrently \"gulp watch\" \"supervisor app.js\" "
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +18,8 @@
     "@types/koa-router": "^7.0.21",
     "koa": "^2.0.0-alpha.7",
     "koa-router": "^7.0.1",
-    "mysql": "^2.12.0"
+    "mysql": "^2.12.0",
+    "supervisor": "^0.11.0"
   },
   "devDependencies": {
     "typescript": "^2.2.0-dev.20161124",
