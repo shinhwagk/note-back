@@ -52,14 +52,13 @@ var nlib =
 	var category_id;
 	function init_note_add() {
 	    var id = note_textarea_number += 1;
-	    var txt = "<textarea id=\"note_" + id + "\" rows=\"3\" cols=\"150\"></textarea>\n               <button id=\"note_delete_" + id + "\" onclick=\"nlib.delete_note_areatext('note_" + id + "','note_delete_" + id + "')\">del</button>";
+	    var txt = "<textarea id=\"note_" + id + "\" rows=\"3\" cols=\"100\"></textarea>\n               <button id=\"note_delete_" + id + "\" onclick=\"nlib.delete_note_areatext('note_" + id + "','note_delete_" + id + "')\">del</button>";
 	    var br = "<br>";
 	    $("#note_area_texts").append(txt, br);
 	}
 	exports.init_note_add = init_note_add;
 	function note_label_apply() {
 	    var labelsStr = $("#note_label_apply_input").val();
-	    console.info(labelsStr);
 	    var labelArr = labelsStr.split('-');
 	    $.ajax({
 	        type: "POST",
@@ -79,7 +78,6 @@ var nlib =
 	exports.note_label_apply = note_label_apply;
 	function note_category_apply() {
 	    var category = $("#note_category_apply_input").val();
-	    alert(category);
 	    $.ajax({
 	        type: "POST",
 	        url: "/api/node/category",
@@ -103,17 +101,11 @@ var nlib =
 	    }
 	    $.ajax({
 	        type: "POST",
-	        url: "/api/node",
+	        url: "/api/node/node",
 	        contentType: "application/json; charset=utf-8",
-	        data: JSON.stringify(data),
-	        dataType: "json",
-	        success: function (message) {
-	            labels_id = message;
-	            $("#label_display").html(labels_id.toString());
-	        },
-	        error: function (message) {
-	            alert(message);
-	        }
+	        data: JSON.stringify({ c_id: category_id, data: data }),
+	        success: function (message) { return alert(message); },
+	        error: function (message) { return alert(message.error + "f"); }
 	    });
 	}
 	exports.note_add = note_add;

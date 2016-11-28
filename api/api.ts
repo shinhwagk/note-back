@@ -21,6 +21,10 @@ api.get("/index", (ctx) => {
     const [name, l_id]: [string, number] = ctx.request.body
     const id = await apllyCategory(name, l_id)
     ctx.body = id
+}).post("/api/node/node", async (ctx) => {
+    const {c_id, data} = ctx.request.body
+    const id = await db.addNote(c_id, data)
+    ctx.body = id
 })
 
 app.use(bodyParser());

@@ -28,6 +28,10 @@ api.get("/index", (ctx) => {
     const [name, l_id] = ctx.request.body;
     const id = yield apllyCategory(name, l_id);
     ctx.body = id;
+})).post("/api/node/node", (ctx) => __awaiter(this, void 0, void 0, function* () {
+    const { c_id, data } = ctx.request.body;
+    const id = yield db.addNote(c_id, data);
+    ctx.body = id;
 }));
 app.use(bodyParser());
 app.use(api.routes()).use(api.allowedMethods());

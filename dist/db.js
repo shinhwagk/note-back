@@ -82,6 +82,19 @@ function deleteLabelById(id) {
     connection.end();
 }
 exports.deleteLabelById = deleteLabelById;
+function addNote(c_id, data) {
+    return new Promise((resolve, reject) => {
+        connection.query(`insert into notes(data,c_id) values(?,?)`, [JSON.stringify(data), c_id], function (err, rows, fields) {
+            if (err) {
+                reject(err);
+            }
+            else {
+                resolve(rows.insertId);
+            }
+        });
+    });
+}
+exports.addNote = addNote;
 // connection.connect();
 // queryLabelIdByNameAndPID("oracle", 0).then(console.info)
 // connection.end() 

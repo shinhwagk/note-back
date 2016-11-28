@@ -30,7 +30,9 @@
     "build": "webpack",
     "webpack_watch": "webpack --watch",
     "gulp": "gulp default",
-    "gulp_watch": "gulp watch"
+    "gulp_watch": "gulp watch",
+    "start":"supervisor dist/api.js",
+    "dev": "concurrently \"npm run gulp_watch\" \"npm run webpack_watch\" \"npm run start\" "
   },
   "repository": {
     "type": "git",

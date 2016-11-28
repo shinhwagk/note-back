@@ -78,6 +78,18 @@ export function deleteLabelById(id: number) {
   connection.end();
 }
 
+export function addNote(c_id: number, data: string[]) {
+  return new Promise((resolve, reject) => {
+    connection.query(`insert into notes(data,c_id) values(?,?)`, [JSON.stringify(data), c_id], function (err, rows, fields) {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows.insertId)
+      }
+    });
+  });
+}
+
 // connection.connect();
 // queryLabelIdByNameAndPID("oracle", 0).then(console.info)
 // connection.end()
