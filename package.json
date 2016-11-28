@@ -5,7 +5,15 @@
   "main": "index.js",
   "dependencies": {
     "@types/jquery": "^2.0.34",
-    "jquery": "^2.2.4"
+    "@types/koa": "^2.0.34",
+    "@types/koa-bodyparser": "^3.0.20",
+    "@types/mysql": "^0.0.30",
+    "gulp": "^3.9.1",
+    "jquery": "^2.2.4",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.0.1",
+    "mysql": "^2.12.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -13,12 +21,15 @@
     "html-webpack-plugin": "^2.24.1",
     "ts-loader": "^1.2.2",
     "typescript": "^2.2.0-dev.20161124",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "supervisor": "^0.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "webpack_watch": "webpack --watch",
+    "gulp": "gulp default",
+    "dev": "concurrently \"gulp watch\" \"supervisor dist\\api.js\" "
   },
   "repository": {
     "type": "git",

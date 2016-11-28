@@ -6,4 +6,6 @@
         "dist/app.js": true,
         "dist/app.js.map": true
     }
+,
+"typescript.check.workspaceVersion": false
 }

@@ -8,6 +8,14 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "."
-  }
+    "outDir": "dist"
+  },
+  "include": [
+    "api/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "app"
+  ]
 }

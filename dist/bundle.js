@@ -47,23 +47,18 @@ var nlib =
 
 	"use strict";
 	var $ = __webpack_require__(1);
-	var note_id = 0;
+	var note_textarea_number = 0;
 	function init_note_add() {
-	    var txt = "<textarea id=\"note_" + (note_id += 1) + "\"></textarea>";
+	    var txt = "<textarea id=\"note_" + (note_textarea_number += 1) + "\"></textarea>";
 	    var br = "<br>";
 	    $("#note_area_texts").append(txt, br);
 	}
 	exports.init_note_add = init_note_add;
 	function note_add() {
 	    var data = [];
-	    for (var i = 0; i <= note_id - 1; i += 1) {
+	    for (var i = 0; i <= note_textarea_number - 1; i += 1) {
 	        data[i] = $("#note_" + (i + 1)).val();
 	    }
-	    // $.post({
-	    //     url: "/api/node", data: JSON.stringify(data), success: function () {
-	    //         $(this).addClass("done");
-	    //     }
-	    // });
 	    $.ajax({
 	        type: "POST",
 	        url: "/api/node",
@@ -79,6 +74,11 @@ var nlib =
 	    });
 	}
 	exports.note_add = note_add;
+	function note_label_add() {
+	    var labelsStr = $("#note_label_add_input").val();
+	    var labelArr = labelsStr.split('-');
+	}
+	exports.note_label_add = note_label_add;
 
 
 /***/ },
