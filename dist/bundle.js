@@ -95,6 +95,8 @@ var nlib =
 	}
 	exports.note_category_apply = note_category_apply;
 	function note_add() {
+	    if (note_textarea_number === 0)
+	        throw "note_textarea_number: " + note_textarea_number;
 	    var data = [];
 	    for (var i = 0; i <= note_textarea_number - 1; i += 1) {
 	        data[i] = $("#note_" + (i + 1)).val();
@@ -112,6 +114,7 @@ var nlib =
 	function delete_note_areatext(text_id, text_del_id) {
 	    $("#" + text_id).remove();
 	    $("#" + text_del_id).remove();
+	    note_textarea_number -= 1;
 	}
 	exports.delete_note_areatext = delete_note_areatext;
 

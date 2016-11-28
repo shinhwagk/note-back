@@ -1,7 +1,6 @@
 import * as $ from 'jquery'
 
 let note_textarea_number = 0;
-
 let labels_id: number
 let category_id: number
 
@@ -51,6 +50,8 @@ export function note_category_apply() {
 }
 
 export function note_add() {
+    if (note_textarea_number === 0) throw "note_textarea_number: " + note_textarea_number
+
     let data = []
     for (let i = 0; i <= note_textarea_number - 1; i += 1) {
         data[i] = $(`#note_${i + 1}`).val()
@@ -69,4 +70,5 @@ export function note_add() {
 export function delete_note_areatext(text_id, text_del_id) {
     $(`#${text_id}`).remove()
     $(`#${text_del_id}`).remove()
+    note_textarea_number -= 1
 }
