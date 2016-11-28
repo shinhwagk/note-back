@@ -1,9 +1,16 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments)).next());
+    });
+};
 const fs = require("fs");
 const db = require("./db");
 const koa = require('koa');
 const router = require('koa-router');
-// const bodyParser = require('koa-bodyparser');
 const bodyParser = require("koa-bodyparser");
 const app = new koa();
 const api = new router();
@@ -13,35 +20,47 @@ api.get("/index", (ctx) => {
 }).get("/bundle.js", (ctx) => {
     ctx.type = 'text/javascript';
     ctx.body = fs.readFileSync("dist/bundle.js");
-}).post("/api/node", (ctx) => {
-    // fs.writeFileSync('aaa.json',JSON.stringify(ctx))
-    console.info(ctx.request.body);
-    ctx.body = 111;
-}).post("/api/node/label", (ctx) => {
-    ctx.body = ctx.request.body;
-});
+}).post("/api/node/label", (ctx) => __awaiter(this, void 0, void 0, function* () {
+    const labels = ctx.request.body;
+    const id = yield apllyLabel(labels.reverse(), 0);
+    ctx.body = id;
+})).post("/api/node/category", (ctx) => __awaiter(this, void 0, void 0, function* () {
+    const [name, l_id] = ctx.request.body;
+    const id = yield apllyCategory(name, l_id);
+    ctx.body = id;
+}));
 app.use(bodyParser());
 app.use(api.routes()).use(api.allowedMethods());
-// app.listen(3000);
-function applyLabel(labelsStr) {
-    const labels = labelsStr.split('-').reverse();
-    ccc(labels, 0);
-}
-function ccc(labels, id) {
-    if (labels.length >= 1) {
-        const label = labels.pop();
-        console.info(label);
-        db.queryLabelIdByNameAndPID(label, id, (rows) => {
-            if (rows.length >= 1) {
-                console.info(labels, rows);
-                console.info("111111111111111111111111111111111111111111");
-                ccc(labels, rows[0].id);
+app.listen(3000);
+function apllyLabel(labels, pid) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (labels.length >= 1) {
+            const label = labels.pop();
+            const rows = yield db.queryLabelByNameAndPID(label, pid);
+            let id;
+            if (rows.length === 0) {
+                id = yield db.addLabel(label, pid);
             }
             else {
-                console.info(id);
-                db.addLabel(label, id);
+                id = rows[0].id;
             }
-        });
-    }
+            return yield apllyLabel(labels, id);
+        }
+        else {
+            return pid;
+        }
+    });
 }
-ccc(["oracle", "fff", "xxx1"].reverse(), 0);
+function apllyCategory(name, l_id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const rows = yield db.queryCategoryByNameAndLid(name, l_id);
+        let id;
+        if (rows.length === 0) {
+            id = yield db.addCategory(name, l_id);
+        }
+        else {
+            id = rows[0].id;
+        }
+        return id;
+    });
+}

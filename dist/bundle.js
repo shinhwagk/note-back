@@ -48,12 +48,54 @@ var nlib =
 	"use strict";
 	var $ = __webpack_require__(1);
 	var note_textarea_number = 0;
+	var labels_id;
+	var category_id;
 	function init_note_add() {
-	    var txt = "<textarea id=\"note_" + (note_textarea_number += 1) + "\"></textarea>";
+	    var id = note_textarea_number += 1;
+	    var txt = "<textarea id=\"note_" + id + "\" rows=\"3\" cols=\"150\"></textarea>\n               <button id=\"note_delete_" + id + "\" onclick=\"nlib.delete_note_areatext('note_" + id + "','note_delete_" + id + "')\">del</button>";
 	    var br = "<br>";
 	    $("#note_area_texts").append(txt, br);
 	}
 	exports.init_note_add = init_note_add;
+	function note_label_apply() {
+	    var labelsStr = $("#note_label_apply_input").val();
+	    console.info(labelsStr);
+	    var labelArr = labelsStr.split('-');
+	    $.ajax({
+	        type: "POST",
+	        url: "/api/node/label",
+	        contentType: "application/json; charset=utf-8",
+	        data: JSON.stringify(labelArr),
+	        dataType: "json",
+	        success: function (message) {
+	            labels_id = message;
+	            $("#label_display").html(labels_id.toString());
+	        },
+	        error: function (message) {
+	            alert("请求已提交！我们会尽快与您取得联2系");
+	        }
+	    });
+	}
+	exports.note_label_apply = note_label_apply;
+	function note_category_apply() {
+	    var category = $("#note_category_apply_input").val();
+	    alert(category);
+	    $.ajax({
+	        type: "POST",
+	        url: "/api/node/category",
+	        contentType: "application/json; charset=utf-8",
+	        data: JSON.stringify([category, labels_id]),
+	        dataType: "json",
+	        success: function (message) {
+	            category_id = message;
+	            $("#category_display").html(category_id.toString());
+	        },
+	        error: function (message) {
+	            alert("请求已提交！我们会尽快与您取得联2系");
+	        }
+	    });
+	}
+	exports.note_category_apply = note_category_apply;
 	function note_add() {
 	    var data = [];
 	    for (var i = 0; i <= note_textarea_number - 1; i += 1) {
@@ -66,19 +108,20 @@ var nlib =
 	        data: JSON.stringify(data),
 	        dataType: "json",
 	        success: function (message) {
-	            alert("请求已提交！我们会尽快与您取得联系");
+	            labels_id = message;
+	            $("#label_display").html(labels_id.toString());
 	        },
 	        error: function (message) {
-	            alert("请求已提交！我们会尽快与您取得联2系");
+	            alert(message);
 	        }
 	    });
 	}
 	exports.note_add = note_add;
-	function note_label_add() {
-	    var labelsStr = $("#note_label_add_input").val();
-	    var labelArr = labelsStr.split('-');
+	function delete_note_areatext(text_id, text_del_id) {
+	    $("#" + text_id).remove();
+	    $("#" + text_del_id).remove();
 	}
-	exports.note_label_add = note_label_add;
+	exports.delete_note_areatext = delete_note_areatext;
 
 
 /***/ },

@@ -3,7 +3,6 @@ import * as db from './db';
 
 const koa = require('koa');
 const router = require('koa-router');
-// const bodyParser = require('koa-bodyparser');
 import * as bodyParser from 'koa-bodyparser';
 const app = new koa();
 const api = new router();
@@ -14,42 +13,45 @@ api.get("/index", (ctx) => {
 }).get("/bundle.js", (ctx) => {
     ctx.type = 'text/javascript';
     ctx.body = fs.readFileSync("dist/bundle.js");
-}).post("/api/node", (ctx) => {
-    // fs.writeFileSync('aaa.json',JSON.stringify(ctx))
-    console.info(ctx.request.body)
-    ctx.body = 111;
-}).post("/api/node/label", (ctx) => {
-    ctx.body = ctx.request.body;
+}).post("/api/node/label", async (ctx) => {
+    const labels = ctx.request.body
+    const id = await apllyLabel(labels.reverse(), 0)
+    ctx.body = id
+}).post("/api/node/category", async (ctx) => {
+    const [name, l_id]: [string, number] = ctx.request.body
+    const id = await apllyCategory(name, l_id)
+    ctx.body = id
 })
 
 app.use(bodyParser());
 
 app.use(api.routes()).use(api.allowedMethods());
 
-// app.listen(3000);
+app.listen(3000);
 
-
-
-function applyLabel(labelsStr: string) {
-    const labels: string[] = labelsStr.split('-').reverse();
-    ccc(labels, 0)
-}
-
-function ccc(labels: string[], id: number) {
+async function apllyLabel(labels: string[], pid: number): Promise<number> {
     if (labels.length >= 1) {
         const label: string = labels.pop();
-        console.info(label)
-        db.queryLabelIdByNameAndPID(label, id, (rows: any[]) => {
-            if (rows.length >= 1) {
-                console.info(labels, rows)
-                console.info("111111111111111111111111111111111111111111")
-                ccc(labels, rows[0].id)
-            } else {
-                console.info(id)
-                db.addLabel(label, id)
-            }
-        })
+        const rows = await db.queryLabelByNameAndPID(label, pid);
+        let id: number
+        if (rows.length === 0) {
+            id = await db.addLabel(label, pid);
+        } else {
+            id = rows[0].id
+        }
+        return await apllyLabel(labels, id)
+    } else {
+        return pid
     }
 }
 
-ccc(["oracle", "fff","xxx1"].reverse(), 0)
+async function apllyCategory(name: string, l_id: number): Promise<number> {
+    const rows = await db.queryCategoryByNameAndLid(name, l_id)
+    let id: number
+    if (rows.length === 0) {
+        id = await db.addCategory(name, l_id)
+    } else {
+        id = rows[0].id
+    }
+    return id;
+}

@@ -16,20 +16,21 @@
     "mysql": "^2.12.0"
   },
   "devDependencies": {
+    "concurrently": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.3",
     "html-webpack-plugin": "^2.24.1",
+    "supervisor": "^0.11.0",
     "ts-loader": "^1.2.2",
     "typescript": "^2.2.0-dev.20161124",
-    "webpack": "^1.13.3",
-    "supervisor": "^0.11.0"
+    "webpack": "^1.13.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "webpack_watch": "webpack --watch",
     "gulp": "gulp default",
-    "dev": "concurrently \"gulp watch\" \"supervisor dist\\api.js\" "
+    "gulp_watch": "gulp watch"
   },
   "repository": {
     "type": "git",
