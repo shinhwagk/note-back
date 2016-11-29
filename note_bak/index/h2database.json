@@ -1,0 +1,11 @@
+{
+  "labels": [],
+  "notes": {
+    "operation": [
+      {
+        "contents": ["打开web控制台","java -jar h2*.jar\neg java -jar h2-1.4.192.jar"],
+        "docs": []
+      }
+    ]
+  }
+}

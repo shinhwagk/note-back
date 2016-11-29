@@ -1,0 +1,28 @@
+{
+  "labels": [],
+  "notes": {
+    "keymap": [
+      {
+        "contents": [
+          "C-c C-d",
+          "设置一个截止时间"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "C-c C-s",
+          "设置起始时间"
+        ],
+        "docs": []
+      },
+      {
+        "contents": [
+          "c-c c-t",
+          "标记todo"
+        ],
+        "docs": []
+      }
+    ]
+  }
+}

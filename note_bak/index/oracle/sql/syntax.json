@@ -1,0 +1,14 @@
+{
+  "labels": [],
+  "notes": {
+    "concept": [
+      {
+        "content": [
+          "在from中使用子查询删除",
+          "delete from (select * from tab where id = 1);"
+        ],
+        "docs": []
+      }
+    ]
+  }
+}

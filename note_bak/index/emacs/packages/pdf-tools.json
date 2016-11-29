@@ -1,0 +1,22 @@
+{
+  "labels": [],
+  "notes": {
+    "doc": [
+      {
+        "contents": [
+          "emacs中看pdf，她把pdf作为image来显示"
+        ],
+        "docs": []
+      }
+    ],
+    "operation": [
+      {
+        "contents": [
+          "使用pdf-tools 在ubuntu 16.04",
+          "安装pdf依赖:M-x pdf-tools-install\nc-x c-f打开pdf文件即可"
+        ],
+        "docs": []
+      }
+    ]
+  }
+}
