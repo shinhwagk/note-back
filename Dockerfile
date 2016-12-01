@@ -8,9 +8,8 @@ RUN npm i --registry=https://registry.npm.taobao.org
 RUN npm run webpack
 
 WORKDIR /
-RUN rm -fr gh-pages/* \ 
-  && mv note-back/lib gh-pages/ \
-  && mv note-back/index.html gh-pages/
+RUN rm -fr gh-pages/*  
+RUN mv note-back/lib/* gh-pages/ 
 WORKDIR /gh-pages
 RUN git add --all && git commit -m 'save'
 RUN git config --global user.name shinhwagk
