@@ -1,7 +1,6 @@
 FROM node:latest
 
 ADD build.sh build.sh
-
 ADD .git-credentials /root/.git-credentials
 
 RUN git config --global credential.helper store
