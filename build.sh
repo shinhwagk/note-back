@@ -15,4 +15,4 @@ cd /gh-pages
 git add --all && git commit -m 'save'
 git config --global user.name shinhwagk
 git config --global user.email shanghai_sl@hotmail.com
-echo $1
+echo $1 
