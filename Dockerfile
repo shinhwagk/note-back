@@ -1,18 +1,9 @@
 FROM node:latest
 
-RUN git clone https://github.com/shinhwagk/note-back note-back --depth=1
-RUN git clone -b gh-pages https://github.com/shinhwagk/note-back gh-pages --depth=1
+RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 
-WORKDIR note-back
-RUN npm i --registry=https://registry.npm.taobao.org
-RUN npm run webpack
+ADD build.sh build.sh
 
-WORKDIR /
-RUN rm -fr gh-pages/*  
-RUN mv note-back/lib/* gh-pages/ 
-WORKDIR /gh-pages
-RUN git add --all && git commit -m 'save'
-RUN git config --global user.name shinhwagk
-RUN git config --global user.email shanghai_sl@hotmail.com
+RUN cat ~/.ssh/id_rsa.pub
 
-
+CMD ["/bin/bash","/build.sh"]
