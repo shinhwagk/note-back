@@ -32,9 +32,9 @@ export class NoteComponent implements OnInit {
     private location: Location) {
   }
 
-  _path
+  _path:string
   _labels: string[] = [];
-  _notes;
+  _notes:any;
   _note_type: string[] = [];
 
   gotoLabel(label: string):void {

@@ -1,0 +1,43 @@
+{
+  "name": "note-back",
+  "version": "1.0.0",
+  "description": "note:  https://shinhwagk.github.io/note-back/#/note/",
+  "main": "index.js",
+  "dependencies": {
+    "@angular/common": "~2.2.0",
+    "@angular/compiler": "~2.2.0",
+    "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
+    "@angular/http": "~2.2.0",
+    "@angular/platform-browser": "~2.2.0",
+    "@angular/platform-browser-dynamic": "~2.2.0",
+    "@angular/router": "~3.2.0",
+    "angular-in-memory-web-api": "~0.1.15",
+    "systemjs": "0.19.40",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.26"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "html-webpack-plugin": "^2.24.1",
+    "ts-loader": "^1.2.2",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinhwagk/note-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinhwagk/note-back/issues"
+  },
+  "homepage": "https://github.com/shinhwagk/note-back#readme"
+}
