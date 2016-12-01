@@ -1,11 +1,12 @@
 #!/bin/bash
 git clone https://github.com/shinhwagk/note-back note-back --depth=1
-git clone -b gh-pages git@github.com:shinhwagk/note-back.git gh-pages --depth=1
 
 cd note-back
 npm i --registry=https://registry.npm.taobao.org
 npm run webpack
 git log
+
+git clone -b gh-pages git@github.com:shinhwagk/note-back.git gh-pages --depth=1
 
 rm -fr /gh-pages/*  
 mv /note-back/lib/* gh-pages/ 
