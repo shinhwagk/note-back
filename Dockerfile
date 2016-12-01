@@ -1,9 +1,9 @@
 FROM node:latest
 
-RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
-
 ADD build.sh build.sh
 
-ADD id_rsa /root/.ssh/id_rsa
+ADD .git-credentials ~/.git-credentials
+
+RUN git config --global credential.helper store
 
 CMD ["/bin/bash","/build.sh"]
