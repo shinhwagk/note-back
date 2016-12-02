@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'orcltabrel', component: OrclTabRelAllComponent },
   { path: 'orcltabrel/:name', component: OrclTabRelComponent }
 ];
- 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
