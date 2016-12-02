@@ -5,7 +5,7 @@ function rmBaseDir(){ if [[ -d $baseDir ]]; then rm -fr $baseDir; fi }
 
 rmBaseDir
 
-mkdir $baseDir && cd $baseDir && git clone https://github.com/shinhwagk/note-back note-back --depth=1 && cd ${baseDir}/note-back
+mkdir $baseDir && cd $baseDir && git clone https://github.com/shinhwagk/note-back --depth=1 && cd ${baseDir}/note-back
 
 cp -r ~/.ssh . && docker build -t gk/note-back-pages --rm .
 
