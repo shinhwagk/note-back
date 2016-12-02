@@ -24,11 +24,9 @@ RUN npm run webpack
 WORKDIR /gh-pages
 RUN git pull
 
-RUN ls -la /gh-pages
 RUN rm -fr ./*
 RUN mv /note-back/lib/* ./
-RUN ls -la /gh-pages
 
-RUN git add --all && git diff --cached --exit-code --quiet || git commit -m 'Update'
+RUN git add --all && git diff --cached --exit-code --quiet || git commit -m 'Update' && git pull
 
 # RUN git push 
