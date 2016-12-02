@@ -27,6 +27,4 @@ RUN git pull
 RUN rm -fr ./*
 RUN mv /note-back/lib/* ./
 
-RUN git add --all && git diff --cached --exit-code --quiet || git commit -m 'Update' && git pull
-
-# RUN git push 
+RUN git add --all && git diff --cached --exit-code --quiet || git commit -m 'Update' && git push
