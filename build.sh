@@ -1,6 +1,8 @@
 #!/bin/bash
-cd /tmp && git clone https://github.com/shinhwagk/note-back note-back --depth=1
+bashDir='/tmp/note-back-pages'
 
-cp -r ~/.ssh /tmp/note-back/ && docker build -t gk/note-back-pages --rm .
+mkdir $bashDir && cd $bashDir && git clone https://github.com/shinhwagk/note-back note-back --depth=1 && cd ${bashDir}/note-back
 
-rm /tmp/note-back
+cp -r ~/.ssh . && docker build -t gk/note-back-pages --rm .
+
+rm -fr $bashDir
