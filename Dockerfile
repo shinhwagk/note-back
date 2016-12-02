@@ -25,6 +25,6 @@ WORKDIR /gh-pages
 RUN git pull
 
 RUN rm -fr ./*
-RUN mv /note-back/lib/* ./
+RUN mv /note-back/dist/* ./
 
 RUN git add --all && git diff --cached --exit-code --quiet || git commit -m 'Update' && git push

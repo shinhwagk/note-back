@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { OrclTabRelAllComponent } from './oracle-table-relation/otr-all.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '', redirectTo: '/note/index', pathMatch: 'full' },
   { path: 'index', component: AppComponent },
 
   //note

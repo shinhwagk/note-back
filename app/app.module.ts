@@ -10,8 +10,17 @@ import { OrclTabRelComponent } from './oracle-table-relation/otr.component';
 import { OrclTabRelAllComponent } from './oracle-table-relation/otr-all.component';
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule],
-  declarations: [AppComponent, NoteComponent, OrclTabRelComponent, OrclTabRelAllComponent],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    NoteComponent,
+    OrclTabRelComponent,
+    OrclTabRelAllComponent
+  ],
   bootstrap: [AppComponent]
 })
 
