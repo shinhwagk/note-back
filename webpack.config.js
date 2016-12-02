@@ -7,7 +7,7 @@ module.exports = {
   entry: './app/main.ts',
   output: {
     path: './lib',
-    filename: 'bundle.js'
+    filename: 'bundle.min.js'
   },
   module: {
     loaders: [{ test: /\.ts$/, loader: 'ts-loader' }]
@@ -24,5 +24,9 @@ module.exports = {
       template: 'index.html',
       title: 'Note Back',
       inject: 'head'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      output: { comments: false }
     })]
 };
