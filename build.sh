@@ -7,6 +7,6 @@ rmBaseDir
 
 mkdir $baseDir && cd $baseDir && git clone https://github.com/shinhwagk/note-back --depth=1 && cd ${baseDir}/note-back
 
-cp -r ~/.ssh . && docker build -t gk/note-back-pages --rm .
+cp -r ~/.ssh . && docker build -t gk/note-back-pages --rm . && docker rmi $(docker images -f "dangling=true" -q)
 
 rmBaseDir
