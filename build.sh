@@ -1,12 +1,10 @@
 #!/bin/bash
-bashDir='/tmp/note-back-pages'
+baseDir='/tmp/note-back-pages'
 
-if [[ -d $bashDir ]]; then
-  rm -fr $bashDir
-fi
+if [[ -d $baseDir ]]; then rm -fr $baseDir; fi
 
-mkdir $bashDir && cd $bashDir && git clone https://github.com/shinhwagk/note-back note-back --depth=1 && cd ${bashDir}/note-back
+mkdir $baseDir && cd $baseDir && git clone https://github.com/shinhwagk/note-back note-back --depth=1 && cd ${baseDir}/note-back
 
 cp -r ~/.ssh . && docker build -t gk/note-back-pages --rm .
 
-rm -fr $bashDir
+rm -fr $baseDir
