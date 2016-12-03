@@ -1,9 +1,10 @@
 language: node_js
 node_js: "node"
+cache: yarn
 install:
-  - npm install
+  - yarn install
 script:
-  - npm run webpack
+  - yarn run webpack
 after_script:
   - cd dist
   - git init
