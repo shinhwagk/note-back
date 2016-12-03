@@ -17,4 +17,4 @@ after_script:
   - git config user.email "shanghai_sl@hotmail.com"
   - git add .
   - git commit -m "Update"
-  - git push --force "https://${GH_TOKEN}@github.com/shinhwagk/note-back.git" master:gh-pages || exit 1
+  - git push --force "https://${GH_TOKEN}@github.com/shinhwagk/note-back.git" master:gh-pages
