@@ -22,5 +22,5 @@ RUN npm run webpack
 # update gh-pages
 WORKDIR /note-back/dist
 RUN git init && git add -A && git commit -m 'Update'
-RUN git remote add origin git@github.com:shinhwagk/note-back.git
-RUN git push --force master:gh-pages
+RUN git remote add -t gh-pages gh-pages git@github.com:shinhwagk/note-back.git
+RUN git push gh-pages --force
