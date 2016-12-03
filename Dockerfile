@@ -1,7 +1,7 @@
 FROM node:latest
 
-RUN apt update -y
-RUN apt upgrade -y
+RUN apt update -y && apt upgrade -y
+RUN apt install -y rsync
 
 ADD .ssh /root/.ssh
 
