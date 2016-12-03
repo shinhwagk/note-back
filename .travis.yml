@@ -4,6 +4,14 @@ install:
   - npm install
 script:
   - npm run webpack
+after_script:
+- cd dist
+- git init
+- git config user.name "shinhwagk"
+- git config user.email "shanghai_sl@hotmail.com"
+- git add .
+- git commit -m "Update"
+- git push --force --quiet "https://${GH_TOKEN}@github.com/shinhwagk/note-back.git" master:gh-pages
 env:
   global:
     secure: IAPcdqIedr7iLSX5yTVk4AT4rFYvGc66ARrWuAVC5aOZImW58SyBHpOWUC9Wk/J1NuAoSBlVwVA7Avc/HmcfOmDfNMTsPnK31JCxMGP5vT5io7hID/8bgfvfxmvFln6GcWxqJZh4REikPG2vgJQlOBs76yIvuDmjWMU5qc4WK5HHSdXNOQHoCvPHogoK1XKyjz1Xr+ANo+/IfK7jT/Sy/dIjAg0vZxJUhd6ksNyVlvk7T5pgAORmS0IAh4jRC8bzZ0J76JqAGP3i6AT08/l+jTBya4au5W5yO2WHXh2cZ3S1SFb/urV2gtuMA8A6q68133MW8co4PPKqXSfNiV8OKFHhN8WVa9YnCVeUDzj0Gg6kbcN5iT+feCB03IXt03e1WDwSUmxnqHvjOqrKNcWYZoxgmfSG7ZrsEuXxyAn+MOnsJhF8Nv3bxlYFKZotF9VGaaDEdjqEglICk01CzaV3l4GLIOtxgNk/hY3COYFx+hDsvEsmeLrGuuTUiilFeOem+QNUePvb8BK2wPBKuKl1AXc12j7UQIL1XHvoiI3rQyXumqiwdadsS9ux7VnMXGs/iuJ+RZvQg0LTi2xSa9uhCxkQdj+QGKGXCdqgbcfPJE3ivZohajI+mfSD/yBuoP2y7i+6shkbqteeVaOJt1srzQFpKu5YcR4oLzXrV3eNbdU=
