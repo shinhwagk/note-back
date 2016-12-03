@@ -1,5 +1,8 @@
 FROM node:latest
 
+RUN apt update -y
+RUN apt upgrade -y
+
 ADD .ssh /root/.ssh
 
 RUN git config --global user.name shinhwagk
