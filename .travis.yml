@@ -7,7 +7,7 @@ install:
   - yarn install
 script:
   - yarn run webpack
-after_script:
+deploy:
   - cd dist
   - git init
   - git config user.name "shinhwagk"
