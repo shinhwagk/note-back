@@ -19,4 +19,4 @@ RUN npm run webpack
 # update gh-pages
 WORKDIR /note-back/dist
 RUN git init && git add -A && git commit -m 'Update'
-RUN git push --froce https://github.com/shinhwagk/note-back.git master:gh-pages
+RUN git push --force https://github.com/shinhwagk/note-back.git master:gh-pages
