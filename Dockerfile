@@ -1,7 +1,7 @@
 FROM node:latest
 
-RUN apt update -y && apt upgrade -y
-RUN apt install -y rsync
+# RUN apt update -y && apt upgrade -y
+# RUN apt install -y rsync
 
 ADD .ssh /root/.ssh
 
@@ -22,4 +22,5 @@ RUN npm run webpack
 # update gh-pages
 WORKDIR /note-back/dist
 RUN git init && git add -A && git commit -m 'Update'
-RUN git push --force "https://shinhwagk@github.com/shinhwagk/note-back.git" master:gh-pages
+RUN git remote add origin git@github.com:shinhwagk/note-back.git
+RUN git push --force master:gh-pages
