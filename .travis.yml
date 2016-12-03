@@ -13,8 +13,9 @@ script:
 after_script:
   - cd dist
   - git init
-  - git config user.name "shinhwagk"
-  - git config user.email "shanghai_sl@hotmail.com"
-  - git add .
+  - git config --global user.name "shinhwagk"
+  - git config --global user.email "shanghai_sl@hotmail.com"
+  - git config --global push.default simple
+  - git add -A
   - git commit -m "Update"
   - git push --force --quiet "https://${GH_TOKEN}@github.com/shinhwagk/note-back.git" master:gh-pages || exit 1
