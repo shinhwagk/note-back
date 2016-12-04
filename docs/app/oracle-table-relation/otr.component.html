@@ -1,0 +1,8 @@
+<table border="1" class="table">
+  <tr *ngFor="let row of _table" id={{row[0]}}>
+    <td *ngFor="let col of row">
+      {{col}}
+    </td>
+  </tr>
+</table>
+<button (click)="goBack()">Back</button>
