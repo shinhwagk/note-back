@@ -6,7 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './app/main.ts',
   output: {
-    path: './dist',
+    path: './docs',
     filename: 'bundle.min.js'
   },
   module: {
