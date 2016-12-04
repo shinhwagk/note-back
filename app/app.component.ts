@@ -4,7 +4,7 @@ import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { ApiServices } from "./api.services";
 
 @Component({
-  selector: 'my-app',
+  selector: 'note-back',
   templateUrl: 'app/app.component.html',
 })
 export class AppComponent { }

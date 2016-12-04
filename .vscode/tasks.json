@@ -4,9 +4,25 @@
 	"version": "0.1.0",
 	"command": "cnpm",
 	"isShellCommand": true,
-	"args": [
-		"run",
-		"webpack"
-	],
-	"showOutput": "always"
+	"args": [],
+	"echoCommand": true,
+	"showOutput": "always",
+	"tasks": [
+		{
+			"taskName": "webpack",
+			"args": [
+				"run",
+				"webpack"
+			],
+			"suppressTaskName": true
+		},
+		{
+			"taskName": "webpack:w",
+			"args": [
+				"run",
+				"webpack:w"
+			],
+			"suppressTaskName": true
+		}
+	]
 }
