@@ -1,0 +1,1 @@
+[ [ "OBJECT_OWNER", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the synonym, table, or view</p>" ], [ "OBJECT_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the synonym, table, or view</p>" ], [ "POLICY_GROUP", "VARCHAR2(128)", "&nbsp;", "<p>Name of the policy group</p>" ] ]

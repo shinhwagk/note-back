@@ -1,0 +1,1 @@
+[ [ "ACTION", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Numeric audit trail action type code.</p>" ], [ "NAME", "VARCHAR2(28)", "<p><code>NOT NULL</code></p>", "<p>Name of the type of audit trail action</p>" ] ]

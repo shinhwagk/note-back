@@ -1,0 +1,1 @@
+[ [ "ROLE", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the application role</p>" ], [ "SCHEMA", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Schema of the authorized package</p>" ], [ "PACKAGE", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the authorized package</p>" ] ]

@@ -1,0 +1,1 @@
+[ [ "TYPE", "NUMBER", "&nbsp;", "<p>Numeric component type for system wide actions</p>" ], [ "COMPONENT", "VARCHAR2(64)", "&nbsp;", "<p>Name of component for system wide actions</p>" ], [ "ACTION", "NUMBER", "&nbsp;", "<p>Numeric auditable action code for system wide actions</p>" ], [ "NAME", "VARCHAR2(64)", "&nbsp;", "<p>Name of auditable action</p>" ] ]

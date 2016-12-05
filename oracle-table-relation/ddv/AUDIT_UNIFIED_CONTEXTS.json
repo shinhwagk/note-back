@@ -1,0 +1,1 @@
+[ [ "NAMESPACE", "VARCHAR2(128)", "&nbsp;", "<p>Application context namespace</p>" ], [ "ATTRIBUTE", "VARCHAR2(128)", "&nbsp;", "<p>Application context attribute</p>" ], [ "USER_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Username of database user for whom the application context's attribute is confiured to be captured in the audit trail</p>" ] ]

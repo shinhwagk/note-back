@@ -1,0 +1,1 @@
+[ [ "SNAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the synonym</p>" ], [ "CREATOR", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the synonym</p>" ], [ "TNAME", "VARCHAR2(128)", "&nbsp;", "<p>Table of which this is a synonym</p>" ], [ "DATABASE", "VARCHAR2(128)", "&nbsp;", "<p>Database in which the table resides</p>" ], [ "TABTYPE", "VARCHAR2(10)", "&nbsp;", "<p>Type of table</p>" ] ]

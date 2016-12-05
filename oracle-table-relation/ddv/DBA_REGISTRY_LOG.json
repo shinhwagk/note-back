@@ -1,0 +1,1 @@
+[ [ "OPTIME", "VARCHAR2(20)", "&nbsp;", "<p>Operation time</p>" ], [ "NAMESPACE", "VARCHAR2(30)", "&nbsp;", "<p>Component namespace</p>" ], [ "COMP_ID", "VARCHAR2(30)", "&nbsp;", "<p>Component identifier</p>" ], [ "OPERATION", "VARCHAR2(11)", "&nbsp;", "<p>Operation name</p>" ], [ "MESSAGE", "VARCHAR2(1000)", "&nbsp;", "<p>Message</p>" ] ]

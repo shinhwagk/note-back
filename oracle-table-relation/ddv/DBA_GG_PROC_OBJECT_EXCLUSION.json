@@ -1,0 +1,1 @@
+[ [ "PACKAGE_OWNER", "VARCHAR2(384)", "&nbsp;", "<p>Procedure package owner</p>" ], [ "PACKAGE_NAME", "VARCHAR2(384)", "&nbsp;", "<p>Procedure package name</p>" ], [ "OBJECT_OWNER", "VARCHAR2(384)", "&nbsp;", "<p>Object owner to filter for the given procedure</p>" ], [ "OBJECT_NAME", "VARCHAR2(384)", "&nbsp;", "<p>Object name to filter for the given procedure</p>" ] ]

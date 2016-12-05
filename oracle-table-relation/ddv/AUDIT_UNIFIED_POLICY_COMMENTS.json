@@ -1,0 +1,1 @@
+[ [ "POLICY_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the unified audit policy</p>" ], [ "COMMENTS", "VARCHAR2(4000)", "&nbsp;", "<p>Description of the unified audit policy, if one was entered using the <code>COMMENT</code> SQL statement</p>" ] ]

@@ -1,0 +1,1 @@
+[ [ "OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of the native compiler option</p>" ], [ "OPTION_NAME", "VARCHAR2(64)", "&nbsp;", "<p>Name of the native compiler option</p>" ], [ "VALUE", "VARCHAR2(4000)", "&nbsp;", "<p>Value of the native compiler option</p>" ] ]

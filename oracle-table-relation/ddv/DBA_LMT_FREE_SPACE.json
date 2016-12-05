@@ -1,0 +1,1 @@
+[ [ "TABLESPACE_ID", "NUMBER", "&nbsp;", "<p>Identifier number of the tablespace containing the extent</p>" ], [ "FILE_ID", "NUMBER", "&nbsp;", "<p>File identifier number of the file containing the extent</p>" ], [ "BLOCK_ID", "NUMBER", "&nbsp;", "<p>Starting block number of the extent</p>" ], [ "BLOCKS", "NUMBER", "&nbsp;", "<p>Size of the extent (in Oracle blocks)</p>" ] ]

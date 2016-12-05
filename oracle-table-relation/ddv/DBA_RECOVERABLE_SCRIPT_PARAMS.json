@@ -1,0 +1,1 @@
+[ [ "SCRIPT_ID", "RAW(16)", "&nbsp;", "<p>Unique ID of the operation</p>" ], [ "PARAMETER", "VARCHAR2(128)", "&nbsp;", "<p>Name of the parameter</p>" ], [ "PARAM_INDEX", "NUMBER", "&nbsp;", "<p>Index for multi-valued parameter</p>" ], [ "VALUE", "VARCHAR2(4000)", "&nbsp;", "<p>Value of the parameter</p>" ] ]

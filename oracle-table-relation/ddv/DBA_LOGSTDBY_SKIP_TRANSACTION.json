@@ -1,0 +1,1 @@
+[ [ "XIDUSN", "NUMBER", "&nbsp;", "<p>Transaction ID undo segment number</p>" ], [ "XIDSLT", "NUMBER", "&nbsp;", "<p>Transaction ID slot number</p>" ], [ "XIDSQN", "NUMBER", "&nbsp;", "<p>Transaction ID sequence number</p>" ], [ "CON_NAME", "VARCHAR2(384)", "&nbsp;", "<p>Container name</p>" ] ]

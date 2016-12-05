@@ -1,0 +1,1 @@
+[ [ "RESOURCE_NAME", "VARCHAR2(32)", "<p><code>NOT NULL</code></p>", "<p>Name of the resource</p>" ], [ "LIMIT", "VARCHAR2(40)", "&nbsp;", "<p>Limit placed on this resource</p>" ] ]

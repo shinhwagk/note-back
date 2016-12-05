@@ -1,0 +1,1 @@
+[ [ "TABLE_OWNER", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the synchronous capture table</p>" ], [ "TABLE_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the synchronous capture table</p>" ], [ "ENABLED", "VARCHAR2(3)", "&nbsp;", "<p>Indicates whether synchronous Streams capture is enabled for the table (<code>YES</code>) or not (<code>NO</code>)</p>" ] ]

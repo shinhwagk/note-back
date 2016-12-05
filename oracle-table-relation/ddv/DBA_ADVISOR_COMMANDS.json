@@ -1,0 +1,1 @@
+[ [ "COMMAND_ID", "NUMBER", "&nbsp;", "<p>Identifier of the command</p>" ], [ "COMMAND_NAME", "VARCHAR2(64)", "&nbsp;", "<p>Name of the command</p>" ] ]

@@ -1,0 +1,1 @@
+[ [ "SCHEMA", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Schema in which the object types is editionable</p>" ], [ "OBJECT_TYPE", "VARCHAR2(23)", "&nbsp;", "<p>Object type that is editionable</p>" ] ]
