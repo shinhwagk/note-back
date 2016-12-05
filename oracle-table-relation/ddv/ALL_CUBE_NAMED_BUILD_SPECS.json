@@ -1,1 +1,0 @@
-[ [ "OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of the OLAP named build specification</p>" ], [ "CUBE_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the OLAP cube</p>" ], [ "NAMED_BUILD_SPEC", "CLOB", "&nbsp;", "<p>Name of the OLAP cube named build specification</p>" ] ]

@@ -1,1 +1,0 @@
-[ [ "NAMESPACE", "VARCHAR2(30)", "&nbsp;", "<p>Namespace that the active attribute is in</p>" ], [ "ATTRIBUTE", "VARCHAR2(30)", "&nbsp;", "<p>Name of the active attribute</p>" ], [ "VALUE", "VARCHAR2(4000)", "&nbsp;", "<p>Value of the active attribute</p>" ] ]

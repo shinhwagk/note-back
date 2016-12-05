@@ -1,1 +1,0 @@
-[ [ "RESOURCE#", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Numeric resource code</p>" ], [ "TYPE#", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Numeric type code</p>" ], [ "NAME", "VARCHAR2(32)", "<p><code>NOT NULL</code></p>", "<p>Name of the resource</p>" ] ]

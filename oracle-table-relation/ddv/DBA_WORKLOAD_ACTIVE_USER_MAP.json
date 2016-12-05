@@ -1,1 +1,0 @@
-[ [ "SCHEDULE_CAP_ID", "NUMBER", "&nbsp;", "<p>The ID of a capture in the schedule</p>" ], [ "CAPTURE_USER", "VARCHAR2(4000)", "<p><code>NOT NULL</code></p>", "<p>The user name during the time of the workload capture</p>" ], [ "REPLAY_USER", "VARCHAR2(4000)", "&nbsp;", "<p>The user name to which captured user should be remapped during replay</p>" ] ]

@@ -1,1 +1,0 @@
-[ [ "TABLE_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the table on which the trigger is defined</p>" ], [ "INTERNAL_TRIGGER_TYPE", "VARCHAR2(19)", "&nbsp;", "<p>Indicates the type of internal trigger on the table</p>" ] ]

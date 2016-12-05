@@ -1,1 +1,0 @@
-[ [ "NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the lock</p>" ], [ "LOCKID", "NUMBER(38)", "&nbsp;", "<p>Lock identifier number</p>" ], [ "EXPIRATION", "DATE", "&nbsp;", "<p>Planned lock expiration date (updates whenever the allocation procedure is run)</p>" ] ]

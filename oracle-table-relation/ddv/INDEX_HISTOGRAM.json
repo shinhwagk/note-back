@@ -1,1 +1,0 @@
-[ [ "REPEAT_COUNT", "NUMBER", "&nbsp;", "<p>Number of times that one or more index keys is repeated in the table</p>" ], [ "KEYS_WITH_REPEAT_COUNT", "NUMBER", "&nbsp;", "<p>Number of index keys that are repeated that many times</p>" ] ]

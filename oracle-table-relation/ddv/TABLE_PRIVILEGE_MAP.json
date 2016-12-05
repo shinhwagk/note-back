@@ -1,1 +1,0 @@
-[ [ "PRIVILEGE", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Numeric privilege (auditing option) type code</p>" ], [ "NAME", "VARCHAR2(40)", "<p><code>NOT NULL</code></p>", "<p>Name of the type of privilege (auditing option)</p>" ] ]

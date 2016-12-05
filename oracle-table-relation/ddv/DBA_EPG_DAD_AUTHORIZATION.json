@@ -1,1 +1,0 @@
-[ [ "DAD_NAME", "VARCHAR2(64)", "<p>NOT NULL</p>", "<p>Name of DAD</p>" ], [ "USERNAME", "VARCHAR2(128)", "<p>NOT NULL</p>", "<p>Name of the user whose privileges the DAD is authorized to use</p>" ] ]

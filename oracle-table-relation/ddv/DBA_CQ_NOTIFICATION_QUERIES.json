@@ -1,1 +1,0 @@
-[ [ "QUERYID", "NUMBER", "&nbsp;", "<p>ID of the query</p>" ], [ "QUERYTEXT", "CLOB", "&nbsp;", "<p>Text of the query</p>" ], [ "REGID", "NUMBER", "&nbsp;", "<p>Registration ID that the query is registered with</p>" ], [ "USERNAME", "VARCHAR2(31)", "&nbsp;", "<p>Name of the user who registered the query</p>" ] ]

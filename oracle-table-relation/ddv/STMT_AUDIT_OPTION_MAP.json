@@ -1,1 +1,0 @@
-[ [ "OPTION#", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Numeric auditing option type code</p>" ], [ "NAME", "VARCHAR2(40)", "<p><code>NOT NULL</code></p>", "<p>Name of the type of auditing option</p>" ], [ "PROPERTY", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Property flag of the auditing option</p>" ] ]

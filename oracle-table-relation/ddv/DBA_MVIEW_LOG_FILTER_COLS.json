@@ -1,1 +1,0 @@
-[ [ "OWNER", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the master table being logged</p>" ], [ "NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the master table being logged</p>" ], [ "COLUMN_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Column being logged</p>" ] ]

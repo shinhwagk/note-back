@@ -1,1 +1,0 @@
-[ [ "DD_TABLE_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the Oracle data dictionary table</p>" ], [ "DD_TABLE_DESC", "VARCHAR2(255)", "&nbsp;", "<p>Description of the Oracle data dictionary table</p>" ], [ "DD_TABLE_ID", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Sequence: a counter that is incremented for every row inserted (used internally)</p>" ] ]

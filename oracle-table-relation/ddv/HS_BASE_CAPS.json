@@ -1,1 +1,0 @@
-[ [ "CAP_NUMBER", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Capability number</p>" ], [ "CAP_DESCRIPTION", "VARCHAR2(255)", "&nbsp;", "<p>Description of the capability</p>" ] ]

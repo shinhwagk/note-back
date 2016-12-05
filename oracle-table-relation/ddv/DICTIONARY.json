@@ -1,1 +1,0 @@
-[ [ "TABLE_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the object</p>" ], [ "COMMENTS", "VARCHAR2(4000)", "&nbsp;", "<p>Text comment on the object</p>" ] ]

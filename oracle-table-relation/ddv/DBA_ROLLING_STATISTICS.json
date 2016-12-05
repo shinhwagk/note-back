@@ -1,1 +1,0 @@
-[ [ "NAME", "VARCHAR2(256)", "&nbsp;", "<p>Name of the statistic</p>" ], [ "VALUE", "VARCHAR2(256)", "&nbsp;", "<p>Value of the statistic</p>" ], [ "UPDATE_TIME", "TIMESTAMP(6)", "&nbsp;", "<p>Time of last update</p>" ] ]

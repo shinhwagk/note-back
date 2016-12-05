@@ -1,1 +1,0 @@
-[ [ "OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of the operator</p>" ], [ "OPERATOR_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the operator</p>" ], [ "NUMBER_OF_BINDS", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Number of bindings associated with the operator</p>" ] ]

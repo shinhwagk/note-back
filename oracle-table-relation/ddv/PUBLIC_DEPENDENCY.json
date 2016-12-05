@@ -1,1 +1,0 @@
-[ [ "OBJECT_ID", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Object number</p>" ], [ "REFERENCED_OBJECT_ID", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>Referenced object (the parent object)</p>" ] ]

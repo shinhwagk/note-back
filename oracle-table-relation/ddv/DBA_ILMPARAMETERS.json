@@ -1,1 +1,0 @@
-[ [ "NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the Automatic Data Optimization environment parameter. The value is one of the constants defined in the <code>DBMS_ILM_ADMIN</code> package.</p>" ], [ "VALUE", "NUMBER", "&nbsp;", "<p>Value of the parameter</p>" ] ]

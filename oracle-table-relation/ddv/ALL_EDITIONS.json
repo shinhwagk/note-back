@@ -1,1 +1,0 @@
-[ [ "EDITION_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the edition</p>" ], [ "PARENT_EDITION_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the parent edition for this edition</p>" ], [ "USABLE", "VARCHAR2(3)", "&nbsp;", "<p>Indicates whether the edition is usable (<code>YES</code>) or unusable (<code>NO</code>)</p>" ] ]

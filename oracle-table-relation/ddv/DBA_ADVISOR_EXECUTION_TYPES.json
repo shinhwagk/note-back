@@ -1,1 +1,0 @@
-[ [ "ADVISOR_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the advisor</p>" ], [ "EXECUTION_TYPE", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Execution type supported by the advisor</p>" ], [ "EXECUTION_DESCRIPTION", "VARCHAR2(4000)", "&nbsp;", "<p>Optional description of the execution type</p>" ] ]

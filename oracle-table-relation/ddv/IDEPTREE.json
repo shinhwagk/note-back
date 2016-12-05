@@ -1,1 +1,0 @@
-[ [ "NESTED_LEVEL", "NUMBER", "&nbsp;", "<p>Nesting level in the dependency tree</p>" ], [ "TYPE", "VARCHAR2(23)", "&nbsp;", "<p>Object type</p>" ], [ "OWNER", "VARCHAR2(28)", "&nbsp;", "<p>Object schema</p>" ], [ "NAME", "VARCHAR2(1002)", "&nbsp;", "<p>Object name</p>" ] ]

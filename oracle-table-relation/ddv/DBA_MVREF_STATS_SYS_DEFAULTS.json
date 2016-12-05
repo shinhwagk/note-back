@@ -1,1 +1,0 @@
-[ [ "PARAMETER_NAME", "CHAR(16)", "&nbsp;", "<p>Value of the <code>parameter_name</code> parameter:</p>\n<ul style=\"list-style-type: disc;\">\n<li>\n<p><code>COLLECTION_LEVEL</code></p>\n</li>\n<li>\n<p><code>RETENTION_PERIOD</code></p>\n</li>\n</ul>" ], [ "VALUE", "VARCHAR2(40)", "&nbsp;", "<p>The system-wide default value for the parameter</p>" ] ]

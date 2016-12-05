@@ -1,1 +1,0 @@
-[ [ "ROW_ID", "ROWID", "&nbsp;", "<p>Row that caused the violation</p>" ], [ "OWNER", "VARCHAR2(128)", "&nbsp;", "<p>Owner of the table</p>" ], [ "TABLE_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the table</p>" ], [ "CONSTRAINT", "VARCHAR2(128)", "&nbsp;", "<p>Integrity constraint that was violated</p>" ] ]

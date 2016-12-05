@@ -1,1 +1,0 @@
-[ [ "CON_UID", "NUMBER", "&nbsp;", "<p>Unique ID of the PDB</p>" ], [ "APP_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the application</p>" ], [ "APP_ID", "NUMBER", "&nbsp;", "<p>Id of the application</p>" ], [ "APP_VERSION", "VARCHAR2(30)", "&nbsp;", "<p>Version of the application</p>" ], [ "APP_STATUS", "VARCHAR2(12)", "&nbsp;", "<p>Status of the application</p>" ] ]

@@ -1,1 +1,0 @@
-[ [ "FILENAME", "VARCHAR2(500)", "<p><code>NOT NULL</code></p>", "<p>Name of the XSLT/XML schema file</p>" ], [ "DATA", "XMLTYPE", "&nbsp;", "<p>XSLT/XML schema data</p>" ] ]

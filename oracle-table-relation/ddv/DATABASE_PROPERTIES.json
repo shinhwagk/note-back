@@ -1,1 +1,0 @@
-[ [ "PROPERTY_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Property name</p>" ], [ "PROPERTY_VALUE", "VARCHAR2(4000)", "&nbsp;", "<p>Property value</p>" ], [ "DESCRIPTION", "VARCHAR2(4000)", "&nbsp;", "<p>Property description</p>" ] ]

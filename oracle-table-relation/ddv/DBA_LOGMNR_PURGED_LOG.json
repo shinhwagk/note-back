@@ -1,1 +1,0 @@
-[ [ "FILE_NAME", "VARCHAR2(513)", "&nbsp;", "<p>Fully qualified names of the archived redo log files that are no longer needed by SQL Apply and can be deleted from the operating system</p>" ] ]

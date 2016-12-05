@@ -1,1 +1,0 @@
-[ [ "OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of the cluster</p>" ], [ "CLUSTER_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the cluster</p>" ], [ "HASH_EXPRESSION", "LONG", "&nbsp;", "<p>Text of the hash function of the hash cluster</p>" ] ]

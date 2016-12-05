@@ -1,1 +1,0 @@
-[ [ "POLICY_NAME", "VARCHAR2(128)", "&nbsp;", "<p>The name of the Transparent Sensitive Data Protection policy</p>" ], [ "SECURITY_FEATURE", "VARCHAR2(12)", "&nbsp;", "<p>The Oracle security feature with which the Transparent Sensitive Data Protection policy is associated</p>" ] ]

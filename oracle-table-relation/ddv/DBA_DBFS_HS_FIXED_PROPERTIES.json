@@ -1,1 +1,0 @@
-[ [ "STORE_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of store</p>" ], [ "STORE_OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of store</p>" ], [ "PROP_NAME", "VARCHAR2(256)", "<p><code>NOT NULL</code></p>", "<p>Property name</p>" ], [ "PROP_VALUE", "VARCHAR2(256)", "<p><code>NOT NULL</code></p>", "<p>Property value</p>" ] ]

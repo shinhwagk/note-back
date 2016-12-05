@@ -1,1 +1,0 @@
-[ [ "STORENAME", "VARCHAR2(256)", "&nbsp;", "<p>Name of store</p>" ], [ "STOREOWNER", "VARCHAR2(64)", "&nbsp;", "<p>Owner of store</p>" ], [ "PROPERTYNAME", "VARCHAR2(256)", "&nbsp;", "<p>Property name</p>" ], [ "PROPERTYVALUE", "VARCHAR2(256)", "&nbsp;", "<p>Property value</p>" ] ]

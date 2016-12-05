@@ -1,1 +1,0 @@
-[ [ "USERNAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the user</p>" ], [ "PRODUCT", "VARCHAR2(4000)", "&nbsp;", "<p>Name of the product the user belongs to</p>" ] ]

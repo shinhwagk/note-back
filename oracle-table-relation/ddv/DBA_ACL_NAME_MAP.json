@@ -1,1 +1,0 @@
-[ [ "XDB_NAME", "VARCHAR2(4000)", "<p><code>NOT NULL</code></p>", "<p>The old XDB name of the access control list</p>" ], [ "ACL", "VARCHAR2(128)", "&nbsp;", "<p>The new name of the access control list</p>" ], [ "ACL_OWNER", "VARCHAR2(128)", "&nbsp;", "<p>The owner of the access control list</p>" ] ]

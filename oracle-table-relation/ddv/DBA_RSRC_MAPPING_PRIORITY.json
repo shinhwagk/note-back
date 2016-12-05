@@ -1,1 +1,0 @@
-[ [ "ATTRIBUTE", "VARCHAR2(128)", "&nbsp;", "<p>Session attribute</p>" ], [ "PRIORITY", "NUMBER", "&nbsp;", "<p>Priority (<code>1</code> is the highest)</p>" ], [ "STATUS", "VARCHAR2(128)", "&nbsp;", "<p>Indicates whether the consumer group is part of the pending area (<code>PENDING</code>) or not (NULL)</p>" ] ]

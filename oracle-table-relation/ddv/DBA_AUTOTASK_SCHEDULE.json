@@ -1,1 +1,0 @@
-[ [ "WINDOW_NAME", "VARCHAR2(128)", "&nbsp;", "<p>Name of the maintenance window</p>" ], [ "START_TIME", "TIMESTAMP(6) WITH TIME ZONE", "&nbsp;", "<p>Projected start time of the window</p>" ], [ "DURATION", "INTERVAL DAY(3) TO SECOND(0)", "&nbsp;", "<p>Currently defined duration of the window (NULL for the currently open window)</p>" ] ]

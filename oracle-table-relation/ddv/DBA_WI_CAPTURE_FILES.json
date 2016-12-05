@@ -1,1 +1,0 @@
-[ [ "JOB_ID", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>The identifier of the job in the workload to which the given capture file belongs</p>" ], [ "FILE_ID", "NUMBER", "<p><code>NOT NULL</code></p>", "<p>The identifier of the current capture file</p>" ], [ "FILE_PATH", "VARCHAR2(4000)", "<p><code>NOT NULL</code></p>", "<p>The path of the current capture file</p>" ] ]

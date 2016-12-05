@@ -1,1 +1,0 @@
-[ [ "RULE_OWNER", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Owner of the rule</p>" ], [ "RULE_NAME", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>Name of the rule</p>" ], [ "EXECUTE_EVENT", "VARCHAR2(2)", "&nbsp;", "<p>Indicates whether the event satisfying the rule is executed</p>" ] ]

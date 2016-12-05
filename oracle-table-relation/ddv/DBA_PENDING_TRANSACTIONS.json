@@ -1,1 +1,0 @@
-[ [ "FORMATID", "NUMBER", "&nbsp;", "<p>The format identifier of the transaction identifier</p>" ], [ "GLOBALID", "RAW(64)", "&nbsp;", "<p>The global part (gtrid) of the transaction identifier</p>" ], [ "BRANCHID", "RAW(64)", "&nbsp;", "<p>The branch qualifier (bqual) of the transaction identifier</p>" ] ]

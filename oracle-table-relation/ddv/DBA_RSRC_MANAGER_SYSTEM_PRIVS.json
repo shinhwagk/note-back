@@ -1,1 +1,0 @@
-[ [ "GRANTEE", "VARCHAR2(128)", "<p><code>NOT NULL</code></p>", "<p>User or role receiving the grant</p>" ], [ "PRIVILEGE", "VARCHAR2(40)", "<p><code>NOT NULL</code></p>", "<p>Name of the system privilege</p>" ], [ "ADMIN_OPTION", "VARCHAR2(3)", "&nbsp;", "<p>Indicates whether the grant was with the <code>ADMIN</code> option (<code>YES</code>) or not (<code>NO</code>)</p>" ] ]

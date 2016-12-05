@@ -1,1 +1,0 @@
-[ [ "TRUST", "VARCHAR2(9)", "&nbsp;", "<p>Trustedness of the server listed. Values can be <code>TRUSTED</code> or <code>UNTRUSTED</code> servers which are not listed in the <code>NAME</code> column have opposite trustedness.</p>" ], [ "NAME", "VARCHAR2(128)", "&nbsp;", "<p>Server name. Can be a specific server name or ALL for all servers.</p>" ] ]

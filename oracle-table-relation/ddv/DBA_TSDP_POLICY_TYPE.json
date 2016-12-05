@@ -1,1 +1,0 @@
-[ [ "POLICY_NAME", "VARCHAR2(128)", "&nbsp;", "<p>The Transparent Sensitive Data Protection policy name</p>" ], [ "SENSITIVE_TYPE", "VARCHAR2(128)", "&nbsp;", "<p>The sensitive column type name</p>" ] ]
