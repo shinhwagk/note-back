@@ -56,19 +56,22 @@ export function note_add() {
     for (let i = 0; i <= note_textarea_number - 1; i += 1) {
         data[i] = $(`#note_${i + 1}`).val()
     }
-
-    $.ajax({
-        type: "POST",
-        url: "/api/node/node",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ c_id: category_id, data: data }),
-        success: (message) => alert(message),
-        error: (message) => alert(message.error + "f")
-    });
+    http_post("/api/node/node", { c_id: category_id, data: data }, (m) => alert(m), (e) => alert(e.error))
 }
 
 export function delete_note_areatext(text_id, text_del_id) {
     $(`#${text_id}`).remove()
     $(`#${text_del_id}`).remove()
     note_textarea_number -= 1
+}
+
+function http_post(url: string, data: any, s_f: (m) => void, e_f: (m) => void) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        success: (message) => s_f(message),
+        error: (error) => e_f(error)
+    });
 }
