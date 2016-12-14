@@ -1,0 +1,1 @@
+create table note_back.labels(id int auto_increment primary key, name varchar(30), p_id int);

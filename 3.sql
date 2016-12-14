@@ -1,0 +1,1 @@
+create table note_back.categorys(id int auto_increment primary key, name varchar(30), l_id int);

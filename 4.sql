@@ -1,0 +1,1 @@
+create table note_back.notes(id int auto_increment primary key, data json, docs json, files json, c_id int);
