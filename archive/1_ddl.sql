@@ -1,1 +1,0 @@
-create database note_back DEFAULT CHARSET utf8;
