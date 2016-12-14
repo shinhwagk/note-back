@@ -2,3 +2,6 @@ node_modules
 npm-debug.log
 dist
 __pycache__
+test.py
+.vscode/.ropeproject
+lib/__pycache__

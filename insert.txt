@@ -1,0 +1,1 @@
+"python" e:/github/note-back/insert.py --labels a-b-c-x --category xxx --notes 1,2 --docs 1,2
