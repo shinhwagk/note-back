@@ -1,0 +1,1 @@
+mysqldump -uroot -p123456aA+ -h'10.65.103.48' --extended-insert=FALSE --databases note_back | Out-File backup\a.sql
