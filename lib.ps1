@@ -1,3 +1,5 @@
+. "./lib-git.ps1"
+
 function labels($path) {
   Write-Host "Lable List:" -ForegroundColor DarkGreen;
   Write-Host ("-" * 30)
@@ -40,6 +42,14 @@ function operation-cli(){
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ac (add category)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
+  Write-Host -NoNewline "rl (rename label rl1)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "rc (rename category rc1)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "dl (delete label dl1)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "dc (delete category dc1)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
   Write-Host -NoNewline "back" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ps (previous)" -ForegroundColor Yellow
@@ -74,7 +84,45 @@ function add_label($path) {
     $obj | Add-Member -NotePropertyName "labels" -NotePropertyValue @()
     $obj | Add-Member -NotePropertyName "categorys" -NotePropertyValue @()
     $obj | ConvertTo-Json -Compress | Out-File $new_file
+    
+    git_commit("add label: ${label}")
   }
+}
+
+function remove_label($path, $label) {
+  $file = $path + ".json"
+  $notes = Get-Content $file | ConvertFrom-Json
+
+  $notes.labels = $notes.labels | Where-Object { $_ -ne $label }
+
+  if (-Not $notes.labels) { $notes.labels = @() } 
+
+  ConvertTo-Json $notes | Out-File $file
+
+  Remove-Item -Path ($path + '/' + $label)
+  Remove-Item -Path ($path + '/' + $label + ".json")
+  git_commit("delete label: ${label}")
+}
+
+function rename_label($path, $old_label) {
+  $file = $path + ".json"
+  $notes = Get-Content $file | ConvertFrom-Json
+
+  $new_label = Read-Host "enter new label"
+
+  $notes.labels = $notes.labels, $new_label
+  $notes.labels = @($notes.labels | Where-Object { $_ -ne $old_label })
+
+  ConvertTo-Json -Compress $notes | Out-File $file
+
+  $old_dir = $path + '/' + $old_label
+  $old_file = $path + '/' + $old_label + ".json"
+  $new_file = $new_label + ".json"
+
+  Rename-Item -Path $old_dir -NewName $new_label
+  Rename-Item -Path $old_file -NewName $new_file
+
+  git_commit("rename label: $old_label -> $new_label")
 }
 
 function add_category($path) {
@@ -119,6 +167,20 @@ function main($path) {
     "c*" { }
     "al" { add_label $path; main $path }
     "ac" { }
+    "rl*" { 
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $l_name = $label_container[$idx];
+      rename_label $path $l_name; 
+      main $path
+    }
+    "rc*" {}
+    "dl*" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $l_name = $label_container[$idx];
+      remove_label $path $l_name
+      main $path
+    }
+    "dc*" {}
     "back" { Write-Host a }
     "exit" { Write-Host "exit"; exit 0 }
     "quit" { Write-Host "exit"; exit 0 }

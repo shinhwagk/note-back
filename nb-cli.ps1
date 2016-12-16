@@ -1,7 +1,8 @@
 # user custom init path
-$index_path = 'index'
+$index_path = 'data/index'
 ##################################################################
 
 . "./lib.ps1"
+
 
 main $index_path
