@@ -73,7 +73,6 @@ function remove_category($path, $category) {
   ConvertTo-Json -Compress $note | Out-File $file
 }
 
-
 function rename_category($path, $old_category) {
   $file = $path + ".json"
 
@@ -89,6 +88,32 @@ function rename_category($path, $old_category) {
 
   ConvertTo-Json -Compress $note | Out-File $file
 
-
   git_commit("rename category: $old_category -> $new_category")
+}
+
+function add_note($path, $idx) {
+
+  $noteback = Get-Content ($path + ".json") | ConvertFrom-Json;
+
+  $data_num = $noteback.categorys[$idx].cols
+ 
+  foreach ($n in (1 .. $data_num)){
+    Out-File ".tmp/${n}" 
+  }
+
+  Write-Host "data file folder at './tmp'"
+
+  $code = Read-Host "enter ok [y/n]"
+
+  $datas = @()
+  if ($code -gt 'y'){
+    foreach ($n in (1 .. $data_num)){
+      $datas += Get-Content ".tmp/${n}"
+    }
+
+
+  }
+
+
+
 }

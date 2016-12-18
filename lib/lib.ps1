@@ -20,17 +20,9 @@ function labels($path) {
 function categorys($path) {
   Write-Host "Category List:" -ForegroundColor DarkGreen ;
   Write-Host ("-" * 30)
-  $notes = Get-Content ($path + ".json") | Out-String  | ConvertFrom-Json
+  $noteback = Get-Content ($path + ".json") | Out-String  | ConvertFrom-Json
 
-  $categorys = $notes.categorys | Get-Member -MemberType NoteProperty | Select-Object Name | Foreach {"$($_.Name)"}
-
-  $categorys | ForEach-Object {$i=1} {"  ${i}: $_ " | Write-Host ; $i++};
-
-  $category_container = @()
-
-  $categorys | ForEach-Object { $category_container += $_ };
-
-  return ,$category_container
+  $noteback.categorys | ForEach-Object {$i=1} {"  ${i}: name=" + $_.name + ", cols=" + $_.cols + "." | Write-Host ; $i++ };
 }
 
 function operation-cli(){
@@ -42,6 +34,8 @@ function operation-cli(){
   Write-Host -NoNewline "al (add label)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ac (add category)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "an (add note)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "rl (rename label rl1)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
@@ -111,6 +105,9 @@ function main($path) {
     "c*" { }
     "al" { add_label $path; main $path }
     "ac" { add_category $path; main $path}
+    "an*" { 
+      $idx = [int]$oper_code.Substring(2) - 1;
+      add_note $path $idx; main $path}
     "rl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
       $l_name = $label_container[$idx];
@@ -118,9 +115,8 @@ function main($path) {
       main $path
     }
     "rc*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      $c_name = $category_container[$idx];
-      rename_category $path $c_name;
+      $idx = [int]$oper_code.Substring(1) - 1;
+      rename_category $path $idx;
       main $path
     }
     "dl*" {
@@ -130,9 +126,8 @@ function main($path) {
       main $path
     }
     "dc*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      $c_name = $category_container[$idx];
-      remove_category $path $c_name;
+      $idx = [int]$oper_code.Substring(1) - 1;
+      remove_category $path $c_idx;;
       main $path
     }
     "back" { Write-Host a }
