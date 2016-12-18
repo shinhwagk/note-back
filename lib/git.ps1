@@ -1,8 +1,24 @@
 function git_commit($message) {
     cd data
-    Get-Location
     git add -A
     git commit -m $message
     # git push
+    cd ..
+}
+
+function git_pull_data() {
+    if (Test-Path data) {
+        cd data
+        git pull
+        cd ..
+    } else {
+        git clone -b data-note https://github.com/shinhwagk/note-back --depth=1
+    }
+}
+
+function git_rest_one() {
+    cd data
+    git rest HEAD~1
+    git clean -xfd
     cd ..
 }

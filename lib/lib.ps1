@@ -1,5 +1,5 @@
-. "./edit.ps1"
-. "./git.ps1"
+. "./lib/edit.ps1"
+. "./lib/git.ps1"
 
 function labels($path) {
   Write-Host "Lable List:" -ForegroundColor DarkGreen;
@@ -22,13 +22,13 @@ function categorys($path) {
   Write-Host ("-" * 30)
   $notes = Get-Content ($path + ".json") | Out-String  | ConvertFrom-Json
 
-  $categorys = ($notes.categorys | Get-Member -MemberType NoteProperty | Select-Object Name) | Foreach {"$($_.Name)"}
+  $categorys = $notes.categorys | Get-Member -MemberType NoteProperty | Select-Object Name | Foreach {"$($_.Name)"}
 
   $categorys | ForEach-Object {$i=1} {"  ${i}: $_ " | Write-Host ; $i++};
 
   $category_container = @()
 
-  $categorys | ForEach-Object { $label_container += $_ };
+  $categorys | ForEach-Object { $category_container += $_ };
 
   return ,$category_container
 }
@@ -55,13 +55,19 @@ function operation-cli(){
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ps (previous)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
+  Write-Host -NoNewline "pln (pull note data)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "phn (push note data)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "un (undo)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
   Write-Host -NoNewline "exit(quit)" -ForegroundColor Yellow
   $oper_code = Read-Host " ]"
   return $oper_code
 }
 
 function previousPath($path){
-  if ($path -eq 'index') {
+  if ($path -eq 'data/index') {
     return $path
   } else {
     $idx = $path.LastIndexOf('/')
@@ -80,10 +86,12 @@ function main($path) {
   check $path
 
   Write-Host ("-" * 30)
-  Write-Host "Path: $path" -ForegroundColor DarkGreen;
+  Write-Host -NoNewline "Path: " -ForegroundColor DarkGreen; Write-Host $path -ForegroundColor Red;
   Write-Host ("-" * 30)
+
   $label_container = labels($path);
-  # $category_container = categorys($path);
+  $category_container = categorys($path);
+
   Write-Host ("-" * 30)
 
   Write-Host ""
@@ -102,24 +110,37 @@ function main($path) {
     }
     "c*" { }
     "al" { add_label $path; main $path }
-    "ac" { }
+    "ac" { add_category $path; main $path}
     "rl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
       $l_name = $label_container[$idx];
       rename_label $path $l_name;
       main $path
     }
-    "rc*" {}
+    "rc*" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $c_name = $category_container[$idx];
+      rename_category $path $c_name;
+      main $path
+    }
     "dl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
       $l_name = $label_container[$idx];
       remove_label $path $l_name
       main $path
     }
-    "dc*" {}
+    "dc*" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $c_name = $category_container[$idx];
+      remove_category $path $c_name;
+      main $path
+    }
     "back" { Write-Host a }
+    "pln" { git_pull_data; main $path }
+    "phn" { git_pull_data; main $path }
     "exit" { Write-Host "exit"; exit 0 }
     "quit" { Write-Host "exit"; exit 0 }
+    "un" { git_rest_one; main $path }
     "ps" { $previousPath = previousPath($path); main($previousPath); }
     default { Write-Host "enter error; retry." -ForegroundColor Red; main $path }
   }
