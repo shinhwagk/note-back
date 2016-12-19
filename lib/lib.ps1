@@ -26,7 +26,7 @@ function categorys($path) {
 
 function operation-cli() {
   Write-Host "please enter code:"
-  Write-Host -NoNewline "     l1 (label id)" -ForegroundColor Yellow
+  Write-Host -NoNewline "     l1" -ForegroundColor Yellow; Write-Host -NoNewline " (label id)"
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "c1 (category id)" -ForegroundColor Yellow
   Write-Host ""
@@ -35,18 +35,22 @@ function operation-cli() {
   Write-Host -NoNewline "ac (add category)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "an (add note)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "ln (launch note)" -ForegroundColor Yellow
   Write-Host ""
   Write-Host -NoNewline "     rl (rename label rl1)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "rc (rename category rc1)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "  
+  Write-Host -NoNewline "un (update note)" -ForegroundColor Yellow
   Write-Host ""
   Write-Host -NoNewline "     dl (delete label dl1)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "dc (delete category dc1)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "dn (delete note)" -ForegroundColor Yellow
-  Write-Host ""
-  Write-Host -NoNewline "     un (update note)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
+  Write-Host -NoNewline "cn (clean note)" -ForegroundColor Yellow
   Write-Host ""
   Write-Host -NoNewline "     back" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
@@ -54,7 +58,7 @@ function operation-cli() {
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "infd (init note full data)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
-  Write-Host -NoNewline "un (undo)" -ForegroundColor Yellow
+  Write-Host -NoNewline "un (undo disabled)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host "exit(quit)" -ForegroundColor Yellow
   $oper_code = Read-Host "code"
@@ -101,42 +105,42 @@ function main($path) {
       $idx = [int]$oper_code.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
-      main($path)
     }
     "c*" { }
-    "al" { add_label $path; main $path }
-    "ac" { add_category $path; main $path}
+    "al" { add_label $path; }
+    "ac" { add_category $path; }
     "an*" { 
       $idx = [int]$oper_code.Substring(2) - 1;
-      add_note $path $idx; main $path}
+      add_note $path $idx;
+    }
     "rl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
-      $l_name = $label_container[$idx];
-      rename_label $path $l_name;
-      main $path
+      rename_label $path $idx;
     }
     "rc*" {
-      $idx = [int]$oper_code.Substring(1) - 1;
+      $idx = [int]$oper_code.Substring(2) - 1;
       rename_category $path $idx;
-      main $path
+    }
+    "un*" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      update_note $path $idx; main $path;
     }
     "dl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
-      $l_name = $label_container[$idx];
-      remove_label $path $l_name
-      main $path
+      remove_label $path $idx; 
     }
     "dc*" {
-      $idx = [int]$oper_code.Substring(1) - 1;
+      $idx = [int]$oper_code.Substring(2) - 1;
       remove_category $path $c_idx;
-      main $path
     }
     "back" { Write-Host a }
-    "infd" { git_pull_data; main $path }
-    "exit" { Write-Host "exit"; exit 0 }
-    "quit" { Write-Host "exit"; exit 0 }
-    "un" { git_rest_one; main $path }
-    "ps" { $previousPath = previousPath($path); main $previousPath; }
-    default { Write-Host "enter error; retry." -ForegroundColor Red; main $path }
+    "infd" { git_pull_data; }
+    "exit" { exit 0 }
+    "quit" { exit 0 }
+    # "un" { git_rest_one; }
+    "ps" { $path = previousPath $path;  }
+    default { Write-Host "enter error; retry." -ForegroundColor Red; }
   }
+
+  main $path
 }

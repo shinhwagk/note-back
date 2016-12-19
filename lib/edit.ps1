@@ -15,9 +15,11 @@ function add_label($path) {
   git_commit("add label: ${label}")
 }
 
-function remove_label($path, $label) {
+function remove_label($path, $idx) {
   $file = $path + ".json"
   $notes = Get-Content $file | ConvertFrom-Json
+
+  $label = $notes.labels[$idx]
 
   $notes.labels = $notes.labels | Where-Object { $_ -ne $label }
 
@@ -30,9 +32,11 @@ function remove_label($path, $label) {
   git_commit("delete label: ${label}")
 }
 
-function rename_label($path, $old_label) {
+function rename_label($path, $idx) {
   $file = $path + ".json"
   $notes = Get-Content $file | ConvertFrom-Json
+
+  $old_label = $notes.labels[$idx]
 
   $new_label = Read-Host "enter new label"
 
@@ -93,36 +97,60 @@ function rename_category($path, $old_category) {
 
 function add_note($path, $idx) {
   $file = $path + ".json"
-
+  $path >> ".tmp/path"; $idx >> ".tmp/category"
+  
   $noteback = Get-Content $file | ConvertFrom-Json;
-
   $data_num = $noteback.categorys[$idx].cols
- 
   foreach ($n in (1 .. $data_num)) {
-    if ( -Not (Test-Path ".tmp/${n}")) {
-      Out-File ".tmp/${n}" 
-    } else {
-      Write-Host "./tmp is no empty."
-    }
+    if ( -Not (Test-Path ".tmp/${n}")) { Out-File ".tmp/${n}" } 
+    else { Write-Host "./tmp is no empty." }
   }
 
   Write-Host "data file folder at './tmp'"
+  $doc = Read-Host "write doc [y/n]?"
+  $file = Read-Host "write file [y/n]?"
 
-  $code = Read-Host "enter success [y/n/exit]"
+  $id = [int](Get-Content "id"); ($id + 1) | Out-File "id"
 
+  $id >> ".tmp/id"
+  if ($doc -eq 'y') { New-Item ".tmp/doc" -ItemType Directory; New-Item ".tmp/README.md" -ItemType File; }
 
-  if ($code -eq 'y'){
-    $datas = [string]@()
-    foreach ($n in (1 .. $data_num)){
-      $datas += [IO.File]::ReadAllText(".tmp/${n}")
-    }
+  if ($file -eq 'y') { New-Item ".tmp/file" -ItemType Directory }
+ 
+  # if ($code -eq 'y'){
+  #   $datas = [string]@()
+  #   foreach ($n in (1 .. $data_num)){
+  #     $datas += [IO.File]::ReadAllText(".tmp/${n}")
+  #   }
     
-    $id = [int](Get-Content "id")
-    ($id + 1) | Out-File "id"
-    
-    $obj = @{id=$id;data=$datas;doc=$false;file=$false}
+  #   $obj = @{id=$id;data=$datas;doc=$false;file=$false}
 
-    $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
-    ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
-  }
+  #   $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
+  #   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
+  # }
 }
+
+function launch_note() {
+  $path = Get-Content ".tmp/path" | Out-String
+  [int]$id = Get-Content ".tmp/id" | Out-String
+  [int]$c_idx = Get-Content ".tmp/category" | Out-String
+  
+  if (Test-Path ".tmp/file") { Move-Item -Path ".tmp/doc" -Destination "data-docs/${id}" }
+  if (Test-Path ".tmp/doc") { Move-Item -Path ".tmp/file" -Destination "data-files/${id}" }
+
+    #   $datas = [string]@()
+  #   foreach ($n in (1 .. $data_num)){
+  #     $datas += [IO.File]::ReadAllText(".tmp/${n}")
+  #   }
+    
+  #   $obj = @{id=$id;data=$datas;doc=$false;file=$false}
+
+  #   $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
+  #   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
+
+}
+
+function update_note() {
+
+}
+
