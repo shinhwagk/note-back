@@ -2,4 +2,4 @@ data
 data-files
 data-docs
 .tmp/*
-test.ps1
+./test.ps1
