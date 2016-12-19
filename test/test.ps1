@@ -70,3 +70,6 @@ Describe "label" {
         $obj.categorys -is [array] | Should Be $True
     }
 }
+
+Remove-Item -Path "test/index.json"
+Remove-Item -Path "test/index"
