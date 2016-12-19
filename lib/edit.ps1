@@ -58,32 +58,32 @@ function add_category($path, $c_name, $c_cols) {
   if ($c_name.length -ge 1 -and $c_cols -ge 1) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
-    # ConvertTo-Json -Compress $note | Write-Host
     ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file
   }
 }
 
-function remove_category($path, $category) {
+function remove_category($path, $idx) {
   $file = $path + ".json"
-  $note = Get-Content $file | ConvertFrom-Json
-  $note.categorys.psobject.Properties.Remove($category)
+  $note = Get-Content $file | Out-String | ConvertFrom-Json
+
+  $categorys = [System.Collections.ArrayList]$note.categorys
+  $categorys.RemoveAt($idx)
+
+  $note.categorys = @($categorys)
+
   ConvertTo-Json -Compress $note | Out-File $file
 }
 
-function rename_category($path, $old_category) {
+function rename_category($path, $idx, $c_name) {
   $file = $path + ".json"
 
   $note = Get-Content $file | ConvertFrom-Json
 
-  $new_category = Read-Host "enter new category"
+  $category = $note.categorys[$idx]
 
-  $category_content = $note.categorys | Select-Object -ExpandProperty $old_category
+  $note.categorys[$idx].name = $c_name
 
-  $note.categorys | Add-Member -NotePropertyName $new_category -NotePropertyValue @($category_content)
-
-  $note.categorys.psobject.Properties.Remove($old_category)
-
-  ConvertTo-Json -Compress $note | Out-File $file
+  ConvertTo-Json -Compress $note -Depth 3 | Out-File $file
 
   git_commit("rename category: $old_category -> $new_category")
 }

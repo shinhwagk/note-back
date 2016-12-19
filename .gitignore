@@ -1,5 +1,7 @@
 data
 data-files
 data-docs
-.tmp/*
-./test.ps1
+.tmp/**/*
+test/index.json
+test/index
+test.ps1

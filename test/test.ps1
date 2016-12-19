@@ -15,21 +15,58 @@ Describe "label" {
         $obj.labels -is [array] | Should Be $True
     }
 
-    It "rename label" {
-        rename_label "test/index" 0 "ff1"
-        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-        $obj.labels -is [array] | Should Be $True 
-    }
-
-    It "add category" {
-        add_category "test/index" "xxx" 1
+    It "add label categorys" {
         $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
         $obj.categorys -is [array] | Should Be $True
     }
 
-    # It "remove label" {
-    #     remove_label "test/index" 0
-    #     $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-    #     $obj.labels -is [array] | Should Be $True
-    # }
+    It "rename label" {
+        rename_label "test/index" 0 "ff1"
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.labels -is [array] | Should Be $true
+    }
+
+    It "rename label categorys" {
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys -is [array] | Should Be $True
+    }
+
+    It "add category" {
+        add_category "test/index" "xxx1" 1
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys -is [array] | Should Be $True
+    }
+
+    It "add category notes type check" {
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys[0].notes -is [array] | Should Be $True
+    }
+
+    It "rename category" {
+        rename_category "test/index" 0 "xxx"
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys -is [array] | Should Be $True
+    }
+
+    It "rename category notes type check" {
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys[0].notes -is [array] | Should Be $True
+    }
+    
+    It "remove category" {
+        remove_category "test/index" 0
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys -is [array] | Should Be $True
+    }
+
+    It "remove label" {
+        remove_label "test/index" 0
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.labels -is [array] | Should Be $True
+    }
+
+    It "relove label categorys type check" {
+        $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
+        $obj.categorys -is [array] | Should Be $True
+    }
 }

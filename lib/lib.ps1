@@ -127,7 +127,8 @@ function main($path) {
     }
     "rc*" {
       $idx = [int]$oper_code.Substring(2) - 1;
-      rename_category $path $idx;
+      $c_name = Read-Host "enter new category"
+      rename_category $path $idx $c_name;
     }
     "un*" {
       $idx = [int]$oper_code.Substring(2) - 1;
