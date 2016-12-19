@@ -107,15 +107,23 @@ function main($path) {
       $path = $path + '/' + $l_name;
     }
     "c*" { }
-    "al" { add_label $path; }
-    "ac" { add_category $path; }
+    "al" { 
+      $label = Read-Host "enter label"
+      add_label $path $label; 
+    }
+    "ac" { 
+      $name = Read-Host "enter category"
+      $cols = [int](Read-Host "enter column count")
+      add_category $path $name $cols; 
+    }
     "an*" { 
       $idx = [int]$oper_code.Substring(2) - 1;
       add_note $path $idx;
     }
     "rl*" {
       $idx = [int]$oper_code.Substring(2) - 1;
-      rename_label $path $idx;
+      $new_label = Read-Host "enter new label"
+      rename_label $path $idx $new_label;
     }
     "rc*" {
       $idx = [int]$oper_code.Substring(2) - 1;

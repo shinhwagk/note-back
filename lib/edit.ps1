@@ -1,16 +1,16 @@
-function add_label($path) {
+. "lib/git.ps1"
+function add_label($path, $label) {
   $file = $path + ".json"
-
-  $label = Read-Host "enter label"
   $notes = Get-Content $file | ConvertFrom-Json
   $notes.labels += $label
   $notes | ConvertTo-Json -Compress | Out-File $file
 
   $new_dir = $path + "/" + $label
-  New-Item -ItemType Directory $new_dir
+  if (-Not(Test-Path $new_dir)) { New-Item -ItemType Directory $new_dir }
+  
   $new_file = $path + "/" + $label + ".json"
 
-  @{labels=@();categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file
+  @{labels=@(); categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file
 
   git_commit("add label: ${label}")
 }
@@ -32,13 +32,10 @@ function remove_label($path, $idx) {
   git_commit("delete label: ${label}")
 }
 
-function rename_label($path, $idx) {
+function rename_label($path, $idx, $new_label) {
   $file = $path + ".json"
   $notes = Get-Content $file | ConvertFrom-Json
-
   $old_label = $notes.labels[$idx]
-
-  $new_label = Read-Host "enter new label"
 
   $notes.labels = $notes.labels, $new_label
   $notes.labels = @($notes.labels | Where-Object { $_ -ne $old_label })
@@ -55,18 +52,14 @@ function rename_label($path, $idx) {
   git_commit("rename label: $old_label -> $new_label")
 }
 
-function add_category($path) {
+function add_category($path, $c_name, $c_cols) {
   $file = $path + ".json"
-  $name = Read-Host "enter category"
-  $cols = [int](Read-Host "enter column count")
 
-  if ($name.length -ge 1 -and $cols -ge 1) {
+  if ($c_name.length -ge 1 -and $c_cols -ge 1) {
     $noteback = Get-Content $file | ConvertFrom-Json
-    $noteback.categorys += @{name=$name;cols=$cols;notes=@()}
+    $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
     # ConvertTo-Json -Compress $note | Write-Host
     ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file
-  } else {
-    add_category $path
   }
 }
 
