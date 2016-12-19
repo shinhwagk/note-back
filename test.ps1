@@ -1,7 +1,4 @@
-function abc($a,$b){
-  $a $b
-}
+$a = 1,2,3
+$b = @($a,1)
 
-function aaa($a){
-  Write-Host $a
-}
+Write-Host $b

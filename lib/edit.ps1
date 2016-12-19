@@ -9,10 +9,8 @@ function add_label($path) {
   $new_dir = $path + "/" + $label
   New-Item -ItemType Directory $new_dir
   $new_file = $path + "/" + $label + ".json"
-  $obj = New-Object psobject
-  $obj | Add-Member -NotePropertyName "labels" -NotePropertyValue @()
-  $obj | Add-Member -NotePropertyName "categorys" -NotePropertyValue (New-Object psobject)
-  $obj | ConvertTo-Json -Compress | Out-File $new_file
+
+  @{labels=@();categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file
 
   git_commit("add label: ${label}")
 }
@@ -56,11 +54,13 @@ function rename_label($path, $old_label) {
 function add_category($path) {
   $file = $path + ".json"
   $name = Read-Host "enter category"
+  $cols = [int](Read-Host "enter column count")
 
-  if ($name.length -ge 1){
-    $note = Get-Content $file | ConvertFrom-Json
-    $note.categorys | Add-Member -NotePropertyName $name -NotePropertyValue @()
-    ConvertTo-Json -Compress $note | Out-File $file
+  if ($name.length -ge 1 -and $cols -ge 1) {
+    $noteback = Get-Content $file | ConvertFrom-Json
+    $noteback.categorys += @{name=$name;cols=$cols;notes=@()}
+    # ConvertTo-Json -Compress $note | Write-Host
+    ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file
   } else {
     add_category $path
   }
@@ -92,28 +92,37 @@ function rename_category($path, $old_category) {
 }
 
 function add_note($path, $idx) {
+  $file = $path + ".json"
 
-  $noteback = Get-Content ($path + ".json") | ConvertFrom-Json;
+  $noteback = Get-Content $file | ConvertFrom-Json;
 
   $data_num = $noteback.categorys[$idx].cols
  
-  foreach ($n in (1 .. $data_num)){
-    Out-File ".tmp/${n}" 
+  foreach ($n in (1 .. $data_num)) {
+    if ( -Not (Test-Path ".tmp/${n}")) {
+      Out-File ".tmp/${n}" 
+    } else {
+      Write-Host "./tmp is no empty."
+    }
   }
 
   Write-Host "data file folder at './tmp'"
 
-  $code = Read-Host "enter ok [y/n]"
+  $code = Read-Host "enter success [y/n/exit]"
 
-  $datas = @()
-  if ($code -gt 'y'){
+
+  if ($code -eq 'y'){
+    $datas = [string]@()
     foreach ($n in (1 .. $data_num)){
-      $datas += Get-Content ".tmp/${n}"
+      $datas += [IO.File]::ReadAllText(".tmp/${n}")
     }
+    
+    $id = [int](Get-Content "id")
+    ($id + 1) | Out-File "id"
+    
+    $obj = @{id=$id;data=$datas;doc=$false;file=$false}
 
-
+    $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
+    ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
   }
-
-
-
 }

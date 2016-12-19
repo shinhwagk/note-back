@@ -1,6 +1,5 @@
 {
   "editor.tabSize": 2,
-  "editor.fontFamily": "'Monaco'",
-  "editor.fontSize": 14,
-  "typescript.check.tscVersion": false
+  "editor.fontSize": 17,
+  "files.eol": "\n"
 }
