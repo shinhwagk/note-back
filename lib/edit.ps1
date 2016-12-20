@@ -10,7 +10,7 @@ function add_label($path, $label) {
   
   $new_file = $path + "/" + $label + ".json"
 
-  @{labels=@(); categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file
+  @{labels=@(); categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file -Encoding utf8
 
   git_commit("add label: ${label}")
 }
@@ -25,7 +25,7 @@ function remove_label($path, $idx) {
 
   if (-Not $notes.labels) { $notes.labels = @() }
 
-  ConvertTo-Json -Compress $notes | Out-File $file
+  ConvertTo-Json -Compress $notes | Out-File $file -Encoding utf8
 
   Remove-Item -Path ($path + '/' + $label)
   Remove-Item -Path ($path + '/' + $label + ".json")
@@ -40,7 +40,7 @@ function rename_label($path, $idx, $new_label) {
   $notes.labels = $notes.labels, $new_label
   $notes.labels = @($notes.labels | Where-Object { $_ -ne $old_label })
 
-  ConvertTo-Json -Compress $notes | Out-File $file
+  ConvertTo-Json -Compress $notes | Out-File $file -Encoding utf8
 
   $old_dir = $path + '/' + $old_label
   $old_file = $path + '/' + $old_label + ".json"
@@ -58,7 +58,7 @@ function add_category($path, $c_name, $c_cols) {
   if ($c_name.length -ge 1 -and $c_cols -ge 1) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
-    ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file
+    ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file -Encoding utf8
   }
 }
 
@@ -71,7 +71,7 @@ function remove_category($path, $idx) {
 
   $note.categorys = @($categorys)
 
-  ConvertTo-Json -Compress $note | Out-File $file
+  ConvertTo-Json -Compress $note | Out-File $file -Encoding utf8
 }
 
 function rename_category($path, $idx, $c_name) {
@@ -83,7 +83,7 @@ function rename_category($path, $idx, $c_name) {
 
   $note.categorys[$idx].name = $c_name
 
-  ConvertTo-Json -Compress $note -Depth 3 | Out-File $file
+  ConvertTo-Json -Compress $note -Depth 3 | Out-File $file -Encoding utf8
 
   git_commit("rename category: $old_category -> $new_category")
 }
@@ -140,7 +140,7 @@ function launch_note() {
 
   $noteback = Get-Content $file | ConvertFrom-Json
   $noteback.categorys[$c_idx].notes += $note
-  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
+  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
   # Move-Item -Path ".tmp/${id}" -Destination $path
   Get-ChildItem "./tmp" | Remove-Item
 }
