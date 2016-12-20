@@ -88,59 +88,61 @@ function rename_category($path, $idx, $c_name) {
   git_commit("rename category: $old_category -> $new_category")
 }
 
-function add_note($path, $idx) {
-  $file = $path + ".json"
-  $path >> ".tmp/path"; $idx >> ".tmp/category"
-  
-  $noteback = Get-Content $file | ConvertFrom-Json;
-  $data_num = $noteback.categorys[$idx].cols
-  foreach ($n in (1 .. $data_num)) {
-    if ( -Not (Test-Path ".tmp/${n}")) { Out-File ".tmp/${n}" } 
-    else { Write-Host "./tmp is no empty." }
+function create_note_template($path, $idx) {
+  $dir_cnt = Get-ChildItem ".tmp" | Measure-Object | ForEach-Object {$_.Count}
+
+  $create_template = $false
+
+  if ($dir_cnt -ge 1) {
+    Write-Host ".tmp below file exists" -ForegroundColor Red
+    $del? = Read-Host "IsDelete? [y/n]"
+    if ($del? -eq "y") {
+      Remove-Item -Path ".tmp" -Recurse;
+      New-Item -Path ".tmp" -ItemType Directory | Out-Null;
+      $create_template = $true
+    }
+  } else {
+    $create_template = $true
   }
-
-  Write-Host "data file folder at './tmp'"
-  $doc = Read-Host "write doc [y/n]?"
-  $file = Read-Host "write file [y/n]?"
-
-  $id = [int](Get-Content "id"); ($id + 1) | Out-File "id"
-
-  $id >> ".tmp/id"
-  if ($doc -eq 'y') { New-Item ".tmp/doc" -ItemType Directory; New-Item ".tmp/README.md" -ItemType File; }
-
-  if ($file -eq 'y') { New-Item ".tmp/file" -ItemType Directory }
- 
-  # if ($code -eq 'y'){
-  #   $datas = [string]@()
-  #   foreach ($n in (1 .. $data_num)){
-  #     $datas += [IO.File]::ReadAllText(".tmp/${n}")
-  #   }
+  if ($create_template) {
+    $id = [int](Get-Content "id"); ($id + 1) | Out-File "id" -Encoding utf8
+    New-Item -Path ".tmp/${id}" -ItemType Directory | Out-Null;
+    $file = $path + ".json"
+    $path >> ".tmp/path"; $idx > ".tmp/category"
     
-  #   $obj = @{id=$id;data=$datas;doc=$false;file=$false}
+    $noteback = Get-Content $file | ConvertFrom-Json;
+    $data_num = $noteback.categorys[$idx].cols
 
-  #   $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
-  #   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
-  # }
+    foreach ($n in (1 .. $data_num)) {
+      if ( -Not (Test-Path ".tmp/${id}/${n}")) { Out-File ".tmp/${id}/${n}" }
+      else { Write-Host "./tmp/${id} is no empty." }
+    }
+
+    Write-Host "data file folder at './tmp/${id}'"
+    $doc = Read-Host "write doc [y/n]?"
+    $file = Read-Host "write file [y/n]?"
+
+    if ($doc -eq 'y') { New-Item ".tmp/${id}/doc" -ItemType Directory | Out-Null; New-Item ".tmp/${id}/README.md" -ItemType File | Out-Null;; }
+    if ($file -eq 'y') { New-Item ".tmp/${id}/file" -ItemType Directory | Out-Null; }
+    Write-Host "note template create success." -ForegroundColor Yellow
+  }
 }
 
 function launch_note() {
-  $path = Get-Content ".tmp/path" | Out-String
-  [int]$id = Get-Content ".tmp/id" | Out-String
   [int]$c_idx = Get-Content ".tmp/category" | Out-String
+  $id = Get-ChildItem -Path ".tmp" -Directory | Select-Object -First 1 -ExpandProperty "Name"
+  $doc = Test-Path ".tmp/${id}/doc" 
+  $file = Test-Path ".tmp/${id}/file"
+  $note = @{id=$id;doc=$doc;file=$file}
   
-  if (Test-Path ".tmp/file") { Move-Item -Path ".tmp/doc" -Destination "data-docs/${id}" }
-  if (Test-Path ".tmp/doc") { Move-Item -Path ".tmp/file" -Destination "data-files/${id}" }
+  $path = Get-Content ".tmp/path"
+  $file = $path + ".json"
 
-    #   $datas = [string]@()
-  #   foreach ($n in (1 .. $data_num)){
-  #     $datas += [IO.File]::ReadAllText(".tmp/${n}")
-  #   }
-    
-  #   $obj = @{id=$id;data=$datas;doc=$false;file=$false}
-
-  #   $noteback.categorys[$idx].notes = @($noteback.categorys[$idx].notes,$obj)
-  #   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
-
+  $noteback = Get-Content $file | ConvertFrom-Json
+  $noteback.categorys[$c_idx].notes += $note
+  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file
+  # Move-Item -Path ".tmp/${id}" -Destination $path
+  Get-ChildItem "./tmp" | Remove-Item
 }
 
 function update_note() {

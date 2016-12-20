@@ -34,7 +34,7 @@ function operation-cli() {
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ac (add category)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
-  Write-Host -NoNewline "an (add note)" -ForegroundColor Yellow
+  Write-Host -NoNewline "cnt[int] (create note template)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "ln (launch note)" -ForegroundColor Yellow
   Write-Host ""
@@ -92,7 +92,6 @@ function main($path) {
   $category_container = categorys($path);
 
   Write-Host ("-" * 30)
-
   Write-Host ""
 
   $oper_code = operation-cli
@@ -100,47 +99,62 @@ function main($path) {
   Write-Host ""
   Write-Host ""
 
-  switch -wildcard ($oper_code) {
-    "l*" {
+  switch -regex ($oper_code) {
+    "l[1-9]+" {
       $idx = [int]$oper_code.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
     }
-    "c*" { }
+    "c[1-9]+" { }
     "al" { 
       $label = Read-Host "enter label"
       add_label $path $label; 
     }
-    "ac" { 
+    "ac" {
       $name = Read-Host "enter category"
       $cols = [int](Read-Host "enter column count")
-      add_category $path $name $cols; 
+      add_category $path $name $cols;
     }
-    "an*" { 
-      $idx = [int]$oper_code.Substring(2) - 1;
-      add_note $path $idx;
+    "cnt[1-9]+" {
+      if($oper_code.length -ge 4) {
+        $idx = [int]$oper_code.Substring(3) - 1;
+        create_note_template $path $idx;
+      }
     }
-    "rl*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      $new_label = Read-Host "enter new label"
-      rename_label $path $idx $new_label;
+    "ln" {
+      launch_note
     }
-    "rc*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      $c_name = Read-Host "enter new category"
-      rename_category $path $idx $c_name;
+    "rl[1-9]+" {
+      if ($oper_code.length -ge 3) {
+        $idx = [int]$oper_code.Substring(2) - 1;
+        $new_label = Read-Host "enter new label"
+        rename_label $path $idx $new_label;
+      }
     }
-    "un*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      update_note $path $idx; main $path;
+    "rc[1-9]+" {
+      if ($oper_code.length -ge 3) {
+        $idx = [int]$oper_code.Substring(2) - 1;
+        $c_name = Read-Host "enter new category"
+        rename_category $path $idx $c_name;
+      }
     }
-    "dl*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      remove_label $path $idx; 
+    "un[1-9]+" {
+      if ($oper_code.length -ge 3) {
+        $idx = [int]$oper_code.Substring(2) - 1;
+        update_note $path $idx; main $path;
+      }
     }
-    "dc*" {
-      $idx = [int]$oper_code.Substring(2) - 1;
-      remove_category $path $c_idx;
+    "dl[1-9]+" {
+      if ($oper_code.length -ge 3) {
+        $idx = [int]$oper_code.Substring(2) - 1;
+        remove_label $path $idx;
+      }
+    }
+    "dc[1-9]+" {
+      if ($oper_code.length -ge 3) {
+        $idx = [int]$oper_code.Substring(2) - 1;
+        remove_category $path $c_idx;
+      }
     }
     "back" { Write-Host a }
     "infd" { git_pull_data; }
