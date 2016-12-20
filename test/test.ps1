@@ -12,12 +12,12 @@ Describe "label" {
     It "add label" {
         add_label "test/index" "xxx"
         $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-        $obj.labels -is [array] | Should Be $True
+        $obj.labels -is [array] | Should Be $true
     }
 
     It "add label categorys" {
         $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-        $obj.categorys -is [array] | Should Be $True
+        $obj.categorys -is [array] | Should Be $true
     }
 
     It "rename label" {
@@ -28,13 +28,13 @@ Describe "label" {
 
     It "rename label categorys" {
         $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-        $obj.categorys -is [array] | Should Be $True
+        $obj.categorys -is [array] | Should Be $true
     }
 
     It "add category" {
         add_category "test/index" "xxx1" 1
         $obj = Get-Content "test/index.json" | Out-String | ConvertFrom-Json
-        $obj.categorys -is [array] | Should Be $True
+        $obj.categorys -is [array] | Should Be $true
     }
 
     It "add category notes type check" {
