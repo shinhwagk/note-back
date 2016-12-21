@@ -1,0 +1,13 @@
+.labels {
+  z-index: -1;
+  background-color: #DDDDDD;
+  position: fixed;
+  left: 1%;
+  bottom: 1%;
+}
+
+.label {
+  display: inline-block;
+}
+
+.category-header {}
