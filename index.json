@@ -1,6 +1,5 @@
 ﻿{
-  "path": "xxx",
-  "name": "",
+  "labels": ["xxx"],
   "categorys": [
     {
       "name": "xx",
