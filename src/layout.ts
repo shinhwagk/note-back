@@ -1,7 +1,7 @@
 import { Category } from "./category.obj";
 import { Note } from "./note.obj";
-import { HttpClient } from "./http-client";
-import { path } from "./main"
+// import { path } from "./main";
+import { NoteBack } from './noteback.obj';
 
 export function nav(labels: string[]) {
   const div = document.createElement("div");
@@ -17,45 +17,58 @@ export function nav(labels: string[]) {
   return div;
 }
 
-export function categorys(categorys: Category[]) {
-  for (let c of categorys) {
-    const category = document.createElement("div");
-    category.className = "category";
-
-    const categoryName = document.createElement("div");
-    categoryName.className = "category-header";
-    categoryName.innerText = c.name;
-
-    const categoryNotes = document.createElement("div");
-    categoryName.className = "category-body";
-
-    category.appendChild(categoryName);
-    category.appendChild(categoryNotes);
-  }
+export function category_ui(category: Category) {
+  const div = document.createElement("div");
+  div.innerText = category.name
+  return div
 }
+//   const table = document.createElement("table");
+//   table.style.width = "100%";
+//   table.style.border = "1"
+//   const tr = document.createElement("tr");
+//   const td_1 = document.createElement("td");
+//   td_1.style.width = "44%"
 
-export function notes(ns: Note[], cols: number) {
-  // const notes = document.createElement("table");
-  // for (let n of ns) {
-  //   const row = document.createElement("tr");
-    
-  //   const colId = document.createElement("td");
-  //   colId.innerText = n.id.toString();
-  //   row.appendChild(colId);
+//   const td_2 = document.createElement("td");
+//   td_2.style.width = "44%"
 
-  //   for (let i = 1; i <= cols; i += 1) {
-  //     const colData = document.createElement("td");
-  //     const hc = new HttpClient();
-  //     // hc.get(path,)
-      
+//   for (let i = 0; i <= categorys.length - 1; i += 1) {
+//     const c = categorys[i];
 
-  //   }
+//     const col = document.createElement("div");
+//     col.innerText = c.name;
 
-  // }
+//     if (i % 2 == 0) {
+//       td_1.appendChild(col);
+//     } else {
+//       td_2.appendChild(col);
+//     }
+//   }
+//   tr.appendChild(td_1);
+//   tr.appendChild(td_2);
+//   table.appendChild(tr);
+//   return table;
+// }
 
-}
+// function parseNote(n: Note, cols: number, f) {
+//   const path = location.hash + '/' + n.id
+//   const tr = document.createElement("tr")
+//   const td_id = document.createElement("td")
+//   td_id.innerHTML = n.id.toString()
+//   tr.appendChild(td_id)
+//   const hc = new HttpClient()
+//   for (let i = 1; i <= cols; i += 1) {
+//     const td = document.createElement("td")
+//     hc.get(path + '/' + i, (x) => {
+//       td.innerText = x
+//       tr.appendChild(td)
+//     })
+//   }
+//   f(tr)
+// }
 
-
-
-
-
+// function parseCategory(categorys: Category[]) {
+//   categorys.map((c: Category) => {
+//     c.
+//   })
+// }
