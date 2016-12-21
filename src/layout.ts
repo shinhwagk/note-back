@@ -35,23 +35,23 @@ export function categorys(categorys: Category[]) {
 }
 
 export function notes(ns: Note[], cols: number) {
-  const notes = document.createElement("table");
-  for (let n of ns) {
-    const row = document.createElement("tr");
+  // const notes = document.createElement("table");
+  // for (let n of ns) {
+  //   const row = document.createElement("tr");
     
-    const colId = document.createElement("td");
-    colId.innerText = n.id.toString();
-    row.appendChild(colId);
+  //   const colId = document.createElement("td");
+  //   colId.innerText = n.id.toString();
+  //   row.appendChild(colId);
 
-    for (let i = 1; i <= cols; i += 1) {
-      const colData = document.createElement("td");
-      const hc = new HttpClient();
-      hc.get(path,)
+  //   for (let i = 1; i <= cols; i += 1) {
+  //     const colData = document.createElement("td");
+  //     const hc = new HttpClient();
+  //     // hc.get(path,)
       
 
-    }
+  //   }
 
-  }
+  // }
 
 }
 

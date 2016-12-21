@@ -21,6 +21,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ inject: 'body', hash: true, favicon: "favicon.ico" }),
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      output: { comments: false }
+    })
   ]
 };
