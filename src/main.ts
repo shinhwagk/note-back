@@ -1,1 +1,1 @@
-console.info(11112)
+document.write("13421111212")

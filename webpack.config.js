@@ -8,6 +8,7 @@ module.exports = {
     path: './docs',
     filename: 'main.min.js'
   },
+  devServer: { inline: true },
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -17,9 +18,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      output: { comments: false }
-    })]
+    })    
+  ]
 };
