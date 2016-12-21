@@ -11,6 +11,16 @@
           "file": false
         }
       ]
+    },{
+      "name": "yyy",
+      "cols": 2,
+      "notes": [
+        {
+          "id": 1,
+          "doc": false,
+          "file": false
+        }
+      ]
     }
   ]
 }
