@@ -1,3 +1,13 @@
-<p>
-  noteback works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6" *ngFor="let category of _categorys">
+      <app-category [category]="category" [path]="_path"></app-category>
+    </div>
+  </div>
+</div>
+
+<ul class="navbar-fixed-bottom">
+  <li><a routerLink="/">Home</a></li>
+  <li *ngFor="let label of _labels" (click)="gotoLabel(label)"> {{label}} </li>
+  <li><button (click)="goBack()">Back</button></li>
+</ul>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Category } from '../noteback-objects';
 
 @Component({
   selector: 'app-category',
@@ -12,4 +13,6 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
   }
 
+  @Input() category: Category;
+  @Input() path: string;
 }

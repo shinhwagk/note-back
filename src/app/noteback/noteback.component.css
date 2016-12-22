@@ -1,0 +1,8 @@
+li {
+  border-radius: 1rem;
+  background-color: cornsilk;
+  /*color: black;*/
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 0.5rem 0;
+}

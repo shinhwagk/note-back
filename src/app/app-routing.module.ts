@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { NoteBackComponent } from './noteback.component';
+import { NotebackComponent } from './noteback/noteback.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/note/index', pathMatch: 'full' },
-  { path: 'note/:path', component: NoteBackComponent }
+  { path: 'note/:path', component: NotebackComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
   providers: []
 })

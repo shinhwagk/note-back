@@ -2,7 +2,7 @@
 
 # compiled output
 /dist
-/docs
+# /docs
 /tmp
 
 # dependencies
@@ -22,6 +22,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/formatter.json
 
 # misc
 /.sass-cache
@@ -32,6 +33,7 @@ npm-debug.log
 testem.log
 /typings
 yarn-error.log
+debug.log
 
 # e2e
 /e2e/*.js
@@ -40,3 +42,7 @@ yarn-error.log
 #System Files
 .DS_Store
 Thumbs.db
+
+#github pages
+/docs/**/*.map
+/docs/**/*.gz
