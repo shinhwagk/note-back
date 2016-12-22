@@ -1,26 +1,33 @@
 import { Category } from "./category.obj";
 import { Note } from "./note.obj";
 // import { path } from "./main";
-import { NoteBack } from './noteback.obj';
+import { NoteBack } from "./noteback.obj";
 
-export function nav(labels: string[]) {
-  const div = document.createElement("div");
-  div.className = "labels";
+export function nav_ui(labels: string[]) {
   const ul = document.createElement("ul");
+  ul.className = "labels";
   for (let label of labels) {
     const li = document.createElement("li");
     li.className = "label";
     li.innerText = label;
     ul.appendChild(li);
   }
-  div.appendChild(ul);
-  return div;
+  return ul;
 }
 
 export function category_ui(category: Category) {
   const div = document.createElement("div");
-  div.innerText = category.name
-  return div
+  div.className = "category";
+  div.innerText = category.name;
+  const table = document.createElement("table");
+  const tr = document.createElement("tr");
+  const td = document.createElement("td");
+  td.innerText = "1";
+  tr.appendChild(td)
+  table.appendChild(tr)
+  table.className = "category-body";
+  div.appendChild(table);
+  return div;
 }
 //   const table = document.createElement("table");
 //   table.style.width = "100%";

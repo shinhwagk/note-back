@@ -20,7 +20,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ inject: 'body', hash: true, favicon: "favicon.ico" }),
+    new HtmlWebpackPlugin({ inject: 'body', hash: true, favicon: "favicon.ico", template: "index.html" }),
     new ExtractTextPlugin("styles.css"),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },

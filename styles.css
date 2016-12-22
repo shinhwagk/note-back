@@ -1,13 +1,33 @@
-.labels {
-  z-index: -1;
-  background-color: #DDDDDD;
-  position: fixed;
-  left: 1%;
-  bottom: 1%;
-}
-
-.label {
-  display: inline-block;
-}
-
-.category-header {}
+ .labels {
+   z-index: -1;
+   position: fixed;
+   left: 1%;
+   bottom: 1%;
+ }
+ 
+ .label {
+   display: inline-block;
+   background-color: cornsilk;
+   cursor: pointer;
+   margin-right: .5rem;
+   padding: 0 0 0 0;
+   border-radius: 1rem;
+ }
+ 
+ .category {
+   display: inline-block;
+   width: 45%;
+ }
+ 
+ .category-body {
+   width: 100%;
+   border: 1;
+   background-color: cornsilk;
+ }
+ 
+ .container-fluid {
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+ }

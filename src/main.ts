@@ -1,5 +1,5 @@
 import { httpGet } from "./http-client";
-import { nav, category_ui } from "./layout";
+import { nav_ui, category_ui } from "./layout";
 import { NoteBack } from "./noteback.obj";
 import { Category } from "./category.obj";
 import { Note } from "./note.obj";
@@ -18,8 +18,8 @@ const body = document.getElementsByTagName("body")[0];
 httpGet(`https://raw.githubusercontent.com/shinhwagk/note-back/data-note/${path}.json`)
   .then(nbString => {
     const noteback: NoteBack = JSON.parse(nbString);
-    body.appendChild(nav(noteback.labels));
-
+    body.appendChild(nav_ui(noteback.labels));
+    
     noteback.categorys.forEach((category: Category) => {
       const c_name: string = category.name;
       const col_num: number = category.cols;
