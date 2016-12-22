@@ -3,7 +3,6 @@
 # compiled output
 /dist
 /gh-pages
-/docs
 /tmp
 
 # dependencies
