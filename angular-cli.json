@@ -5,7 +5,7 @@
     },
     "apps": [{
         "root": "src",
-        "outDir": "docs",
+        "outDir": "gh-pages",
         "assets": [
             "assets",
             "favicon.ico"
