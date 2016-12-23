@@ -33,3 +33,10 @@ function git_pull_data() {
 #     git clean -xfd
 #     cd ..
 # }
+
+
+function push_data() {
+    Set-Location data
+    git push
+    Set-Location ..
+}

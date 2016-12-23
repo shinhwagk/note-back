@@ -64,6 +64,8 @@ function operation-cli() {
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "un (undo disabled)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
+  Write-Host -NoNewline "pd (push data)" -ForegroundColor Yellow
+  Write-Host -NoNewline " | "
   Write-Host "exit(quit)" -ForegroundColor Yellow
   $oper_code = Read-Host "code"
   return $oper_code
@@ -165,6 +167,7 @@ function main($path) {
     }
     "back" { Write-Host a }
     "infd" { git_pull_data; }
+    "pd" { push_data; }
     "exit" { exit 0 }
     "quit" { exit 0 }
     # "un" { git_rest_one; }
