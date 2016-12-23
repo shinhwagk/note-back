@@ -47,7 +47,7 @@ function rename_label($path, $idx, $new_label) {
 
 function add_category($path, $c_name, $c_cols) {
   $file = $path + ".json"
-
+  
   if ($c_name.length -ge 1 -and $c_cols -ge 1) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
@@ -120,7 +120,7 @@ function create_note_template($path, $idx) {
 
 function launch_note() {
   [int]$c_idx = Get-Content ".tmp/category" | Out-String
-  $id = Get-ChildItem -Path ".tmp" -Directory | Select-Object -First 1 -ExpandProperty "Name"
+  [int]$id = Get-ChildItem -Path ".tmp" -Directory | Select-Object -First 1 -ExpandProperty "Name"
   $doc = Test-Path ".tmp/${id}/doc" 
   $file = Test-Path ".tmp/${id}/file"
   $note = @{id=$id;doc=$doc;file=$file}
@@ -131,8 +131,10 @@ function launch_note() {
   $noteback = Get-Content $file | ConvertFrom-Json
   $noteback.categorys[$c_idx].notes += $note
   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
-  # Move-Item -Path ".tmp/${id}" -Destination $path
-  Get-ChildItem "./tmp" | Remove-Item
+  Move-Item -Path ".tmp/${id}" -Destination $path
+  Get-ChildItem ".tmp" | Remove-Item
+
+  git_commit("add note: $path -> ${noteback.categorys[$c_idx].name} -> $id")
 }
 
 function remove_note($path, $c_idx, $n_id) {

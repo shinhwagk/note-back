@@ -24,9 +24,9 @@ function git_pull_data() {
 #     cd ..
 # }
 
-
 function push_data() {
     Set-Location data
+    git pull
     git push
     Set-Location ..
 }

@@ -105,8 +105,12 @@ function main($path) {
   Write-Host ""
   Write-Host ""
 
+  if(-Not (Test-Path $path)) {
+    New-Item -Path $path -ItemType Directory
+  }
+
   switch -regex ($oper_code) {
-    "l[1-9]+" {
+    "l[1-9]+$" {
       $idx = [int]$_.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
@@ -117,9 +121,6 @@ function main($path) {
       add_label $path $label; 
     }
     "ac" {
-      if(-Not (Test-Path $path)) {
-        New-Item -Path $path -ItemType Directory
-      }
       $name = Read-Host "enter category"
       $cols = [int](Read-Host "enter column count")
       add_category $path $name $cols;
