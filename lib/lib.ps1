@@ -117,6 +117,9 @@ function main($path) {
       add_label $path $label; 
     }
     "ac" {
+      if(-Not (Test-Path $path)) {
+        New-Item -Path $path -ItemType Directory
+      }
       $name = Read-Host "enter category"
       $cols = [int](Read-Host "enter column count")
       add_category $path $name $cols;

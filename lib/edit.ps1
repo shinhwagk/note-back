@@ -14,12 +14,9 @@ function add_label($path, $label) {
 
 function remove_label($path, $idx) {
   $noteback = getNoteBack $path
-
   $label = $noteback.labels[$idx]
 
-  $noteback.labels = $noteback.labels | Where-Object { $_ -ne $label }
-
-  if (-Not $noteback.labels) { $noteback.labels = @() }
+  $noteback.labels = @($noteback.labels | Where-Object { $_ -ne $label })
 
   saveNoteBack $noteback $path
 
