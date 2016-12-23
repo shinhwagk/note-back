@@ -1,6 +1,7 @@
 {
-  "editor.tabSize": 2,
-  "editor.fontSize": 17,
-  "files.eol": "\n",
-  "terminal.integrated.cursorBlinking": true
+    "editor.tabSize": 2,
+    "editor.fontSize": 17,
+    "files.eol": "\n",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 17
 }
