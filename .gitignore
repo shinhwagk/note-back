@@ -1,5 +1,5 @@
 /data
 /.tmp/**/*
-# /test/index.json
-# /test/index
 test.ps1
+/test/*
+!/text/test.ps1

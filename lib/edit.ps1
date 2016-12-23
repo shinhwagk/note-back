@@ -1,47 +1,42 @@
 . "lib/git.ps1"
+. "lib/common.ps1"
 
 function add_label($path, $label) {
-  $file = $path + ".json"
-  $notes = Get-Content $file | ConvertFrom-Json
-  $notes.labels += $label
-  $notes | ConvertTo-Json -Compress | Out-File $file
+  $noteback = getNoteBack $path
+  $noteback.labels += $label
+  saveNoteBack $noteback $path
 
-  $new_dir = $path + "/" + $label
-  if (-Not(Test-Path $new_dir)) { New-Item -ItemType Directory $new_dir }
-  
-  $new_file = $path + "/" + $label + ".json"
-
-  @{labels=@(); categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file -Encoding utf8
-
+  $child_path = $path + "/" + $label
+  if (-Not(Test-Path $child_path)) { New-Item -ItemType Directory $child_path }
+  saveNoteBack @{labels=@(); categorys=@()} $child_path
   git_commit("create label: ${label}")
 }
 
 function remove_label($path, $idx) {
-  $file = $path + ".json"
-  $notes = Get-Content $file | ConvertFrom-Json
+  $noteback = getNoteBack $path
 
-  $label = $notes.labels[$idx]
+  $label = $noteback.labels[$idx]
 
-  $notes.labels = $notes.labels | Where-Object { $_ -ne $label }
+  $noteback.labels = $noteback.labels | Where-Object { $_ -ne $label }
 
-  if (-Not $notes.labels) { $notes.labels = @() }
+  if (-Not $noteback.labels) { $noteback.labels = @() }
 
-  ConvertTo-Json -Compress $notes | Out-File $file -Encoding utf8
+  saveNoteBack $noteback $path
 
   Remove-Item -Path ($path + '/' + $label)
   Remove-Item -Path ($path + '/' + $label + ".json")
+  
   git_commit("delete label: ${label}")
 }
 
 function rename_label($path, $idx, $new_label) {
-  $file = $path + ".json"
-  $notes = Get-Content $file | ConvertFrom-Json
+  $notes = getNoteBack $path
   $old_label = $notes.labels[$idx]
 
   $notes.labels = $notes.labels, $new_label
   $notes.labels = @($notes.labels | Where-Object { $_ -ne $old_label })
 
-  ConvertTo-Json -Compress $notes | Out-File $file -Encoding utf8
+  saveNoteBack $notes $path
 
   $old_dir = $path + '/' + $old_label
   $old_file = $path + '/' + $old_label + ".json"
@@ -64,27 +59,24 @@ function add_category($path, $c_name, $c_cols) {
 }
 
 function remove_category($path, $idx) {
-  $file = $path + ".json"
-  $note = Get-Content $file | Out-String | ConvertFrom-Json
+  $notes = getNoteBack $path
 
-  $categorys = [System.Collections.ArrayList]$note.categorys
+  $categorys = [System.Collections.ArrayList]$notes.categorys
   $categorys.RemoveAt($idx)
 
-  $note.categorys = @($categorys)
+  $notes.categorys = @($categorys)
 
-  ConvertTo-Json -Compress $note | Out-File $file -Encoding utf8
+  saveNoteBack $notes $path
 }
 
 function rename_category($path, $idx, $c_name) {
-  $file = $path + ".json"
-
-  $note = Get-Content $file | ConvertFrom-Json
+  $note = getNoteBack $path
 
   $category = $note.categorys[$idx]
 
   $note.categorys[$idx].name = $c_name
 
-  ConvertTo-Json -Compress $note -Depth 3 | Out-File $file -Encoding utf8
+  saveNoteBack $note $path
 
   git_commit("rename category: $old_category -> $new_category")
 }

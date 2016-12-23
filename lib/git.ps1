@@ -1,9 +1,9 @@
 function git_commit($message) {
-    cd data
+    Set-Location data
     git add -A
     git commit -m $message
     # git push
-    cd ..
+    Set-Location ..
 }
 
 function git_pull_data() {
@@ -27,9 +27,9 @@ function git_pull_data() {
     git pull | Out-Null
 }
 
-function git_rest_one() {
-    cd data
-    git rest HEAD~1
-    git clean -xfd
-    cd ..
-}
+# function git_rest_one() {
+#     cd data
+#     git rest HEAD~1
+#     git clean -xfd
+#     cd ..
+# }
