@@ -21,7 +21,11 @@ function categorys($path) {
   Write-Host "Category List:" -ForegroundColor DarkGreen;
   Write-Host ("-" * 30)
   $noteback = Get-Content ($path + ".json") | Out-String | ConvertFrom-Json
-  $noteback.categorys | ForEach-Object {$i=1} {"  ${i}: name=" + $_.name + ", cols=" + $_.cols + "." | Write-Host ; $i++ };
+  $noteback.categorys | ForEach-Object {$i=1} {
+    $ids = ConvertTo-Json -Compress @($noteback.categorys[$i-1].notes | ForEach-Object {$_.id})
+    "  ${i}: name=" + $_.name + ", cols=" + $_.cols + ", ids=" + $ids + "" | Write-Host ;
+    $i++ 
+  };
 }
 
 function operation-cli() {
@@ -77,7 +81,7 @@ function previousPath($path) {
 function check($path) {
   if ( -Not (Test-Path $path) ) {
     Write-Host "Path: <${path}> no exists." -ForegroundColor Red
-    exit 1;
+    git clone -b data-note --depth=1 https://github.com/shinhwagk/note-back data
   }
 }
 
@@ -155,6 +159,11 @@ function main($path) {
         $idx = [int]$oper_code.Substring(2) - 1;
         remove_category $path $c_idx;
       }
+    }
+    "dn" {
+      [int]$c_idx = Read-Host "Category id";
+      [int]$n_id = Read-Host "Note id";
+      remove_note $path ($c_idx -1) $n_id;
     }
     "back" { Write-Host a }
     "infd" { git_pull_data; }

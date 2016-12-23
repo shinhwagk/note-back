@@ -145,7 +145,12 @@ function launch_note() {
   Get-ChildItem "./tmp" | Remove-Item
 }
 
-function update_note() {
-
+function remove_note($path, $c_idx, $n_id) {
+  $file = $path + ".json"
+  $noteback = Get-Content $file | ConvertFrom-Json
+  $new_notes = @($noteback.categorys[$c_idx].notes | Where-Object { $_.id -ne $n_id })
+  $noteback.categorys[$c_idx].notes = $new_notes
+  # ConvertTo-Json $noteback.categorys[$c_idx].notes | Write-Host
+  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
 }
 

@@ -1,7 +1,5 @@
-data
-data-files
-data-docs
-.tmp/**/*
-test/index.json
-test/index
+/data
+/.tmp/**/*
+# /test/index.json
+# /test/index
 test.ps1
