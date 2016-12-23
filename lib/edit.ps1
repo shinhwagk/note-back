@@ -1,4 +1,5 @@
 . "lib/git.ps1"
+
 function add_label($path, $label) {
   $file = $path + ".json"
   $notes = Get-Content $file | ConvertFrom-Json
@@ -12,7 +13,7 @@ function add_label($path, $label) {
 
   @{labels=@(); categorys=@()} | ConvertTo-Json -Compress | Out-File $new_file -Encoding utf8
 
-  git_commit("add label: ${label}")
+  git_commit("create label: ${label}")
 }
 
 function remove_label($path, $idx) {

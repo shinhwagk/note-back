@@ -105,7 +105,7 @@ function main($path) {
 
   switch -regex ($oper_code) {
     "l[1-9]+" {
-      $idx = [int]$oper_code.Substring(1) - 1;
+      $idx = [int]$_.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
     }
@@ -149,10 +149,8 @@ function main($path) {
       }
     }
     "dl[1-9]+" {
-      if ($oper_code.length -ge 3) {
-        $idx = [int]$oper_code.Substring(2) - 1;
-        remove_label $path $idx;
-      }
+      $idx = [int]$_.Substring(2) - 1;
+      remove_label $path $idx;
     }
     "dc[1-9]+" {
       if ($oper_code.length -ge 3) {
