@@ -112,7 +112,7 @@ function create_note_template($path, $idx) {
     $doc = Read-Host "write doc [y/n]?"
     $file = Read-Host "write file [y/n]?"
 
-    if ($doc -eq 'y') { New-Item ".tmp/${id}/doc" -ItemType Directory | Out-Null; New-Item ".tmp/${id}/README.md" -ItemType File | Out-Null;; }
+    if ($doc -eq 'y') { New-Item ".tmp/${id}/doc" -ItemType Directory | Out-Null; New-Item ".tmp/${id}/doc/README.md" -ItemType File | Out-Null;; }
     if ($file -eq 'y') { New-Item ".tmp/${id}/file" -ItemType Directory | Out-Null; }
     Write-Host "note template create success." -ForegroundColor Yellow
   }
@@ -132,7 +132,7 @@ function launch_note() {
   $noteback.categorys[$c_idx].notes += $note
   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
   Move-Item -Path ".tmp/${id}" -Destination $path
-  Get-ChildItem ".tmp" | Remove-Item
+  # Get-ChildItem ".tmp" | Remove-Item
 
   git_commit("add note: $path -> ${noteback.categorys[$c_idx].name} -> $id")
 }

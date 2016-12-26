@@ -26,6 +26,8 @@ function git_pull_data() {
 
 function push_data() {
     Set-Location data
+    git add -A
+    git commit -m "update note"
     git pull
     git push
     Set-Location ..
