@@ -4,8 +4,8 @@
     <table class="table table-hover">
       <tr *ngFor="let note of category.notes">
         <td class="noteid">
-          <a *ngIf="note.doc" (click)="gotoDoc(note)">{{ note.id }}</a>
-          <span>{{ note.id }}</span>
+          <button type="button" class="btn btn-link" *ngIf="note.doc" (click)="gotoDoc(note)">{{ note.id }}</button>
+          <span *ngIf="!note.doc">{{ note.id }}</span>
         </td>
         <td>
           <app-note [note]="note" [path]="path" [cols]="category.cols"></app-note>

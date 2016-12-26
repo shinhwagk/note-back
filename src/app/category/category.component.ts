@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Category, Note } from '../noteback-objects';
 
 @Component({
@@ -6,12 +6,7 @@ import { Category, Note } from '../noteback-objects';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class CategoryComponent {
 
   @Input() category: Category;
   @Input() path: string;
