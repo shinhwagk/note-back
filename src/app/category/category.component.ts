@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Category } from '../noteback-objects';
+import { Category, Note } from '../noteback-objects';
 
 @Component({
   selector: 'app-category',
@@ -15,4 +15,9 @@ export class CategoryComponent implements OnInit {
 
   @Input() category: Category;
   @Input() path: string;
+
+  gotoDoc(note: Note) {
+      const path = this.path.replace(/-/,"/")
+      location.href = "https://github.com/shinhwagk/note-back/blob/data-note/" + path + "/" + note.id + "/doc/README.md"
+  }
 }
