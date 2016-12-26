@@ -13,6 +13,6 @@ export class CategoryComponent {
 
   gotoDoc(note: Note) {
       const path = this.path.replace(/-/,"/")
-      location.href = "https://github.com/shinhwagk/note-back/blob/data-note/" + path + "/" + note.id + "/doc/README.md"
+      window.open("https://github.com/shinhwagk/note-back/blob/data-note/" + path + "/" + note.id + "/doc/README.md")
   }
 }
