@@ -3,5 +3,6 @@
     "editor.fontSize": 17,
     "files.eol": "\n",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.fontSize": 17
+    "terminal.integrated.fontSize": 17,
+    "editor.fontWeight": "bold"
 }

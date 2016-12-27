@@ -52,6 +52,8 @@ function add_category($path, $c_name, $c_cols) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
     ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file -Encoding utf8
+
+    git_commit("create category: $path -> $c_name")
   }
 }
 
@@ -104,15 +106,18 @@ function create_note_template($path, $idx) {
     $data_num = $noteback.categorys[$idx].cols
 
     foreach ($n in (1 .. $data_num)) {
-      if ( -Not (Test-Path ".tmp/${id}/${n}")) { Out-File ".tmp/${id}/${n}" }
+      if ( -Not (Test-Path ".tmp/${id}/${n}")) { 
+        New-Item -ItemType File -Path ".tmp/${id}/${n}" | Out-Null
+      }
       else { Write-Host "./tmp/${id} is no empty." }
+      
     }
 
     Write-Host "data file folder at './tmp/${id}'"
     $doc = Read-Host "write doc [y/n]?"
     $file = Read-Host "write file [y/n]?"
 
-    if ($doc -eq 'y') { New-Item ".tmp/${id}/doc" -ItemType Directory | Out-Null; New-Item ".tmp/${id}/README.md" -ItemType File | Out-Null;; }
+    if ($doc -eq 'y') { New-Item ".tmp/${id}/doc" -ItemType Directory | Out-Null; New-Item ".tmp/${id}/doc/README.md" -ItemType File | Out-Null;; }
     if ($file -eq 'y') { New-Item ".tmp/${id}/file" -ItemType Directory | Out-Null; }
     Write-Host "note template create success." -ForegroundColor Yellow
   }
@@ -133,8 +138,9 @@ function launch_note() {
   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
   Move-Item -Path ".tmp/${id}" -Destination $path
   Get-ChildItem ".tmp" | Remove-Item
+  $c_name = $noteback.categorys[$c_idx].name
 
-  git_commit("add note: $path -> ${noteback.categorys[$c_idx].name} -> $id")
+  git_commit("add note: $path -> ${c_name} -> $id")
 }
 
 function remove_note($path, $c_idx, $n_id) {
