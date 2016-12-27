@@ -9,16 +9,16 @@ function git_commit($message) {
     git commit -m "update id"
 }
 
-# function git_pull_data() {
-# 	if (-Not (Test-Path "data")) {	
-# 		git clone -b data-note https://github.com/shinhwagk/note-back data --depth=1
-# 	}
+function git_pull_data() {
+	if (-Not (Test-Path "data")) {	
+		git clone -b data-note https://github.com/shinhwagk/note-back data --depth=1
+	}
 
-# 	Write-Host "check data-note update"
-# 	cd data; git pull | Out-Null; cd ..
-# 	Write-Host "check nb-cli update"
-# 	git pull | Out-Null
-# }
+	Write-Host "check data-note update"
+	cd data; git pull | Out-Null; cd ..
+	Write-Host "check nb-cli update"
+	git pull | Out-Null
+}
 
 # function git_rest_one() {
 #     cd data
@@ -34,4 +34,8 @@ function push_data() {
     git pull
     git push
     Set-Location ..
+
+    git add id
+    git commit -m "update id"
+    git push
 }
