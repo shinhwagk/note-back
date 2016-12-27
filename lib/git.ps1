@@ -6,16 +6,16 @@ function git_commit($message) {
     Set-Location ..
 }
 
-function git_pull_data() {
-    if (-Not (Test-Path "data")) {
-        git clone -b data-note https://github.com/shinhwagk/note-back data --depth=1
-    }
+# function git_pull_data() {
+# 	if (-Not (Test-Path "data")) {	
+# 		git clone -b data-note https://github.com/shinhwagk/note-back data --depth=1
+# 	}
 
-    Write-Host "check data-note update"
-    cd data; git pull | Out-Null; cd ..
-    Write-Host "check nb-cli update"
-    git pull | Out-Null
-}
+# 	Write-Host "check data-note update"
+# 	cd data; git pull | Out-Null; cd ..
+# 	Write-Host "check nb-cli update"
+# 	git pull | Out-Null
+# }
 
 # function git_rest_one() {
 #     cd data

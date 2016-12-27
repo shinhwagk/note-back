@@ -80,15 +80,18 @@ function previousPath($path) {
   }
 }
 
-function check($path) {
+function check_last_version($path) {
   if ( -Not (Test-Path $path) ) {
     Write-Host "Path: <${path}> no exists." -ForegroundColor Red
     git clone -b data-note --depth=1 https://github.com/shinhwagk/note-back data
   }
+
+  Write-Host "update edit-cli."
+  git pull
 }
 
 function main($path) {
-  check $path
+  # check_last_version $path
 
   Write-Host ("-" * 30)
   Write-Host -NoNewline "Path: " -ForegroundColor DarkGreen; Write-Host $path -ForegroundColor Red;

@@ -9,7 +9,7 @@ function add_label($path, $label) {
   $child_path = $path + "/" + $label
   if (-Not(Test-Path $child_path)) { New-Item -ItemType Directory $child_path }
   saveNoteBack @{labels=@(); categorys=@()} $child_path
-  git_commit("create label: ${label}")
+  git_commit("create label: ${path} -> ${label}")
 }
 
 function remove_label($path, $idx) {
@@ -132,9 +132,10 @@ function launch_note() {
   $noteback.categorys[$c_idx].notes += $note
   ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
   Move-Item -Path ".tmp/${id}" -Destination $path
-  # Get-ChildItem ".tmp" | Remove-Item
+  Get-ChildItem ".tmp" | Remove-Item
+  $c_name = $noteback.categorys[$c_idx].name
 
-  git_commit("add note: $path -> ${noteback.categorys[$c_idx].name} -> $id")
+  git_commit("add note: $path -> ${c_name} -> $id")
 }
 
 function remove_note($path, $c_idx, $n_id) {
