@@ -3,3 +3,4 @@ docker不管是本地还是远程，都是通过rest api操作的,
   unix:///var/run/docker.sock
 远程使用:
   tcp://host:port
+所以当你使用docker cli执行如创建，启动容器时，需要看你的docker host环境变量，来观察具体执行在那个host上面。
