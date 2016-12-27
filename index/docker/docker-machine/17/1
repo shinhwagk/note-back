@@ -1,0 +1,5 @@
+docker不管是本地还是远程，都是通过rest api操作的,
+只不过本地使用：
+  unix:///var/run/docker.sock
+远程使用:
+  tcp://host:port
