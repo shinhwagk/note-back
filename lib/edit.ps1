@@ -52,6 +52,8 @@ function add_category($path, $c_name, $c_cols) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
     ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file -Encoding utf8
+
+    git_commit("create category: $path -> $c_name")
   }
 }
 
