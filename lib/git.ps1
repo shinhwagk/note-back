@@ -4,6 +4,9 @@ function git_commit($message) {
     git commit -m $message
     # git push
     Set-Location ..
+
+    git add id
+    git commit -m "update id"
 }
 
 # function git_pull_data() {
