@@ -1,0 +1,2 @@
+openssl rsa -text -in fd.key
+# 需要输入当时生成私钥的密码
