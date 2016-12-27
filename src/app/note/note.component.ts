@@ -17,14 +17,14 @@ export class NoteComponent implements OnInit {
   ngOnInit() {
     const datas = []
     for (let i = 1; i <= this.cols; i += 1) {
-      const pdata = this._api.getNoteBackData(this.path, this.note.id, i).toPromise()
+      const pdata = this._api.getNoteBackData(this.path.join('/'), this.note.id, i).toPromise()
       datas.push(pdata)
     }
     Promise.all(datas).then(datas => this._datas = datas)
   }
 
   @Input() note: Note;
-  @Input() path: string;
+  @Input() path: string[];
   @Input() cols: number;
   _datas = []
 }

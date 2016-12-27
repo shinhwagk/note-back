@@ -9,10 +9,10 @@ import { Category, Note } from '../noteback-objects';
 export class CategoryComponent {
 
   @Input() category: Category;
-  @Input() path: string;
+  @Input() path: string[];
 
   gotoDoc(note: Note) {
-      const path = this.path.replace(/-/g,"/")
-      window.open("https://github.com/shinhwagk/note-back/blob/data-note/" + path + "/" + note.id + "/doc/README.md")
+      const path = this.path.join('/')
+      window.open('https://github.com/shinhwagk/note-back/blob/data-note/' + path + '/' + note.id + '/doc/README.md');
   }
 }
