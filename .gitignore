@@ -46,3 +46,6 @@ Thumbs.db
 #github pages
 /docs/**/*.map
 /docs/**/*.gz
+
+#other branch
+/data
