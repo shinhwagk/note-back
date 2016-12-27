@@ -12,7 +12,7 @@ export class CategoryComponent {
   @Input() path: string;
 
   gotoDoc(note: Note) {
-      const path = this.path.replace(/-/,"/")
+      const path = this.path.replace(/-/g,"/")
       window.open("https://github.com/shinhwagk/note-back/blob/data-note/" + path + "/" + note.id + "/doc/README.md")
   }
 }

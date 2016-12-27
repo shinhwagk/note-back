@@ -9,12 +9,12 @@ export class ApiService {
   private url: string = 'https://raw.githubusercontent.com/shinhwagk/note-back/data-note'
 
   getNoteBack(path: string) {
-    const url = this.url + '/' + path.replace('-', '/') + '.json';
+    const url = this.url + '/' + path.replace(/-/g, '/') + '.json';
     return this._http.get(url).map((res: Response) => res.json());
   }
 
   getNoteBackData(path: string, id: number, col: number) {
-    const url = this.url + '/' + path.replace('-', '/') + '/' + id + '/' + col;
+    const url = this.url + '/' + path.replace(/-/g, '/') + '/' + id + '/' + col;
     return this._http.get(url).map((res: Response) => res.text());
   }
 
