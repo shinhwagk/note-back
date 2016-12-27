@@ -113,7 +113,7 @@ function main($path) {
   }
 
   switch -regex ($oper_code) {
-    "l[1-9]+$" {
+    "l[1-9][0-9]*$" {
       $idx = [int]$_.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
