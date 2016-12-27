@@ -1,0 +1,2 @@
+openssl genrsa -aes128 -out fd.key 2048
+# 会被要求输入密码
