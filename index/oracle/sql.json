@@ -1,18 +1,12 @@
-﻿{
-    "labels":  [
-                   "syntax"
-               ],
-    "categorys":  [
-                      {
-                          "cols":  2,
-                          "name":  "syntax-delete",
-                          "notes":  [
-                                        {
-                                            "doc":  false,
-                                            "id":  57,
-                                            "file":  false
-                                        }
-                                    ]
-                      }
-                  ]
+{
+    "labels": ["syntax"],
+    "categorys": [{
+        "cols": 2,
+        "name": "syntax-delete",
+        "notes": [{
+            "doc": false,
+            "id": 57,
+            "file": false
+        }]
+    }]
 }
