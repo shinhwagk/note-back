@@ -51,7 +51,7 @@ function add_category($path, $c_name, $c_cols) {
   if ($c_name.length -ge 1 -and $c_cols -ge 1) {
     $noteback = Get-Content $file | ConvertFrom-Json
     $noteback.categorys += @{name=$c_name;cols=$c_cols;notes=@()}
-    ConvertTo-Json -Depth 5 -Compress $noteback | Out-File $file -Encoding utf8
+    ConvertTo-Json -Depth 5 $noteback | Out-File $file -Encoding utf8
 
     git_commit("create category: $path -> $c_name")
   }
@@ -135,7 +135,7 @@ function launch_note() {
 
   $noteback = Get-Content $file | ConvertFrom-Json
   $noteback.categorys[$c_idx].notes += $note
-  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
+  ConvertTo-Json $noteback -Depth 4 | Out-File $file -Encoding utf8
   Move-Item -Path ".tmp/${id}" -Destination $path
   Get-ChildItem ".tmp" | Remove-Item
   $c_name = $noteback.categorys[$c_idx].name
@@ -149,6 +149,6 @@ function remove_note($path, $c_idx, $n_id) {
   $new_notes = @($noteback.categorys[$c_idx].notes | Where-Object { $_.id -ne $n_id })
   $noteback.categorys[$c_idx].notes = $new_notes
   # ConvertTo-Json $noteback.categorys[$c_idx].notes | Write-Host
-  ConvertTo-Json $noteback -Compress -Depth 4 | Out-File $file -Encoding utf8
+  ConvertTo-Json $noteback -Depth 4 | Out-File $file -Encoding utf8
 }
 

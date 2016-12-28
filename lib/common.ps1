@@ -5,5 +5,5 @@ function getNoteBack([string]$path) {
 
 function saveNoteBack($noteback, $path) {
   $file = $path + ".json"
-  ConvertTo-Json -Compress $noteback -Depth 5 | Out-File $file -Encoding utf8
+  ConvertTo-Json $noteback -Depth 5 | Out-File $file -Encoding utf8
 }

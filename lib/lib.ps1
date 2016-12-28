@@ -173,7 +173,7 @@ function main($path) {
       remove_note $path ($c_idx -1) $n_id;
     }
     "back" { Write-Host a }
-    "infd" { git_pull_data; }
+    "infd" { pull_data; }
     "pd" { push_data; }
     "exit" { exit 0 }
     "quit" { exit 0 }
