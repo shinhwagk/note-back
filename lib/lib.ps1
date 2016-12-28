@@ -48,11 +48,11 @@ function operationCli() {
   Write-Host ""
   Write-Host -NoNewline "     ps (previous)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
-  Write-Host -NoNewline "infd (init note full data)" -ForegroundColor Yellow
+  Write-Host -NoNewline "pld (pull data)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "un (undo disabled)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
-  Write-Host -NoNewline "pd (push data)" -ForegroundColor Yellow
+  Write-Host -NoNewline "phd (push data)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host "exit(quit)" -ForegroundColor Yellow
   $oper_code = Read-Host "code"
@@ -154,8 +154,8 @@ function main($path) {
       [int]$n_id = Read-Host "Note id";
       remove_note $path ($c_idx -1) $n_id;
     }
-    "infd" { pull_data; }
-    "pd" { push_data; }
+    "pld" { pull_data; }
+    "phd" { push_data; }
     "exit" { exit 0 }
     "quit" { exit 0 }
     # "un" { git_rest_one; }
