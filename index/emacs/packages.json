@@ -51,6 +51,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "popwin",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
