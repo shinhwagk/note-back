@@ -93,7 +93,11 @@
                           "cols":  1,
                           "name":  "install",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  61,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
