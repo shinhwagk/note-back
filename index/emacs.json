@@ -94,7 +94,7 @@
                           "name":  "install",
                           "notes":  [
                                         {
-                                            "doc":  false,
+                                            "doc":  true,
                                             "id":  61,
                                             "file":  false
                                         }
