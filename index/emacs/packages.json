@@ -106,6 +106,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "hungry-delete",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
