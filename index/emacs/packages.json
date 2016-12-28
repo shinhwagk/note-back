@@ -7,7 +7,11 @@
                           "cols":  2,
                           "name":  "pdf-tools",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  65,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
