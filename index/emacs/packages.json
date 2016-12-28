@@ -133,7 +133,11 @@
                           "cols":  2,
                           "name":  "company",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  77,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
