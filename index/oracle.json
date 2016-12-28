@@ -1,1 +1,32 @@
-﻿{"labels":["cdb\u0026pdb","sqlplus","syntax"],"categorys":[{"cols":1,"name":"error","notes":[{"doc":true,"id":5,"file":false}]},{"cols":1,"name":"install","notes":[{"doc":true,"id":6,"file":false}]}]}
+﻿{
+    "labels":  [
+                   "cdb\u0026pdb",
+                   "sqlplus",
+                   "syntax",
+                   "sql"
+               ],
+    "categorys":  [
+                      {
+                          "cols":  1,
+                          "name":  "error",
+                          "notes":  [
+                                        {
+                                            "doc":  true,
+                                            "id":  5,
+                                            "file":  false
+                                        }
+                                    ]
+                      },
+                      {
+                          "cols":  1,
+                          "name":  "install",
+                          "notes":  [
+                                        {
+                                            "doc":  true,
+                                            "id":  6,
+                                            "file":  false
+                                        }
+                                    ]
+                      }
+                  ]
+}
