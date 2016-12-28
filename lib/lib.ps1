@@ -17,7 +17,7 @@ function labels($path) {
   return ,$label_container
 }
 
-function categorys($path) {
+function display_categorys($path) {
   Write-Host "Category List:" -ForegroundColor DarkGreen;
   Write-Host ("-" * 30)
   $noteback = Get-Content ($path + ".json") | Out-String | ConvertFrom-Json
@@ -94,7 +94,7 @@ function main($path) {
   Write-Host ("-" * 30)
 
   $label_container = labels($path);
-  $category_container = categorys($path);
+  display_categorys($path);
 
   Write-Host ("-" * 30)
   Write-Host ""
