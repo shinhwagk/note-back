@@ -1,8 +1,6 @@
 function git_commit($message) {
     Set-Location data
-    git add id
-    git commit -m "update id"
-    
+
     git add -A
     git commit -m $message
 

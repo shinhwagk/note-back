@@ -122,7 +122,7 @@ function main($path) {
       $cols = [int](Read-Host "enter column count")
       add_category $path $name $cols;
     }
-    "^cnt[1-9]+$" {
+    "^cnt[1-9][0-9]*$" {
       if($oper_code.length -ge 4) {
         $idx = [int]$oper_code.Substring(3) - 1;
         create_note_template $path $idx;

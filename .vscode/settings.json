@@ -4,5 +4,6 @@
     "files.eol": "\n",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 17,
-    "editor.fontWeight": "bold"
+    "editor.fontWeight": "bold",
+    "json.format.enable": false
 }
