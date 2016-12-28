@@ -6,27 +6,6 @@
     "command": [
       {
         "contents": [
-          "show { error | errors}",
-          "显示错误，包括plsql编译错误。"
-        ],
-        "docs": []
-      },
-      {
-        "contents": [
-          "show parameter {paramater_name}",
-          "查看参数值"
-        ],
-        "docs": []
-      },
-      {
-        "contents": [
-          "show con_name",
-          "查看当前使用的pdb"
-        ],
-        "docs": []
-      },
-      {
-        "contents": [
           "sta[rt] xxx.sql",
           "执行一个sql脚 支持http和ftp协议"
         ],
