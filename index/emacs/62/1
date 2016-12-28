@@ -1,0 +1,3 @@
+编译安装emacs 24.5
+yum install -y git wget ncurses-devel gcc vim
+cd emacs-24.5 && ./confiure && make && make install
