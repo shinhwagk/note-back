@@ -84,6 +84,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "swiper",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
