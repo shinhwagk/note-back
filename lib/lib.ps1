@@ -1,24 +1,18 @@
 . "./lib/edit.ps1"
 . "./lib/git.ps1"
 
-function labels($path) {
+function display_labels($path) {
   Write-Host "Lable List:" -ForegroundColor DarkGreen;
-  $file = $path + ".json"
-
-  $notes = Get-Content $file | Out-String | ConvertFrom-Json
-
-  $notes.labels | ForEach-Object {$i=1} {"  ${i}: $_ " | Write-Host ; $i++ };
-
-  $label_container = @()
-
-  $notes.labels | ForEach-Object { $label_container += $_ };
-
-  return ,$label_container
+  $noteback = getNoteBack $path;
+  $noteback.labels | ForEach-Object {$i=1} {"  ${i}: $_ " | Write-Host ; $i++ };
+  $label_container = @();
+  $noteback.labels | ForEach-Object { $label_container += $_ };
+  return ,$label_container;
 }
 
 function display_categorys($path) {
   Write-Host "Category List:" -ForegroundColor DarkGreen;
-  $noteback = Get-Content ($path + ".json") | Out-String | ConvertFrom-Json
+  $noteback = getNoteBack $path
   $noteback.categorys | ForEach-Object {$i=1} {
     $ids = ConvertTo-Json -Compress @($noteback.categorys[$i-1].notes | ForEach-Object {$_.id})
     "  ${i}: name=" + $_.name + ", cols=" + $_.cols + ", ids=" + $ids + "" | Write-Host ;
@@ -91,7 +85,7 @@ function main($path) {
   Write-Host -NoNewline "Path: " -ForegroundColor DarkGreen; Write-Host $path -ForegroundColor Red;
   Write-Host ("-" * 30)
 
-  $label_container = labels($path);
+  $label_container = display_labels($path);
   Write-Host ("-" * 30)
   display_categorys($path);
 
