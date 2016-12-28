@@ -1,6 +1,6 @@
 function getNoteBack([string]$path) {
   $file = $path + ".json"
-  return ConvertFrom-Json (Get-Content $file)
+  return ConvertFrom-Json (Get-Content $file | Out-String)
 }
 
 function saveNoteBack($noteback, $path) {

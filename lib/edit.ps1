@@ -18,10 +18,12 @@ function remove_label($path, $idx) {
 
   $noteback.labels = @($noteback.labels | Where-Object { $_ -ne $label })
 
+  # $noteback.categorys[0].notes | Write-Host
+
   saveNoteBack $noteback $path
 
-  Remove-Item -Path ($path + '/' + $label)
-  Remove-Item -Path ($path + '/' + $label + ".json")
+  Remove-Item -Path ($path + '/' + $label) -Recurse
+  Remove-Item -Path ($path + '/' + $label + ".json") -Recurse
 
   git_commit("delete label: ${path} -> ${label}")
 }

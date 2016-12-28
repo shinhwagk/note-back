@@ -31,8 +31,6 @@ function categorys($path) {
 function operationCli() {
   Write-Host "please enter code:"
   Write-Host -NoNewline "     l1" -ForegroundColor Yellow; Write-Host -NoNewline " (label id)"
-  Write-Host -NoNewline " | "
-  Write-Host -NoNewline "c1 (category id)" -ForegroundColor Yellow
   Write-Host ""
   Write-Host -NoNewline "     al (add label)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
@@ -113,28 +111,27 @@ function main($path) {
   }
 
   switch -regex ($oper_code) {
-    "l[1-9][0-9]*$" {
+    "^l[1-9][0-9]*$" {
       $idx = [int]$_.Substring(1) - 1;
       $l_name = $label_container[$idx];
       $path = $path + '/' + $l_name;
     }
-    "c[1-9]+" { }
-    "al" {
+    "^al$" {
       $label = Read-Host "enter label"
       add_label $path $label;
     }
-    "ac" {
+    "^ac$" {
       $name = Read-Host "enter category"
       $cols = [int](Read-Host "enter column count")
       add_category $path $name $cols;
     }
-    "cnt[1-9]+" {
+    "^cnt[1-9]+$" {
       if($oper_code.length -ge 4) {
         $idx = [int]$oper_code.Substring(3) - 1;
         create_note_template $path $idx;
       }
     }
-    "ln" {
+    "^ln$" {
       launch_note
     }
     "rl[1-9]+" {
@@ -157,15 +154,13 @@ function main($path) {
         update_note $path $idx; main $path;
       }
     }
-    "dl[1-9]+" {
+    "^dl[1-9][0-9]*$" {
       $idx = [int]$_.Substring(2) - 1;
       remove_label $path $idx;
     }
     "dc[1-9]+" {
-      if ($oper_code.length -ge 3) {
         $idx = [int]$oper_code.Substring(2) - 1;
         remove_category $path $c_idx;
-      }
     }
     "dn" {
       [int]$c_idx = Read-Host "Category id";
