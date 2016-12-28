@@ -6,20 +6,6 @@
     "command": [
       {
         "contents": [
-          "sta[rt] xxx.sql",
-          "执行一个sql脚 支持http和ftp协议"
-        ],
-        "docs": []
-      },
-      {
-        "contents": [
-          "@",
-          "执行一个sql脚"
-        ],
-        "docs": []
-      },
-      {
-        "contents": [
           "l[ist]",
           "列出buffer中最近执行过的sql和pl/sql"
         ],
@@ -43,14 +29,6 @@
         "contents": [
           "-no logintime",
           "12c中登录sqlplus会显示最后一次登录时间，此参数为去掉这个显示"
-        ],
-        "docs": []
-      }
-    ],
-    "concepts": [
-      {
-        "contents": [
-          "初始化加载sqlplus配置文件: glogin.sql和login.sql"
         ],
         "docs": []
       }
