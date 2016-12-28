@@ -97,7 +97,7 @@ function create_note_template($path, $idx) {
     $create_template = $true
   }
   if ($create_template) {
-    $id = [int](Get-Content "id"); ($id + 1) | Out-File "id" -Encoding utf8
+    $id = [int](Get-Content "data/id"); ($id + 1) | Out-File "data/id" -Encoding utf8
     New-Item -Path ".tmp/${id}" -ItemType Directory | Out-Null;
     $file = $path + ".json"
     $path >> ".tmp/path"; $idx > ".tmp/category"
@@ -106,11 +106,11 @@ function create_note_template($path, $idx) {
     $data_num = $noteback.categorys[$idx].cols
 
     foreach ($n in (1 .. $data_num)) {
-      if ( -Not (Test-Path ".tmp/${id}/${n}")) { 
+      if ( -Not (Test-Path ".tmp/${id}/${n}")) {
         New-Item -ItemType File -Path ".tmp/${id}/${n}" | Out-Null
       }
       else { Write-Host "./tmp/${id} is no empty." }
-      
+
     }
 
     Write-Host "data file folder at './tmp/${id}'"

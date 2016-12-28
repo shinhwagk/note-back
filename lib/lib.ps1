@@ -24,11 +24,11 @@ function categorys($path) {
   $noteback.categorys | ForEach-Object {$i=1} {
     $ids = ConvertTo-Json -Compress @($noteback.categorys[$i-1].notes | ForEach-Object {$_.id})
     "  ${i}: name=" + $_.name + ", cols=" + $_.cols + ", ids=" + $ids + "" | Write-Host ;
-    $i++ 
+    $i++
   };
 }
 
-function operation-cli() {
+function operationCli() {
   Write-Host "please enter code:"
   Write-Host -NoNewline "     l1" -ForegroundColor Yellow; Write-Host -NoNewline " (label id)"
   Write-Host -NoNewline " | "
@@ -45,7 +45,7 @@ function operation-cli() {
   Write-Host -NoNewline "     rl (rename label rl1)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "rc (rename category rc1)" -ForegroundColor Yellow
-  Write-Host -NoNewline " | "  
+  Write-Host -NoNewline " | "
   Write-Host -NoNewline "un (update note)" -ForegroundColor Yellow
   Write-Host ""
   Write-Host -NoNewline "     dl (delete label dl1)" -ForegroundColor Yellow
@@ -103,7 +103,7 @@ function main($path) {
   Write-Host ("-" * 30)
   Write-Host ""
 
-  $oper_code = operation-cli
+  $oper_code = operationCli
 
   Write-Host ""
   Write-Host ""
@@ -119,9 +119,9 @@ function main($path) {
       $path = $path + '/' + $l_name;
     }
     "c[1-9]+" { }
-    "al" { 
+    "al" {
       $label = Read-Host "enter label"
-      add_label $path $label; 
+      add_label $path $label;
     }
     "ac" {
       $name = Read-Host "enter category"

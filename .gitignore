@@ -1,5 +1,5 @@
 /data
-/.tmp/**/*
+/.tmp
 test.ps1
 /test/*
 !/text/test.ps1

@@ -10,12 +10,12 @@ function git_commit($message) {
 }
 
 function git_pull_data() {
-	if (-Not (Test-Path "data")) {	
+	if (-Not (Test-Path "data")) {
 		git clone -b data-note https://github.com/shinhwagk/note-back data --depth=1
 	}
 
 	Write-Host "check data-note update"
-	cd data; git pull | Out-Null; cd ..
+	Set-Location data; git pull | Out-Null; Set-Location ..
 	Write-Host "check nb-cli update"
 	git pull | Out-Null
 }
