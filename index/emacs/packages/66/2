@@ -1,0 +1,2 @@
+安装pdf依赖:M-x pdf-tools-install
+c-x c-f打开pdf文件即可
