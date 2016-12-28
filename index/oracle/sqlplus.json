@@ -96,6 +96,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "other",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
