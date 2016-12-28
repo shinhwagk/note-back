@@ -95,6 +95,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "smex",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
