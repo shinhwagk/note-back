@@ -40,6 +40,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "smartparens",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
