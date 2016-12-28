@@ -3,7 +3,6 @@
 
 function labels($path) {
   Write-Host "Lable List:" -ForegroundColor DarkGreen;
-  Write-Host ("-" * 30)
   $file = $path + ".json"
 
   $notes = Get-Content $file | Out-String | ConvertFrom-Json
@@ -19,7 +18,6 @@ function labels($path) {
 
 function display_categorys($path) {
   Write-Host "Category List:" -ForegroundColor DarkGreen;
-  Write-Host ("-" * 30)
   $noteback = Get-Content ($path + ".json") | Out-String | ConvertFrom-Json
   $noteback.categorys | ForEach-Object {$i=1} {
     $ids = ConvertTo-Json -Compress @($noteback.categorys[$i-1].notes | ForEach-Object {$_.id})
@@ -94,6 +92,7 @@ function main($path) {
   Write-Host ("-" * 30)
 
   $label_container = labels($path);
+  Write-Host ("-" * 30)
   display_categorys($path);
 
   Write-Host ("-" * 30)
