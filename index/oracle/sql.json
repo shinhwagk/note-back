@@ -1,8 +1,14 @@
 ﻿{
-    "labels": [
-        "syntax"
-    ],
-    "categorys": [
+    "labels":  [
+                   "syntax"
+               ],
+    "categorys":  [
+                      {
+                          "cols":  2,
+                          "name":  "syntax-delete",
+                          "notes":  [
 
-    ]
+                                    ]
+                      }
+                  ]
 }
