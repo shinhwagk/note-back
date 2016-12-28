@@ -89,7 +89,11 @@
                           "cols":  2,
                           "name":  "swiper",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  73,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
