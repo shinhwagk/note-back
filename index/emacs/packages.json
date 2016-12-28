@@ -73,6 +73,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "js2-mode",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
