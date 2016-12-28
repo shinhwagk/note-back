@@ -16,16 +16,20 @@ function remove_label($path, $idx) {
   $noteback = getNoteBack $path
   $label = $noteback.labels[$idx]
 
-  $noteback.labels = @($noteback.labels | Where-Object { $_ -ne $label })
+  $del_path = $path + "/" + $label
+  $del_noteback = getNoteBack $del_path
+  if ($del_noteback.labels.length -eq 0 -and $del_noteback.categorys.length -eq 0)  {
+    $noteback.labels = @($noteback.labels | Where-Object { $_ -ne $label })
 
-  # $noteback.categorys[0].notes | Write-Host
+    saveNoteBack $noteback $path
 
-  saveNoteBack $noteback $path
+    Remove-Item -Path ($path + '/' + $label) -Recurse
+    Remove-Item -Path ($path + '/' + $label + ".json") -Recurse
 
-  Remove-Item -Path ($path + '/' + $label) -Recurse
-  Remove-Item -Path ($path + '/' + $label + ".json") -Recurse
-
-  git_commit("delete label: ${path} -> ${label}")
+    git_commit("delete label: ${path} -> ${label}")
+  } else {
+    Write-Host "delete ${path} failure. here are notes" -ForegroundColor Red
+  }
 }
 
 function rename_label($path, $idx, $new_label) {
