@@ -128,6 +128,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "company",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
