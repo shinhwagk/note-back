@@ -23,7 +23,11 @@
                           "cols":  2,
                           "name":  "clojure-mode",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  67,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
