@@ -1,6 +1,7 @@
 ﻿{
     "labels":  [
-                   "org-mode"
+                   "org-mode",
+                   "packages"
                ],
     "categorys":  [
                       {
