@@ -122,7 +122,11 @@
                           "cols":  2,
                           "name":  "monokai-theme",
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  76,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ]
