@@ -29,6 +29,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "cider",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
