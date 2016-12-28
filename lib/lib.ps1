@@ -54,9 +54,7 @@ function operationCli() {
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "cn (clean note)" -ForegroundColor Yellow
   Write-Host ""
-  Write-Host -NoNewline "     back" -ForegroundColor Yellow
-  Write-Host -NoNewline " | "
-  Write-Host -NoNewline "ps (previous)" -ForegroundColor Yellow
+  Write-Host -NoNewline "     ps (previous)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
   Write-Host -NoNewline "infd (init note full data)" -ForegroundColor Yellow
   Write-Host -NoNewline " | "
@@ -134,19 +132,15 @@ function main($path) {
     "^ln$" {
       launch_note
     }
-    "rl[1-9]+" {
-      if ($oper_code.length -ge 3) {
-        $idx = [int]$oper_code.Substring(2) - 1;
-        $new_label = Read-Host "enter new label"
-        rename_label $path $idx $new_label;
-      }
+    "^rl[1-9][0-9]*$" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $new_label = Read-Host "enter new label"
+      rename_label $path $idx $new_label;
     }
-    "rc[1-9]+" {
-      if ($oper_code.length -ge 3) {
-        $idx = [int]$oper_code.Substring(2) - 1;
-        $c_name = Read-Host "enter new category"
-        rename_category $path $idx $c_name;
-      }
+    "^rc[1-9][0-9]*$" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      $c_name = Read-Host "enter new category"
+      rename_category $path $idx $c_name;
     }
     "un[1-9]+" {
       if ($oper_code.length -ge 3) {
@@ -158,16 +152,15 @@ function main($path) {
       $idx = [int]$_.Substring(2) - 1;
       remove_label $path $idx;
     }
-    "dc[1-9]+" {
-        $idx = [int]$oper_code.Substring(2) - 1;
-        remove_category $path $c_idx;
+    "^dc[1-9][0-9]*$" {
+      $idx = [int]$oper_code.Substring(2) - 1;
+      remove_category $path $c_idx;
     }
     "dn" {
       [int]$c_idx = Read-Host "Category id";
       [int]$n_id = Read-Host "Note id";
       remove_note $path ($c_idx -1) $n_id;
     }
-    "back" { Write-Host a }
     "infd" { pull_data; }
     "pd" { push_data; }
     "exit" { exit 0 }
