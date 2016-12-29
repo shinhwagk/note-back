@@ -1,16 +1,8 @@
-<div class="card">
-  <div class="card-header">{{ category.name }}</div>
-  <div class="card-block">
-    <table class="table table-hover">
-      <tr *ngFor="let note of category.notes">
-        <td class="noteid">
-          <button type="button" class="btn btn-link" *ngIf="note.doc" (click)="gotoDoc(note)">{{ note.id }}</button>
-          <span *ngIf="!note.doc">{{ note.id }}</span>
-        </td>
-        <td>
-          <app-note [note]="note" [path]="path" [cols]="category.cols"></app-note>
-        </td>
-      </tr>
-    </table>
+<div class="col-lg-6 col-sm-12" *ngFor="let category of categorys">
+  <div class="card">
+    <div class="card-header">{{ category.name }}</div>
+    <div class="card-block">
+      <app-note [notes]="category.notes" [path]="path" [cols]="category.cols"></app-note>
+    </div>
   </div>
 </div>

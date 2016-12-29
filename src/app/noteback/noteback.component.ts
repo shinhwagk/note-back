@@ -12,6 +12,9 @@ import { NoteBack, Category, Note } from '../noteback-objects';
   providers: [ApiService]
 })
 export class NotebackComponent implements OnInit {
+  _path: string[] = [];
+  _labels: string[] = [];
+  _categorys: Category[] = [];
 
   constructor(
     private _api: ApiService,
@@ -40,8 +43,4 @@ export class NotebackComponent implements OnInit {
   goback() {
     this.location.back();
   }
-
-  _path: string[] = [];
-  _labels: string[] = [];
-  _categorys: Category[] = [];
 }

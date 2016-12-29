@@ -1,5 +1,9 @@
-<table>
-  <tr>
-    <td *ngFor="let data of _datas"><pre>{{ data }}</pre></td>
+<table class="table table-hover">
+  <tr *ngFor="let note of notes">
+    <td class="noteid">
+      <button *ngIf="note.doc" type="button" class="btn btn-link" (click)="gotoDoc(note)">{{ note.id }}</button>
+      <span *ngIf="!note.doc">{{ note.id }}</span>
+    </td>
+    <td *ngFor="let data of _note_data.get(note.id)"><pre>{{ data }}</pre></td>
   </tr>
 </table>

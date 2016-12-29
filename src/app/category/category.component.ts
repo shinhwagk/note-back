@@ -7,12 +7,6 @@ import { Category, Note } from '../noteback-objects';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent {
-
-  @Input() category: Category;
+  @Input() categorys: Category[];
   @Input() path: string[];
-
-  gotoDoc(note: Note) {
-      const path = this.path.join('/')
-      window.open('https://github.com/shinhwagk/note-back/blob/data-note/' + path + '/' + note.id + '/doc/README.md');
-  }
 }
