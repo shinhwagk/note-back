@@ -1,7 +1,8 @@
 ﻿{
     "labels":  [
                    "org-mode",
-                   "packages"
+                   "packages",
+                   "elisp"
                ],
     "categorys":  [
                       {
