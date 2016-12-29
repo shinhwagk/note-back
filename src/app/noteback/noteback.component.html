@@ -6,6 +6,7 @@
 
 <ul class="navbar-fixed-bottom">
   <li><a routerLink="/">Home</a></li>
+  <li class="flabel" *ngFor="let label of _f_labels; let i = index" (click)="backLabel(label,i)"> {{label}} </li>
   <li *ngFor="let label of _labels" (click)="gotoLabel(label)"> {{label}} </li>
   <li><button (click)="goBack()">Back</button></li>
 </ul>
