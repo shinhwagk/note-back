@@ -1,0 +1,1 @@
+输入字符后，等待多久显示补全内容eg: (setq company-idle-delay  0.08),等待0.08秒
