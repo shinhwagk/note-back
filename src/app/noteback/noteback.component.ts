@@ -26,7 +26,7 @@ export class NotebackComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
       this._path = params['path'].split(',')
-      this._api.getNoteBack(this._path.join("/")).toPromise().then(nb => this.parseNoteBack(nb));
+      this._api.getNoteBack(this._path.join('/')).toPromise().then(nb => this.parseNoteBack(nb));
     });
   }
 
@@ -36,7 +36,7 @@ export class NotebackComponent implements OnInit {
   }
 
   gotoLabel(label: string) {
-    this._path.push(label)
+    this._path.push(label);
     this.router.navigate(['/note', { path: this._path }]);
   }
 
