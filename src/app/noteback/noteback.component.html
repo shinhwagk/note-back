@@ -1,12 +1,9 @@
 <div class="container-fluid">
-  <div class="row">
-    <app-category [categorys]="_categorys" [path]="_path"></app-category>
-  </div>
-</div>
+  <app-category [categorys]="_categorys" [path]="_path"></app-category>
 
-<ul class="navbar-fixed-bottom">
-  <li><a routerLink="/">Home</a></li>
-  <li class="flabel" *ngFor="let label of _f_labels; let i = index" (click)="backLabel(label,i)"> {{label}} </li>
-  <li *ngFor="let label of _labels" (click)="gotoLabel(label)"> {{label}} </li>
-  <li><button (click)="goBack()">Back</button></li>
-</ul>
+  <ul class="navbar-fixed-bottom">
+    <li class="tag tag-pill tag-warning"><a routerLink="/">Home</a></li>
+    <li class="tag tag-pill tag-success" *ngFor="let label of _f_labels; let i = index" (click)="backLabel(label,i)"> {{label}} </li>
+    <li class="tag tag-pill tag-info" *ngFor="let label of _labels" (click)="gotoLabel(label)">{{label}}</li>
+  </ul>
+</div>

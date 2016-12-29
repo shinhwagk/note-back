@@ -1,12 +1,3 @@
-li {
-  border-radius: 1rem;
-  background-color: cornsilk;
-  color: black;
+.tag {
   cursor: pointer;
-  display: inline-block;
-  padding: 0 0 0 .5rem;
-}
-
-.flabel {
-  background-color: silver;
 }

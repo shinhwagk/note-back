@@ -1,8 +1,14 @@
-<div class="col-lg-6 col-sm-12" *ngFor="let category of categorys">
-  <div class="card">
-    <div class="card-header">{{ category.name }}</div>
-    <div class="card-block">
-      <app-note [notes]="category.notes" [path]="path" [cols]="category.cols"></app-note>
+<ul class="navbar-fixed-top">
+  <li class="tag tag-pill tag-default" *ngFor="let category of categorys">{{category.name}}</li>
+</ul>
+
+<div class="row">
+  <div class="col-lg-6 col-sm-12" *ngFor="let category of categorys">
+    <div class="card" id="{{category.name}}">
+      <div class="card-header">{{ category.name }}</div>
+      <div class="card-block">
+        <app-note [notes]="category.notes" [path]="path" [cols]="category.cols"></app-note>
+      </div>
     </div>
   </div>
 </div>
