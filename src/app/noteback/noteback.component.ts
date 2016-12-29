@@ -25,7 +25,7 @@ export class NotebackComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-      this._path = params['path'].split(',')
+      this._path = params['path'].split(',');
       this._api.getNoteBack(this._path.join('/')).toPromise().then(nb => this.parseNoteBack(nb));
     });
   }
