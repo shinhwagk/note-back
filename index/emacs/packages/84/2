@@ -1,0 +1,1 @@
+输入多个字符后开始显示补全，eg: (setq company-minimum-prefix-length 1),输入一个字符开始补全
