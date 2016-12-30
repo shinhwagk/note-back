@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-lg-6 col-sm-12" *ngFor="let category of categorys">
     <div class="card" id="{{category.name}}">
-      <div class="card-header">{{ category.name }}</div>
+      <h6 class="card-header">{{ category.name }}</h6>
       <div class="card-block">
         <app-note [notes]="category.notes" [path]="path" [cols]="category.cols"></app-note>
       </div>
