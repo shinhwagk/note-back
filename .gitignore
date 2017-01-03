@@ -3,3 +3,4 @@
 test.ps1
 /test/*
 !/text/test.ps1
+/node_moudles
