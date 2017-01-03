@@ -1,0 +1,1 @@
+默认curl不知道 response header中重定向协议，加上这个参数表示支持
