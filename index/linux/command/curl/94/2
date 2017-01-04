@@ -1,0 +1,2 @@
+命名文件
+curl http://xxx/abc.sh -o /tmp/xx.sh
