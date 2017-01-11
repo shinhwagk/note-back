@@ -11,7 +11,8 @@
                    "h2database",
                    "linux",
                    "emacs",
-                   "playframework"
+                   "playframework",
+                   "mysql"
                ],
     "categorys":  [
 
