@@ -12,7 +12,8 @@
                    "linux",
                    "emacs",
                    "playframework",
-                   "mysql"
+                   "mysql",
+                   "scala"
                ],
     "categorys":  [
 
