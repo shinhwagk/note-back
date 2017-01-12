@@ -1,1 +1,35 @@
-﻿{"labels":[],"categorys":[{"cols":2,"name":"configure","notes":[{"doc":true,"id":2,"file":false},{"doc":true,"id":3,"file":false},{"doc":true,"id":4,"file":false}]}]}
+﻿{
+    "labels":  [
+
+               ],
+    "categorys":  [
+                      {
+                          "cols":  2,
+                          "name":  "configure",
+                          "notes":  [
+                                        {
+                                            "doc":  true,
+                                            "id":  2,
+                                            "file":  false
+                                        },
+                                        {
+                                            "doc":  true,
+                                            "id":  3,
+                                            "file":  false
+                                        },
+                                        {
+                                            "doc":  true,
+                                            "id":  4,
+                                            "file":  false
+                                        }
+                                    ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "command",
+                          "notes":  [
+
+                                    ]
+                      }
+                  ]
+}
