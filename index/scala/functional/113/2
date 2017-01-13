@@ -1,2 +1,2 @@
-def m1[A](a: A, f: A => String) = f(a) //第二个参数不能推断
+def m1[A](a: A, f: A => String) = f(a) //第二个参数不能推断,m1(100,i=>s"$i + $i")
 def m1[A](a: A) (f: A => String) = f(a)
