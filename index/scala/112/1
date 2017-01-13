@@ -1,0 +1,2 @@
+case class A(a:Int)
+val a = A(1); val a1 = a.copy(2)
