@@ -1,6 +1,7 @@
 ﻿{
     "labels":  [
-                   "functional"
+                   "functional",
+                   "annotation"
                ],
     "categorys":  [
                       {
