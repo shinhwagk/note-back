@@ -1,0 +1,2 @@
+  def f1(a: String*): String = a.mkString("-")
+  def f2(b: List[String]) = f1(b: _*)
