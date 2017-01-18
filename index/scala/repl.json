@@ -1,14 +1,23 @@
 ﻿{
-    "categorys": [{
-        "cols": 2,
-        "name": "command",
-        "notes": [{
-            "id": 115,
-            "file": false,
-            "doc": false
-        }]
-    }],
-    "labels": [
+    "categorys":  [
+                      {
+                          "cols":  2,
+                          "name":  "command",
+                          "notes":  [
+                                        {
+                                            "id":  115,
+                                            "file":  false,
+                                            "doc":  false
+                                        },
+                                        {
+                                            "doc":  false,
+                                            "id":  116,
+                                            "file":  false
+                                        }
+                                    ]
+                      }
+                  ],
+    "labels":  [
 
-    ]
+               ]
 }
