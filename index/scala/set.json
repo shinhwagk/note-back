@@ -2,7 +2,11 @@
     "categorys":  [
                       {
                           "notes":  [
-
+                                        {
+                                            "doc":  false,
+                                            "id":  118,
+                                            "file":  false
+                                        }
                                     ],
                           "cols":  2,
                           "name":  "range"
