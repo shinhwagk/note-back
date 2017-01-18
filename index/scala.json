@@ -1,25 +1,22 @@
 ﻿{
-    "labels":  [
-                   "functional",
-                   "annotation",
-                   "command"
-               ],
-    "categorys":  [
-                      {
-                          "cols":  2,
-                          "name":  "other",
-                          "notes":  [
-                                        {
-                                            "doc":  false,
-                                            "id":  111,
-                                            "file":  false
-                                        },
-                                        {
-                                            "doc":  false,
-                                            "id":  112,
-                                            "file":  false
-                                        }
-                                    ]
-                      }
-                  ]
+    "labels": [
+        "functional",
+        "annotation",
+        "repl"
+    ],
+    "categorys": [{
+        "cols": 2,
+        "name": "other",
+        "notes": [{
+                "doc": false,
+                "id": 111,
+                "file": false
+            },
+            {
+                "doc": false,
+                "id": 112,
+                "file": false
+            }
+        ]
+    }]
 }

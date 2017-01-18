@@ -1,0 +1,14 @@
+﻿{
+    "categorys": [{
+        "cols": 2,
+        "name": "command",
+        "notes": [{
+            "id": 115,
+            "file": false,
+            "doc": false
+        }]
+    }],
+    "labels": [
+
+    ]
+}
