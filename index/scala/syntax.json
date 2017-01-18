@@ -1,6 +1,12 @@
 ﻿{
     "categorys":  [
+                      {
+                          "notes":  [
 
+                                    ],
+                          "cols":  2,
+                          "name":  "command"
+                      }
                   ],
     "labels":  [
 
