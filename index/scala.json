@@ -3,7 +3,8 @@
                    "functional",
                    "annotation",
                    "repl",
-                   "set"
+                   "set",
+                   "syntax"
                ],
     "categorys":  [
                       {
