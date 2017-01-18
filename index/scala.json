@@ -1,7 +1,8 @@
 ﻿{
     "labels":  [
                    "functional",
-                   "annotation"
+                   "annotation",
+                   "command"
                ],
     "categorys":  [
                       {
