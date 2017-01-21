@@ -1,1 +1,1 @@
-Source(List(1,2,3))
+val s:Source[Int, NotUsed] = Source(List(1,2,3))
