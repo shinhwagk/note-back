@@ -67,11 +67,14 @@ function remove_category($path, $idx) {
   $notes = getNoteBack $path
 
   $categorys = [System.Collections.ArrayList]$notes.categorys
+  $c_name = $categorys.categorys[$idx].name
   $categorys.RemoveAt($idx)
 
   $notes.categorys = @($categorys)
 
   saveNoteBack $notes $path
+
+  git_commit("delete category: $path -> $c_name")
 }
 
 function rename_category($path, $idx, $c_name) {

@@ -147,7 +147,7 @@ function main($path) {
     }
     "^dc[1-9][0-9]*$" {
       $idx = [int]$oper_code.Substring(2) - 1;
-      remove_category $path $c_idx;
+      remove_category $path $idx;
     }
     "dn" {
       [int]$c_idx = Read-Host "Category id";
