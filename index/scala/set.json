@@ -20,6 +20,13 @@
                                     ],
                           "cols":  2,
                           "name":  "range"
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "collection",
+                          "notes":  [
+
+                                    ]
                       }
                   ],
     "labels":  [
