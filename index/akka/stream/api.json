@@ -36,6 +36,13 @@
                           "notes":  [
 
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "stage",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
