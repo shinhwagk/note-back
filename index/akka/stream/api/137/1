@@ -1,0 +1,1 @@
+val c: Source[Int, NotUsed] = Source.fromIterator { () => Iterator from 0 }
