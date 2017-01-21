@@ -13,7 +13,8 @@
                    "playframework",
                    "mysql",
                    "sbt",
-                   "scala"
+                   "scala",
+                   "akka"
                ],
     "categorys":  [
 
