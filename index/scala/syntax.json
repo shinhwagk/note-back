@@ -6,11 +6,6 @@
                                             "doc":  false,
                                             "id":  121,
                                             "file":  false
-                                        },
-                                        {
-                                            "doc":  true,
-                                            "id":  122,
-                                            "file":  false
                                         }
                                     ],
                           "cols":  2,
@@ -20,7 +15,11 @@
                           "cols":  1,
                           "name":  "Pattern Matching",
                           "notes":  [
-
+                                        {
+                                            "doc":  true,
+                                            "id":  122,
+                                            "file":  false
+                                        }
                                     ]
                       }
                   ],
