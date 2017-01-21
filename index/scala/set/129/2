@@ -1,0 +1,3 @@
+flod 和 flodleft是一样的
+foldRigth 是把集合反过来排放，再应用flodfelt,
+同时init值和elem值位置调换
