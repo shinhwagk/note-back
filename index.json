@@ -14,7 +14,8 @@
                    "mysql",
                    "sbt",
                    "scala",
-                   "akka"
+                   "akka",
+                   "english"
                ],
     "categorys":  [
 
