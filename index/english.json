@@ -3,6 +3,12 @@
 
                ],
     "categorys":  [
+                      {
+                          "name":  "phrase",
+                          "notes":  [
 
+                                    ],
+                          "cols":  2
+                      }
                   ]
 }
