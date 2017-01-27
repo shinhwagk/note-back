@@ -17,7 +17,11 @@
                       {
                           "name":  "词性",
                           "notes":  [
-
+                                        {
+                                            "id":  139,
+                                            "doc":  false,
+                                            "file":  false
+                                        }
                                     ],
                           "cols":  3
                       }
