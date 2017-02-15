@@ -15,7 +15,8 @@
                    "sbt",
                    "scala",
                    "akka",
-                   "english"
+                   "english",
+                   "elasticsearch"
                ],
     "categorys":  [
 
