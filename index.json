@@ -16,7 +16,8 @@
                    "scala",
                    "akka",
                    "english",
-                   "elasticsearch"
+                   "elasticsearch",
+                   "grafana"
                ],
     "categorys":  [
 
