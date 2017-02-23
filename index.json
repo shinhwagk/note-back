@@ -17,7 +17,8 @@
                    "akka",
                    "english",
                    "elasticsearch",
-                   "grafana"
+                   "grafana",
+                   "consul"
                ],
     "categorys":  [
 
