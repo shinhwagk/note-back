@@ -18,7 +18,8 @@
                    "english",
                    "elasticsearch",
                    "grafana",
-                   "consul"
+                   "consul",
+                   "traefik"
                ],
     "categorys":  [
 
