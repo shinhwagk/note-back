@@ -3,6 +3,12 @@
                    "json"
                ],
     "categorys":  [
+                      {
+                          "cols":  2,
+                          "name":  "logger",
+                          "notes":  [
 
+                                    ]
+                      }
                   ]
 }
