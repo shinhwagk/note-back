@@ -1,0 +1,1 @@
+当CMD用于为ENTRYPOINT提供参数的时候，CMD和ENTRYPOINT都要在Dockerfile中写成数组形式.不然不能其效果
