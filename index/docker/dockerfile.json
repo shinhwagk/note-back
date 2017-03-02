@@ -13,6 +13,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  2,
+                          "name":  "CMD",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }
