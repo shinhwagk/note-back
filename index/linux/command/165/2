@@ -1,0 +1,2 @@
+debug ssh 可以查看ssh登陆性能问题
+ssh -v root@192.168.2.1
