@@ -1,10 +1,8 @@
 ﻿{
-    "labels": [
-
-    ],
+    "labels": [],
     "categorys": [{
         "cols": 1,
-        "name": "concepts",
+        "name": "operation",
         "notes": [{
                 "doc": true,
                 "id": 167,
