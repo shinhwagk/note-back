@@ -1,28 +1,25 @@
 ﻿{
-    "labels":  [
+    "labels": [
 
-               ],
-    "categorys":  [
-                      {
-                          "cols":  1,
-                          "name":  "concepts",
-                          "notes":  [
-                                        {
-                                            "doc":  true,
-                                            "id":  167,
-                                            "file":  false
-                                        },
-                                        {
-                                            "doc":  true,
-                                            "id":  168,
-                                            "file":  false
-                                        },
-                                        {
-                                            "doc":  false,
-                                            "id":  169,
-                                            "file":  false
-                                        }
-                                    ]
-                      }
-                  ]
+    ],
+    "categorys": [{
+        "cols": 1,
+        "name": "concepts",
+        "notes": [{
+                "doc": true,
+                "id": 167,
+                "file": false
+            },
+            {
+                "doc": true,
+                "id": 168,
+                "file": false
+            },
+            {
+                "doc": true,
+                "id": 169,
+                "file": false
+            }
+        ]
+    }]
 }
