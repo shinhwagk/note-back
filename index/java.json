@@ -1,1 +1,15 @@
-﻿{"labels":["jdbc"],"categorys":[{"cols":1,"name":"example","notes":[]}]}
+﻿{
+    "labels":  [
+                   "jdbc",
+                   "time"
+               ],
+    "categorys":  [
+                      {
+                          "cols":  1,
+                          "name":  "example",
+                          "notes":  [
+
+                                    ]
+                      }
+                  ]
+}
