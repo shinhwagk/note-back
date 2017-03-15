@@ -1,18 +1,14 @@
 ﻿{
-    "labels":  [
+    "labels": [
 
-               ],
-    "categorys":  [
-                      {
-                          "cols":  1,
-                          "name":  "concepts",
-                          "notes":  [
-                                        {
-                                            "doc":  false,
-                                            "id":  167,
-                                            "file":  false
-                                        }
-                                    ]
-                      }
-                  ]
+    ],
+    "categorys": [{
+        "cols": 1,
+        "name": "concepts",
+        "notes": [{
+            "doc": true,
+            "id": 167,
+            "file": false
+        }]
+    }]
 }
