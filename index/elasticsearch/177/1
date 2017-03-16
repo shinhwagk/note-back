@@ -1,1 +1,2 @@
 PUT /customer?pretty
+PUT /customer/external/1?pretty
