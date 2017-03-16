@@ -19,7 +19,8 @@
                    "elasticsearch",
                    "grafana",
                    "consul",
-                   "traefik"
+                   "traefik",
+                   "logback"
                ],
     "categorys":  [
 
