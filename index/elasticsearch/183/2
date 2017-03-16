@@ -1,0 +1,3 @@
+搜索bank索引
+q=* 匹配索引中的所有文档
+sort=account_number:asc
