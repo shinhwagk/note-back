@@ -1,2 +1,3 @@
 PUT /customer?pretty
 PUT /customer/external/1?pretty
+<REST Verb> /<Index>/<Type>/<ID>
