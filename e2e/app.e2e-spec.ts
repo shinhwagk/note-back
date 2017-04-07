@@ -1,6 +1,6 @@
 import { NoteBackPage } from './app.po';
 
-describe('note-back App', function() {
+describe('note-back App', () => {
   let page: NoteBackPage;
 
   beforeEach(() => {
