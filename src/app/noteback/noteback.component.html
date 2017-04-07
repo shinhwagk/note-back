@@ -1,9 +1,10 @@
 <div class="container-fluid">
-  <app-category [categorys]="_categorys" [path]="_path"></app-category>
+    <app-category [categorys]="_categorys" [path]="_path"></app-category>
 
-  <ul class="navbar-fixed-bottom">
-    <li class="tag tag-pill tag-warning"><a routerLink="/">Home</a></li>
-    <li class="tag tag-pill tag-success" *ngFor="let label of _f_labels; let i = index" (click)="backLabel(label,i)"> {{label}} </li>
-    <li class="tag tag-pill tag-info" *ngFor="let label of _labels" (click)="gotoLabel(label)">{{label}}</li>
-  </ul>
+    <!--<ul class="navbar fixed-bottom">-->
+    <div class="fixed-bottom">
+        <span class="tag badge badge-pill badge-warning"><a routerLink="/">Home</a></span>
+        <span class="tag badge badge-pill badge-success" *ngFor="let label of _f_labels; let i = index" (click)="backLabel(label,i)"> {{label}} </span>
+        <span class="tag badge badge-pill badge-info" *ngFor="let label of _labels" (click)="gotoLabel(label)">{{label}}</span>
+    </div>
 </div>
