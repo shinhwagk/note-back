@@ -23,6 +23,12 @@
                    "logback"
                ],
     "categorys":  [
+                      {
+                          "cols":  1,
+                          "name":  "check",
+                          "notes":  [
 
+                                    ]
+                      }
                   ]
 }
