@@ -13,6 +13,13 @@
                                             "file":  false
                                         }
                                     ]
+                      },
+                      {
+                          "cols":  1,
+                          "name":  "check",
+                          "notes":  [
+
+                                    ]
                       }
                   ]
 }

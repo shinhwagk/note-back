@@ -1,34 +1,26 @@
 ﻿{
-    "labels":  [
-                   "powershell",
-                   "oracle",
-                   "github",
-                   "git",
-                   "java",
-                   "shell",
-                   "docker",
-                   "h2database",
-                   "linux",
-                   "emacs",
-                   "playframework",
-                   "mysql",
-                   "sbt",
-                   "scala",
-                   "akka",
-                   "english",
-                   "elasticsearch",
-                   "grafana",
-                   "consul",
-                   "traefik",
-                   "logback"
-               ],
-    "categorys":  [
-                      {
-                          "cols":  1,
-                          "name":  "check",
-                          "notes":  [
-
-                                    ]
-                      }
-                  ]
+    "labels": [
+        "powershell",
+        "oracle",
+        "github",
+        "git",
+        "java",
+        "shell",
+        "docker",
+        "h2database",
+        "linux",
+        "emacs",
+        "playframework",
+        "mysql",
+        "sbt",
+        "scala",
+        "akka",
+        "english",
+        "elasticsearch",
+        "grafana",
+        "consul",
+        "traefik",
+        "logback"
+    ],
+    "categorys": []
 }
